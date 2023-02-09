@@ -16,6 +16,7 @@
 * [Barco - G60 Projector](PepperDash/epi-projector-barco-g60)
 * [Utilities - i18n](https://github.com/PepperDash/epi-utilities-i18n)
 * [Cisco - RoomOS](PepperDash/epi-videoCodec-ciscoExtended)
+* [Mersive - Solstice](https://github.com/PepperDash/epi-mersive-solstice)
 
 
 
