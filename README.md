@@ -3,6 +3,7 @@
 * [Biamp - Tesira](https://github.com/PepperDash/epi-dsp-tesira)
 * [Panasonic - Display](PepperDash/PanasonicDisplay.EPI)
 * [Panasonic - Projectors](https://github.com/PepperDash/epi-display-panasonic-projectors)
+* [Panasonic - Cameras HTTP](https://github.com/PepperDash/epi-panasonic-camera-http)
 * [LG - Display](https://github.com/PepperDash/epi-display-lg)
 * [Pure Link - Switcher](https://github.com/PepperDash/epi-switcher-pure-link)
 * [Qsc - QSYS](PepperDash/epi-qsc-qsysdsp)
@@ -17,7 +18,6 @@
 * [Utilities - i18n](https://github.com/PepperDash/epi-utilities-i18n)
 * [Cisco - RoomOS](PepperDash/epi-videoCodec-ciscoExtended)
 * [Mersive - Solstice](https://github.com/PepperDash/epi-mersive-solstice)
-
 
 
 Currently Private
