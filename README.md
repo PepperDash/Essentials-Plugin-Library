@@ -1,6 +1,5 @@
 # Repositories List
 
-- [.github](https://github.com/PepperDash/.github)
 - [epi-1beyond-automate-vx](https://github.com/PepperDash/epi-1beyond-automate-vx)
 - [epi-apc-pdu](https://github.com/PepperDash/epi-apc-pdu)
 - [epi-camera-visca](https://github.com/PepperDash/epi-camera-visca)
@@ -36,13 +35,3 @@
 - [epi-utilities-i18n](https://github.com/PepperDash/epi-utilities-i18n)
 - [epi-utility-tcpproxy](https://github.com/PepperDash/epi-utility-tcpproxy)
 - [epi-videoCodec-ciscoExtended](https://github.com/PepperDash/epi-videoCodec-ciscoExtended)
-- [Essentials](https://github.com/PepperDash/Essentials)
-- [Essentials-Builds](https://github.com/PepperDash/Essentials-Builds)
-- [Essentials-Template-UI](https://github.com/PepperDash/Essentials-Template-UI)
-- [EssentialsPluginTemplate](https://github.com/PepperDash/EssentialsPluginTemplate)
-- [EssentialsSIMPLWindowsBridgeExample](https://github.com/PepperDash/EssentialsSIMPLWindowsBridgeExample)
-- [PanasonicDisplay.EPI](https://github.com/PepperDash/PanasonicDisplay.EPI)
-- [PepperDashCore](https://github.com/PepperDash/PepperDashCore)
-- [PepperDashCore-Builds](https://github.com/PepperDash/PepperDashCore-Builds)
-- [repo-compliance-check](https://github.com/PepperDash/repo-compliance-check)
-- [workflow-templates](https://github.com/PepperDash/workflow-templates)
