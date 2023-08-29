@@ -1,4 +1,4 @@
-# Repositories List
+# Essentials EPI's List
 
 - [epi-1beyond-automate-vx](https://github.com/PepperDash/epi-1beyond-automate-vx)
 - [epi-apc-pdu](https://github.com/PepperDash/epi-apc-pdu)
