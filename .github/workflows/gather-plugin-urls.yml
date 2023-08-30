@@ -1,0 +1,54 @@
+name: Gather Repo URLs
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Mode (debug or production)'
+        required: true
+        default: 'production'
+
+jobs:
+  gather-repo-urls:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: pip install PyGithub
+    - name: Gather repo URLs
+      env:
+        GITHUB_TOKEN: ${{ secrets.PEPPERDASH_ORG_READ }}
+        ORG_NAME: 'PepperDash'
+        MODE: ${{ github.event.inputs.mode }}
+      run: python .github/scripts/gather_repo_urls.py
+    - name: Upload Markdown file
+      uses: actions/upload-artifact@v2
+      with:
+        name: all-repos-list
+        path: README.md
+
+  commit-to-same-repo:
+    needs: gather-repo-urls
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: all-repos-list
+        path: './'
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.inputs.mode == 'production' && 'main' || 'development' }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Commit and push changes
+      run: |
+        git config --global user.email "action@github.com"
+        git config --global user.name "GitHub Action"
+        git add README.md
+        git commit -m "Update README.md"
+        git push origin ${{ github.event.inputs.mode == 'production' && 'main' || 'development' }}
