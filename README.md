@@ -1,77 +1,79 @@
-# Essentials EPI's List
+# Repositories List
 
-- [epi-1beyond-automate-vx](https://github.com/PepperDash/epi-1beyond-automate-vx)
-- [epi-analogWay-aquilon](https://github.com/PepperDash/epi-analogWay-aquilon)
-- [epi-apc-pdu](https://github.com/PepperDash/epi-apc-pdu)
-- [epi-atlona-ome](https://github.com/PepperDash/epi-atlona-ome)
-- [epi-axis-camera](https://github.com/PepperDash/epi-axis-camera)
-- [epi-barco-control_room_proxy](https://github.com/PepperDash/epi-barco-control_room_proxy)
-- [epi-barco-event-master](https://github.com/PepperDash/epi-barco-event-master)
-- [epi-camera-visca](https://github.com/PepperDash/epi-camera-visca)
-- [epi-contemporaryresearch-tuner](https://github.com/PepperDash/epi-contemporaryresearch-tuner)
-- [epi-crestron-amp8xxx](https://github.com/PepperDash/epi-crestron-amp8xxx)
-- [epi-crestron-deviceinfo](https://github.com/PepperDash/epi-crestron-deviceinfo)
-- [epi-crestron-dm](https://github.com/PepperDash/epi-crestron-dm)
-- [epi-crestron-dmmd6xN](https://github.com/PepperDash/epi-crestron-dmmd6xN)
-- [epi-crestron-hdwp4k401c](https://github.com/PepperDash/epi-crestron-hdwp4k401c)
-- [epi-crestron-iptable_editor](https://github.com/PepperDash/epi-crestron-iptable_editor)
-- [epi-crestron-nvx](https://github.com/PepperDash/epi-crestron-nvx)
-- [epi-crestron-touchpanels](https://github.com/PepperDash/epi-crestron-touchpanels)
-- [epi-dataStore](https://github.com/PepperDash/epi-dataStore)
-- [epi-display-avocor](https://github.com/PepperDash/epi-display-avocor)
-- [epi-display-lg](https://github.com/PepperDash/epi-display-lg)
-- [epi-display-planar-qe](https://github.com/PepperDash/epi-display-planar-qe)
-- [epi-display-samsung-mdc](https://github.com/PepperDash/epi-display-samsung-mdc)
-- [epi-display-sony-bravia](https://github.com/PepperDash/epi-display-sony-bravia)
-- [epi-dsp-clearone-converge-pro](https://github.com/PepperDash/epi-dsp-clearone-converge-pro)
-- [epi-dsp-clearone-converge-pro2](https://github.com/PepperDash/epi-dsp-clearone-converge-pro2)
-- [epi-dsp-symetrix](https://github.com/PepperDash/epi-dsp-symetrix)
-- [epi-dsp-tesira](https://github.com/PepperDash/epi-dsp-tesira)
-- [epi-epson-projector](https://github.com/PepperDash/epi-epson-projector)
-- [epi-essentials-mobile-control](https://github.com/PepperDash/epi-essentials-mobile-control)
-- [epi-extron-dmp](https://github.com/PepperDash/epi-extron-dmp)
-- [epi-generic-cec-display](https://github.com/PepperDash/epi-generic-cec-display)
-- [epi-lighting-acuity-fresco](https://github.com/PepperDash/epi-lighting-acuity-fresco)
-- [epi-lighting-denton-cor-tap](https://github.com/PepperDash/epi-lighting-denton-cor-tap)
-- [epi-lighting-enceliumX](https://github.com/PepperDash/epi-lighting-enceliumX)
-- [epi-lighting-enlighted](https://github.com/PepperDash/epi-lighting-enlighted)
-- [epi-lighting-lutron_quantum](https://github.com/PepperDash/epi-lighting-lutron_quantum)
-- [epi-lutron-grx](https://github.com/PepperDash/epi-lutron-grx)
-- [epi-matrox-monarch](https://github.com/PepperDash/epi-matrox-monarch)
-- [epi-mersive-solstice](https://github.com/PepperDash/epi-mersive-solstice)
-- [epi-nec-common-ascii](https://github.com/PepperDash/epi-nec-common-ascii)
-- [epi-nec-display](https://github.com/PepperDash/epi-nec-display)
-- [epi-panasonic-camera-http](https://github.com/PepperDash/epi-panasonic-camera-http)
-- [epi-panasonic-camera-serial](https://github.com/PepperDash/epi-panasonic-camera-serial)
-- [epi-panasonic-projectors](https://github.com/PepperDash/epi-panasonic-projectors)
-- [epi-panopto-cloud](https://github.com/PepperDash/epi-panopto-cloud)
-- [epi-pjlink](https://github.com/PepperDash/epi-pjlink)
-- [epi-poly-room](https://github.com/PepperDash/epi-poly-room)
-- [epi-projector-barco-g60](https://github.com/PepperDash/epi-projector-barco-g60)
-- [epi-qsc-qsysdsp](https://github.com/PepperDash/epi-qsc-qsysdsp)
-- [epi-roku-mediaplayer](https://github.com/PepperDash/epi-roku-mediaplayer)
-- [epi-sharp-display](https://github.com/PepperDash/epi-sharp-display)
-- [epi-shure-mxa](https://github.com/PepperDash/epi-shure-mxa)
-- [epi-shure-mxw](https://github.com/PepperDash/epi-shure-mxw)
-- [epi-shure-ulxd](https://github.com/PepperDash/epi-shure-ulxd)
-- [epi-snapone-wattbox](https://github.com/PepperDash/epi-snapone-wattbox)
-- [epi-switcher-digitalmedia](https://github.com/PepperDash/epi-switcher-digitalmedia)
-- [epi-switcher-extron-quantum](https://github.com/PepperDash/epi-switcher-extron-quantum)
-- [epi-switcher-pure-link](https://github.com/PepperDash/epi-switcher-pure-link)
-- [epi-tripleplay-server](https://github.com/PepperDash/epi-tripleplay-server)
-- [epi-uintled-colorlightZ6](https://github.com/PepperDash/epi-uintled-colorlightZ6)
-- [epi-utilities-customvalues](https://github.com/PepperDash/epi-utilities-customvalues)
-- [epi-utilities-deviceInfo](https://github.com/PepperDash/epi-utilities-deviceInfo)
-- [epi-utilities-devicemonitor](https://github.com/PepperDash/epi-utilities-devicemonitor)
-- [epi-utilities-dynfusion](https://github.com/PepperDash/epi-utilities-dynfusion)
-- [epi-utilities-i18n](https://github.com/PepperDash/epi-utilities-i18n)
-- [epi-utilities-idigitalinputaction](https://github.com/PepperDash/epi-utilities-idigitalinputaction)
-- [epi-utilities-timer](https://github.com/PepperDash/epi-utilities-timer)
-- [epi-utilities-timer-scheduled](https://github.com/PepperDash/epi-utilities-timer-scheduled)
-- [epi-utility-tcpproxy](https://github.com/PepperDash/epi-utility-tcpproxy)
-- [epi-vaddio-camera](https://github.com/PepperDash/epi-vaddio-camera)
-- [epi-vc4-cws](https://github.com/PepperDash/epi-vc4-cws)
-- [epi-videoCodec-ciscoExtended](https://github.com/PepperDash/epi-videoCodec-ciscoExtended)
-- [epi-yamaha-cs700](https://github.com/PepperDash/epi-yamaha-cs700)
-- [epi-yamaha-mixer](https://github.com/PepperDash/epi-yamaha-mixer)
-- [epi-yamaha-YXC](https://github.com/PepperDash/epi-yamaha-YXC)
+| Repository | Current Release |
+|------------|-----------------|
+| [epi-1beyond-automate-vx](https://github.com/PepperDash/epi-1beyond-automate-vx) | 1.0.1-beta-1 |
+| [epi-analogWay-aquilon](https://github.com/PepperDash/epi-analogWay-aquilon) | 1.0.2-alpha-4 |
+| [epi-apc-pdu](https://github.com/PepperDash/epi-apc-pdu) | 1.2.3 |
+| [epi-atlona-ome](https://github.com/PepperDash/epi-atlona-ome) | 1.1.1-hotfix-3 |
+| [epi-axis-camera](https://github.com/PepperDash/epi-axis-camera) | 1.0.0-rc-1 |
+| [epi-barco-control_room_proxy](https://github.com/PepperDash/epi-barco-control_room_proxy) | 0.0.1-beta-6 |
+| [epi-barco-event-master](https://github.com/PepperDash/epi-barco-event-master) | 1.0.1-hotfix-9 |
+| [epi-camera-visca](https://github.com/PepperDash/epi-camera-visca) | 0.0.0-buildtype-buildnumber |
+| [epi-contemporaryresearch-tuner](https://github.com/PepperDash/epi-contemporaryresearch-tuner) | 1.0.3-alpha-1 |
+| [epi-crestron-amp8xxx](https://github.com/PepperDash/epi-crestron-amp8xxx) | 0.0.1-beta-1 |
+| [epi-crestron-deviceinfo](https://github.com/PepperDash/epi-crestron-deviceinfo) | 1.1.1-alpha-5 |
+| [epi-crestron-dm](https://github.com/PepperDash/epi-crestron-dm) | 0.0.1-beta-2 |
+| [epi-crestron-dmmd6xN](https://github.com/PepperDash/epi-crestron-dmmd6xN) | 1.0.1 |
+| [epi-crestron-fusion](https://github.com/PepperDash/epi-crestron-fusion) | 1.0.2-hotfix-23 |
+| [epi-crestron-hdwp4k401c](https://github.com/PepperDash/epi-crestron-hdwp4k401c) | 1.0.1 |
+| [epi-crestron-iptable_editor](https://github.com/PepperDash/epi-crestron-iptable_editor) | 1.1.2 |
+| [epi-crestron-nvx](https://github.com/PepperDash/epi-crestron-nvx) | 2.3.7-beta-6 |
+| [epi-crestron-touchpanels](https://github.com/PepperDash/epi-crestron-touchpanels) | N/A |
+| [epi-dataStore](https://github.com/PepperDash/epi-dataStore) | N/A |
+| [epi-display-avocor](https://github.com/PepperDash/epi-display-avocor) | 1.0.0 |
+| [epi-display-lg](https://github.com/PepperDash/epi-display-lg) | 1.0.4-beta-38 |
+| [epi-display-planar-qe](https://github.com/PepperDash/epi-display-planar-qe) | 1.0.0 |
+| [epi-display-samsung-mdc](https://github.com/PepperDash/epi-display-samsung-mdc) | 1.3.2-alpha-34 |
+| [epi-display-sony-bravia](https://github.com/PepperDash/epi-display-sony-bravia) | 1.0.3 |
+| [epi-dsp-clearone-converge-pro](https://github.com/PepperDash/epi-dsp-clearone-converge-pro) | 1.1.0 |
+| [epi-dsp-clearone-converge-pro2](https://github.com/PepperDash/epi-dsp-clearone-converge-pro2) | 0.0.1-alpha-3 |
+| [epi-dsp-symetrix](https://github.com/PepperDash/epi-dsp-symetrix) | 1.0.0-rc-7 |
+| [epi-dsp-tesira](https://github.com/PepperDash/epi-dsp-tesira) | 2.5.2-hotfix-94 |
+| [epi-epson-projector](https://github.com/PepperDash/epi-epson-projector) | 2.0.6-beta-12 |
+| [epi-essentials-mobile-control](https://github.com/PepperDash/epi-essentials-mobile-control) | 3.1.1-hotfix-344-4-Series |
+| [epi-extron-dmp](https://github.com/PepperDash/epi-extron-dmp) | 0.0.1-alpha-25 |
+| [epi-generic-cec-display](https://github.com/PepperDash/epi-generic-cec-display) | 0.0.1-beta-4 |
+| [epi-lighting-acuity-fresco](https://github.com/PepperDash/epi-lighting-acuity-fresco) | 1.0.0 |
+| [epi-lighting-denton-cor-tap](https://github.com/PepperDash/epi-lighting-denton-cor-tap) | 0.2.2 |
+| [epi-lighting-enceliumX](https://github.com/PepperDash/epi-lighting-enceliumX) | 1.0.2-hotfix-20 |
+| [epi-lighting-enlighted](https://github.com/PepperDash/epi-lighting-enlighted) | 1.0.5-alpha-10 |
+| [epi-lighting-lutron_quantum](https://github.com/PepperDash/epi-lighting-lutron_quantum) | 1.0.4-alpha-3 |
+| [epi-lutron-grx](https://github.com/PepperDash/epi-lutron-grx) | 0.0.1-beta-9 |
+| [epi-matrox-monarch](https://github.com/PepperDash/epi-matrox-monarch) | 1.0.9-alpha-11 |
+| [epi-mersive-solstice](https://github.com/PepperDash/epi-mersive-solstice) | 1.1.1-beta-11 |
+| [epi-nec-common-ascii](https://github.com/PepperDash/epi-nec-common-ascii) | 1.0.2 |
+| [epi-nec-display](https://github.com/PepperDash/epi-nec-display) | 1.0.1 |
+| [epi-panasonic-camera-http](https://github.com/PepperDash/epi-panasonic-camera-http) | 1.2.1-alpha-17 |
+| [epi-panasonic-camera-serial](https://github.com/PepperDash/epi-panasonic-camera-serial) | 0.0.1-beta-1 |
+| [epi-panasonic-projectors](https://github.com/PepperDash/epi-panasonic-projectors) | 1.1.0 |
+| [epi-panopto-cloud](https://github.com/PepperDash/epi-panopto-cloud) | N/A |
+| [epi-pjlink](https://github.com/PepperDash/epi-pjlink) | N/A |
+| [epi-poly-room](https://github.com/PepperDash/epi-poly-room) | 1.0.0-beta.1 |
+| [epi-projector-barco-g60](https://github.com/PepperDash/epi-projector-barco-g60) | 1.0.2 |
+| [epi-qsc-qsysdsp](https://github.com/PepperDash/epi-qsc-qsysdsp) | 2.1.1-hotfix-20 |
+| [epi-roku-mediaplayer](https://github.com/PepperDash/epi-roku-mediaplayer) | 0.0.1-alpha-1 |
+| [epi-sharp-display](https://github.com/PepperDash/epi-sharp-display) | 1.0.3-alpha-29 |
+| [epi-shure-mxa](https://github.com/PepperDash/epi-shure-mxa) | 1.0.2 |
+| [epi-shure-mxw](https://github.com/PepperDash/epi-shure-mxw) | 2.0.0 |
+| [epi-shure-ulxd](https://github.com/PepperDash/epi-shure-ulxd) | 2.0.0 |
+| [epi-snapone-wattbox](https://github.com/PepperDash/epi-snapone-wattbox) | 2.3.1 |
+| [epi-switcher-digitalmedia](https://github.com/PepperDash/epi-switcher-digitalmedia) | N/A |
+| [epi-switcher-extron-quantum](https://github.com/PepperDash/epi-switcher-extron-quantum) | v1.0.1 |
+| [epi-switcher-pure-link](https://github.com/PepperDash/epi-switcher-pure-link) | 1.1.1 |
+| [epi-tripleplay-server](https://github.com/PepperDash/epi-tripleplay-server) | 1.0.5-beta-2 |
+| [epi-uintled-colorlightZ6](https://github.com/PepperDash/epi-uintled-colorlightZ6) | v0.0.1-alpha-95 |
+| [epi-utilities-customvalues](https://github.com/PepperDash/epi-utilities-customvalues) | 1.0.0 |
+| [epi-utilities-deviceInfo](https://github.com/PepperDash/epi-utilities-deviceInfo) | 0.0.1 |
+| [epi-utilities-devicemonitor](https://github.com/PepperDash/epi-utilities-devicemonitor) | 1.2.3-alpha-13 |
+| [epi-utilities-i18n](https://github.com/PepperDash/epi-utilities-i18n) | 1.0.5 |
+| [epi-utilities-idigitalinputaction](https://github.com/PepperDash/epi-utilities-idigitalinputaction) | 1.0.0 |
+| [epi-utilities-timer](https://github.com/PepperDash/epi-utilities-timer) | 1.1.1-beta-4 |
+| [epi-utilities-timer-scheduled](https://github.com/PepperDash/epi-utilities-timer-scheduled) | 1.0.5-beta-1 |
+| [epi-utility-tcpproxy](https://github.com/PepperDash/epi-utility-tcpproxy) | N/A |
+| [epi-vaddio-camera](https://github.com/PepperDash/epi-vaddio-camera) | 0.0.1-beta-3 |
+| [epi-vc4-cws](https://github.com/PepperDash/epi-vc4-cws) | 0.0.1-beta-1 |
+| [epi-videoCodec-ciscoExtended](https://github.com/PepperDash/epi-videoCodec-ciscoExtended) | 1.4.1 |
+| [epi-yamaha-YXC](https://github.com/PepperDash/epi-yamaha-YXC) | 0.0.1-alpha-2 |
+| [epi-yamaha-cs700](https://github.com/PepperDash/epi-yamaha-cs700) | N/A |
+| [epi-yamaha-mixer](https://github.com/PepperDash/epi-yamaha-mixer) | 0.0.1-beta-1 |
