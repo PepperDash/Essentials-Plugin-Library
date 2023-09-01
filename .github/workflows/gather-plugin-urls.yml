@@ -50,6 +50,9 @@ jobs:
       id: vars
       run: echo "::set-output name=branch::${{ github.event.inputs.mode == 'production' && 'main' || 'development' }}"
       
+    - name: Debug - Show README.md Contents Before git add
+      run: cat README.md
+
     - name: Commit and push changes
       run: |
         git config --global user.email "action@github.com"
@@ -58,7 +61,11 @@ jobs:
         git diff --cached --exit-code || git commit -m "Update README.md"
       continue-on-error: true
 
+    - name: Debug - Show README.md Contents After git add
+      run: cat README.md
+
     - name: Push Changes
       run: git push origin ${{ steps.vars.outputs.branch }}
       if: always() && steps.vars.outputs.branch
+
   
