@@ -45,14 +45,10 @@ jobs:
       with:
         ref: ${{ github.event.inputs.mode == 'production' && 'main' || 'development' }}
         token: ${{ secrets.GITHUB_TOKEN }}
-        
-    - name: Determine Branch
-      id: vars
-      run: echo "::set-output name=branch::${{ github.event.inputs.mode == 'production' && 'main' || 'development' }}"
-      
-    - name: Debug - Show README.md Contents Before git add
+    - name: Move Downloaded README.md to Correct Location
+      run: mv ./all-repos-list/README.md ./README.md
+    - name: Debug - Show README.md Contents After Move
       run: cat README.md
-
     - name: Commit and push changes
       run: |
         git config --global user.email "action@github.com"
@@ -60,12 +56,7 @@ jobs:
         git add README.md
         git diff --cached --exit-code || git commit -m "Update README.md"
       continue-on-error: true
-
     - name: Debug - Show README.md Contents After git add
       run: cat README.md
-
     - name: Push Changes
-      run: git push origin ${{ steps.vars.outputs.branch }}
-      if: always() && steps.vars.outputs.branch
-
-  
+      run: git push origin ${{ github.event.inputs.mode == 'production' && 'main' || 'development' }}
