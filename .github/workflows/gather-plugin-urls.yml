@@ -42,7 +42,7 @@ jobs:
         path: './'
 
     - name: Unzip Artifact
-      run: unzip all-repos-list.zip
+      run: unzip all-repos-list
 
     - name: Checkout code
       uses: actions/checkout@v2
