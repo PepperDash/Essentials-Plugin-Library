@@ -42,7 +42,8 @@ jobs:
         path: './'
 
     - name: Unzip Artifact
-      run: unzip all-repos-list
+      run: unzip /home/runner/work/Essentials-Plugin-Pages-Test/Essentials-Plugin-Pages-Test/all-repos-list.zip
+  
 
     - name: Checkout code
       uses: actions/checkout@v2
