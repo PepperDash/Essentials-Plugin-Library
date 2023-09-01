@@ -45,10 +45,20 @@ jobs:
       with:
         ref: ${{ github.event.inputs.mode == 'production' && 'main' || 'development' }}
         token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Determine Branch
+      id: vars
+      run: echo "::set-output name=branch::${{ github.event.inputs.mode == 'production' && 'main' || 'development' }}"
+      
     - name: Commit and push changes
       run: |
         git config --global user.email "action@github.com"
         git config --global user.name "GitHub Action"
         git add README.md
-        git diff --cached --exit-code || (git commit -m "Update README.md" && git push origin ${{ github.event.inputs.mode == 'production' && 'main' || 'development' }})
-      
+        git diff --cached --exit-code || git commit -m "Update README.md"
+      continue-on-error: true
+
+    - name: Push Changes
+      run: git push origin ${{ steps.vars.outputs.branch }}
+      if: always() && steps.vars.outputs.branch
+  
