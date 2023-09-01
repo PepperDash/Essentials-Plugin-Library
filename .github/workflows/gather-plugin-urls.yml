@@ -40,23 +40,25 @@ jobs:
       with:
         name: all-repos-list
         path: './'
+
+    - name: Unzip Artifact
+      run: unzip all-repos-list.zip
+
     - name: Checkout code
       uses: actions/checkout@v2
       with:
         ref: ${{ github.event.inputs.mode == 'production' && 'main' || 'development' }}
         token: ${{ secrets.GITHUB_TOKEN }}
+
     - name: Move Downloaded README.md to Correct Location
-      run: mv ./all-repos-list/README.md ./README.md
-    - name: Debug - Show README.md Contents After Move
-      run: cat README.md
+      run: mv README.md ./README.md
+
     - name: Commit and push changes
       run: |
         git config --global user.email "action@github.com"
         git config --global user.name "GitHub Action"
         git add README.md
         git diff --cached --exit-code || git commit -m "Update README.md"
-      continue-on-error: true
-    - name: Debug - Show README.md Contents After git add
-      run: cat README.md
+
     - name: Push Changes
       run: git push origin ${{ github.event.inputs.mode == 'production' && 'main' || 'development' }}
