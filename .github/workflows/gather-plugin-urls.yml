@@ -50,5 +50,5 @@ jobs:
         git config --global user.email "action@github.com"
         git config --global user.name "GitHub Action"
         git add README.md
-        git commit -m "Update README.md"
-        git push origin ${{ github.event.inputs.mode == 'production' && 'main' || 'development' }}
+        git diff --cached --exit-code || (git commit -m "Update README.md" && git push origin ${{ github.event.inputs.mode == 'production' && 'main' || 'development' }})
+      
