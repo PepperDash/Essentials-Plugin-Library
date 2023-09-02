@@ -41,6 +41,9 @@ jobs:
         name: all-repos-list
         path: './artifact-dir'
 
+    - name: Debug - List Contents of artifact-dir
+      run: ls -al ./artifact-dir
+
     - name: Checkout code
       uses: actions/checkout@v2
       with:
