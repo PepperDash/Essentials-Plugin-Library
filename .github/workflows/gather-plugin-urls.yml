@@ -39,17 +39,19 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: all-repos-list
-        path: './'
-
-    - name: Unzip Artifact
-      run: unzip /home/runner/work/Essentials-Plugin-Pages-Test/Essentials-Plugin-Pages-Test/all-repos-list.zip
-  
+        path: './artifact-dir'
 
     - name: Checkout code
       uses: actions/checkout@v2
       with:
         ref: ${{ github.event.inputs.mode == 'production' && 'main' || 'development' }}
         token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Debug - List Directory Contents
+      run: ls -al
+
+    - name: Unzip Artifact
+      run: unzip ./artifact-dir/all-repos-list.zip
 
     - name: Move Downloaded README.md to Correct Location
       run: mv README.md ./README.md
