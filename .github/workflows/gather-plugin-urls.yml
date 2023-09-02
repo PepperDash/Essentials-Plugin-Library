@@ -30,36 +30,10 @@ jobs:
       with:
         name: all-repos-list
         path: README.md
-
-  commit-to-same-repo:
-    needs: gather-repo-urls
-    runs-on: ubuntu-latest
-    steps:
-    - name: Download artifact
-      uses: actions/download-artifact@v2
-      with:
-        name: all-repos-list
-        path: '/home/runner/work/Essentials-Plugin-Pages-Test/Essentials-Plugin-Pages-Test/artifact-dir'
-
-    - name: Checkout code
-      uses: actions/checkout@v2
-      with:
-        ref: ${{ github.event.inputs.mode == 'production' && 'main' || 'development' }}
-        token: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Debug - List Directory Contents
-      run: ls -al
-
-    - name: Move and Overwrite README.md to Correct Location
-      run: mv -f /home/runner/work/Essentials-Plugin-Pages-Test/Essentials-Plugin-Pages-Test/artifact-dir/README.md /home/runner/work/Essentials-Plugin-Pages-Test/Essentials-Plugin-Pages-Test/README.md
-
-    - name: Commit and push changes
+    - name: Commit and push README.md
       run: |
-        git config --global user.email "action@github.com"
-        git config --global user.name "GitHub Action"
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
         git add README.md
-        git diff --cached --exit-code || git commit -m "Update README.md"
-
-    - name: Push Changes
-      run: git push origin ${{ github.event.inputs.mode == 'production' && 'main' || 'development' }}
-
+        git commit -m "Update README.md" || echo "No changes to commit"
+        git push
