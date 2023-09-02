@@ -53,9 +53,6 @@ jobs:
     - name: Debug - List Directory Contents
       run: ls -al
 
-    - name: Unzip Artifact
-      run: unzip ./artifact-dir/all-repos-list.zip
-
     - name: Move Downloaded README.md to Correct Location
       run: mv README.md ./README.md
 
