@@ -39,7 +39,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: all-repos-list
-        path: './artifact-dir'
+        path: '/home/runner/work/Essentials-Plugin-Pages-Test/Essentials-Plugin-Pages-Test/artifact-dir'
 
     - name: Checkout code
       uses: actions/checkout@v2
@@ -51,7 +51,7 @@ jobs:
       run: ls -al
 
     - name: Move and Overwrite README.md to Correct Location
-      run: mv -f ./artifact-dir/README.md ./README.md
+      run: mv -f /home/runner/work/Essentials-Plugin-Pages-Test/Essentials-Plugin-Pages-Test/artifact-dir/README.md /home/runner/work/Essentials-Plugin-Pages-Test/Essentials-Plugin-Pages-Test/README.md
 
     - name: Commit and push changes
       run: |
