@@ -41,9 +41,6 @@ jobs:
         name: all-repos-list
         path: './artifact-dir'
 
-    - name: Debug - List Contents of artifact-dir
-      run: ls -al ./artifact-dir
-
     - name: Checkout code
       uses: actions/checkout@v2
       with:
@@ -53,8 +50,8 @@ jobs:
     - name: Debug - List Directory Contents
       run: ls -al
 
-    - name: Move Downloaded README.md to Correct Location
-      run: mv README.md ./README.md
+    - name: Move and Overwrite README.md to Correct Location
+      run: mv -f ./artifact-dir/README.md ./README.md
 
     - name: Commit and push changes
       run: |
@@ -65,3 +62,4 @@ jobs:
 
     - name: Push Changes
       run: git push origin ${{ github.event.inputs.mode == 'production' && 'main' || 'development' }}
+
