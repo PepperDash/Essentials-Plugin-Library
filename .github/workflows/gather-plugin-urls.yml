@@ -12,7 +12,7 @@ jobs:
   gather-repo-urls:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -26,7 +26,7 @@ jobs:
         MODE: ${{ github.event.inputs.mode }}
       run: python .github/scripts/gather_repo_urls.py
     - name: Upload Markdown file
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: all-repos-list
         path: README.md
