@@ -5,30 +5,6 @@ import logging
 
 logging.basicConfig(level=logging.DEBUG)
 
-def find_interfaces(repo, path=""):
-    logging.debug(f"Searching for interfaces in repo: {repo.name}, path: {path}")
-    interfaces = []
-    try:
-        contents = repo.get_contents(path, ref="main")
-        for content in contents:
-            if content.type == "dir":
-                logging.debug(f"Found directory: {content.path}")
-                interfaces.extend(find_interfaces(repo, content.path))
-            elif content.name.endswith('.cs'):
-                logging.debug(f"Found C# file: {content.name}")
-                file_content = repo.get_contents(content.path).decoded_content.decode()
-                matches = re.findall(r'public (abstract )?class [A-Za-z0-9_]+ : ([A-Za-z0-9_,\s]+)', file_content)
-                for match in matches:
-                    for item in match[1].split(","):
-                        item = item.strip()
-                        if item.startswith("I"):
-                            interfaces.append(item)
-    except Exception as e:
-        logging.error(f"Error while finding interfaces in {repo.name}: {e}")
-        return interfaces  # Return whatever interfaces were found before the exception
-
-    return list(set(interfaces))  # Remove duplicates
-
 def generate_markdown_file(repos):
     logging.debug("Generating markdown file.")
     with open('README.md', 'w') as file:
@@ -46,10 +22,8 @@ def generate_markdown_file(repos):
                         current_release = release.tag_name
                         break
 
-                interfaces = find_interfaces(repo)
-                interfaces_str = ", ".join(interfaces) if interfaces else "N/A"
 
-                file.write(f"| [{repo.name}]({repo.html_url}) | {visibility} | {current_release} | {interfaces_str} |\n")
+                file.write(f"| [{repo.name}]({repo.html_url}) | {visibility} | {current_release} |\n")
 
 def main():
     logging.debug("Starting script.")
