@@ -19,10 +19,12 @@ def extract_min_essentials_version(repo):
             elif file_content.type == "file" and "factory" in file_content.name.lower() and file_content.name.endswith(".cs"):
                 logging.debug(f"Found potential file: {file_content.path}")
                 file_data = repo.get_contents(file_content.path).decoded_content.decode("utf-8")
-                match = re.search(r'MinimumEssentialsFrameworkVersion\s*=\s*"([^"]+)"', file_data)
+                # Adjusted regex to capture only the version string before ";"
+                match = re.search(r'MinimumEssentialsFrameworkVersion\s*=\s*"([^"]+)"\s*;', file_data)
                 if match:
-                    logging.debug(f"Found MinimumEssentialsFrameworkVersion: {match.group(1)}")
-                    return match.group(1)
+                    version = match.group(1).strip()  # Extract and clean the version string
+                    logging.debug(f"Found MinimumEssentialsFrameworkVersion: {version}")
+                    return version
     except Exception as e:
         logging.error(f"Error processing repo {repo.name}: {e}")
     return "N/A"
@@ -31,8 +33,8 @@ def generate_markdown_file(repos):
     logging.debug("Generating markdown file.")
     with open('README.md', 'w') as file:
         file.write("# Essentials Plugin Library\n\n")
-        file.write("| Repository                          | Visibility | Release | Min Essentials | Interfaces |\n")
-        file.write("|-------------------------------------|------------|---------|----------------|------------|\n")
+        file.write("| Repository                          | Visibility | Release | Min Essentials |\n")
+        file.write("|-------------------------------------|------------|---------|----------------|\n")
         for repo in sorted(repos, key=lambda x: x.name):
             if repo.name.startswith('epi-'):
                 logging.debug(f"Processing repo: {repo.name}, Public: {not repo.private}")
