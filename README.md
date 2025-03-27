@@ -1,9 +1,10 @@
 # Essentials Plugin Library
 
-Total repos: 106
-Total repos with release 1.*: 48
-Total repos with release 2.*: 5
-Total repos with release N/A: 36
+- Total repos: 106
+- Total Min Essentials -> v1: 48
+- Total Min Essentials -> v2: 5
+- Total Min Essentials -> N/A: 36
+
 
 | Repository                          | Visibility | Release | Min Essentials |
 |-------------------------------------|------------|---------|----------------|
