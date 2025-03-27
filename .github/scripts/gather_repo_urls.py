@@ -38,7 +38,7 @@ def generate_markdown_file(repos):
     total_release_2_x = 0
     total_release_na = 0
 
-    with open('README.md', 'w') as file:
+    with open('README.md', 'w', newline='\n') as file:
         file.write("# Essentials Plugin Library\n\n")
         
         # Iterate through repos to calculate counts
@@ -61,10 +61,10 @@ def generate_markdown_file(repos):
                     total_release_na += 1
 
         # Write the counts to the markdown file
-        file.write(f"Total repos: {total_epi_repos}\n")
-        file.write(f"Total repos with release 1.*: {total_release_1_x}\n")
-        file.write(f"Total repos with release 2.*: {total_release_2_x}\n")
-        file.write(f"Total repos with release N/A: {total_release_na}\n\n")
+        file.write(f"- Total repos: {total_epi_repos}\n")
+        file.write(f"- Total Min Essentials -> v1: {total_release_1_x}\n")
+        file.write(f"- Total Min Essentials -> v2: {total_release_2_x}\n")
+        file.write(f"- Total Min Essentials -> N/A: {total_release_na}\n\n\n")  # Add an extra blank line
 
         # Write the table header
         file.write("| Repository                          | Visibility | Release | Min Essentials |\n")
