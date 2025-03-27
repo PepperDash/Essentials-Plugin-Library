@@ -1,5 +1,11 @@
 # Essentials Plugin Library
 
+- Total repos: 106
+- Total Min Essentials -> v1: 48
+- Total Min Essentials -> v2: 5
+- Total Min Essentials -> N/A: 36
+
+
 | Repository                          | Visibility | Release | Min Essentials |
 |-------------------------------------|------------|---------|----------------|
 | [epi-1beyond-automate-vx](https://github.com/PepperDash/epi-1beyond-automate-vx) | Public | v1.0.0 | 1.16.1 |
@@ -8,7 +14,7 @@
 | [epi-apc-pdu](https://github.com/PepperDash/epi-apc-pdu) | Public | 1.2.4 | 1.15.0 |
 | [epi-atlona-ome](https://github.com/PepperDash/epi-atlona-ome) | Public | 1.1.3 | 1.13.4 |
 | [epi-avocor-display](https://github.com/PepperDash/epi-avocor-display) | Internal | 1.0.0 | 1.9.5 |
-| [epi-avr-marantz](https://github.com/PepperDash/epi-avr-marantz) | Public | v1.0.0 | 1.15.2 |
+| [epi-avr-marantz](https://github.com/PepperDash/epi-avr-marantz) | Public | v1.0.1 | 2.1.0 |
 | [epi-axis-camera](https://github.com/PepperDash/epi-axis-camera) | Public | N/A | N/A |
 | [epi-barco-crp](https://github.com/PepperDash/epi-barco-crp) | Public | N/A | 1.10.0 |
 | [epi-barco-event-master](https://github.com/PepperDash/epi-barco-event-master) | Internal | 1.0.0 | 1.9.7 |
@@ -73,7 +79,7 @@
 | [epi-poly-room](https://github.com/PepperDash/epi-poly-room) | Internal | N/A | 1.11.0 |
 | [epi-primeview-display](https://github.com/PepperDash/epi-primeview-display) | Internal | N/A | N/A |
 | [epi-purelinkav-swicther](https://github.com/PepperDash/epi-purelinkav-swicther) | Public | 1.1.1 | 1.5.5 |
-| [epi-qsc-qsysdsp](https://github.com/PepperDash/epi-qsc-qsysdsp) | Public | 2.1.0 | N/A |
+| [epi-qsc-qsysdsp](https://github.com/PepperDash/epi-qsc-qsysdsp) | Public | v3.0.0 | 2.0.0 |
 | [epi-roku-mediaplayer](https://github.com/PepperDash/epi-roku-mediaplayer) | Internal | N/A | 1.5.5 |
 | [epi-samsung-mdc-display](https://github.com/PepperDash/epi-samsung-mdc-display) | Public | v1.4.0 | 1.16.1 |
 | [epi-seimens-enlighted](https://github.com/PepperDash/epi-seimens-enlighted) | Internal | 1.0.4 | 1.9.7 |
