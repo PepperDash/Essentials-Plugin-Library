@@ -1,5 +1,10 @@
 # Essentials Plugin Library
 
+Total repos: 106
+Total repos with release 1.*: 48
+Total repos with release 2.*: 5
+Total repos with release N/A: 36
+
 | Repository                          | Visibility | Release | Min Essentials |
 |-------------------------------------|------------|---------|----------------|
 | [epi-1beyond-automate-vx](https://github.com/PepperDash/epi-1beyond-automate-vx) | Public | v1.0.0 | 1.16.1 |
