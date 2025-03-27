@@ -8,7 +8,7 @@
 | [epi-apc-pdu](https://github.com/PepperDash/epi-apc-pdu) | Public | 1.2.4 | 1.15.0 |
 | [epi-atlona-ome](https://github.com/PepperDash/epi-atlona-ome) | Public | 1.1.3 | 1.13.4 |
 | [epi-avocor-display](https://github.com/PepperDash/epi-avocor-display) | Internal | 1.0.0 | 1.9.5 |
-| [epi-avr-marantz](https://github.com/PepperDash/epi-avr-marantz) | Internal | N/A | 1.6.4 |
+| [epi-avr-marantz](https://github.com/PepperDash/epi-avr-marantz) | Public | v1.0.0 | 1.15.2 |
 | [epi-axis-camera](https://github.com/PepperDash/epi-axis-camera) | Public | N/A | N/A |
 | [epi-barco-crp](https://github.com/PepperDash/epi-barco-crp) | Public | N/A | 1.10.0 |
 | [epi-barco-event-master](https://github.com/PepperDash/epi-barco-event-master) | Internal | 1.0.0 | 1.9.7 |
