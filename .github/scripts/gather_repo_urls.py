@@ -150,9 +150,10 @@ def main():
 
     try:
         org = g.get_organization(org_name)
-        repos = org.get_repos(type='all')  # Keep as PaginatedList
-        repo_list = [repo for repo in repos]  # Convert to list manually if needed
-        logging.debug(f"Number of repos before filtering: {len(repo_list)}")
+        repos = org.get_repos(type='all')
+        logging.debug(f"Repos object type: {type(repos)}")
+        repo_list = list(repos)
+        logging.debug(f"Number of repos after conversion: {len(repo_list)}")
         generate_markdown_file(repo_list)
     except Exception as e:
         logging.error(f"Error accessing organization or repositories: {e}")
