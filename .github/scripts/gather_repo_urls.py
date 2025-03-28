@@ -39,7 +39,7 @@ def generate_markdown_file(repos):
     total_release_na = 0
 
     with open('README.md', 'w', newline='\n') as file:
-        file.write("# Essentials Plugin Library\n\n\n")
+        file.write("# Essentials Plugin Library\n\n")
         
         # Iterate through repos to calculate counts
         for repo in sorted(repos, key=lambda x: x.name):
@@ -47,18 +47,10 @@ def generate_markdown_file(repos):
                 total_epi_repos += 1
                 releases = repo.get_releases()
                 current_release = "N/A"
-                latest_build_tag = "N/A"
-                
-                # Get the latest release
                 for release in releases:
                     if not release.prerelease:
                         current_release = release.tag_name
                         break
-
-                # Get the latest build tag
-                tags = repo.get_tags()
-                if tags:
-                    latest_build_tag = tags[0].name  # Get the most recent tag
 
                 # Count based on release version
                 if current_release.startswith("1."):
@@ -77,8 +69,8 @@ def generate_markdown_file(repos):
         file.write(f"| Total Essentials N/A   | {total_release_na} |\n\n\n")
 
         # Write the table header
-        file.write("| Repository                          | Visibility | Release | Build Output | Min Essentials |\n")
-        file.write("|-------------------------------------|------------|---------|--------------|----------------|\n")
+        file.write("| Repository                          | Visibility | Release | Min Essentials |\n")
+        file.write("|-------------------------------------|------------|---------|----------------|\n")
 
         # Write the table rows
         for repo in sorted(repos, key=lambda x: x.name):
@@ -87,22 +79,14 @@ def generate_markdown_file(repos):
                 visibility = "Public" if not repo.private else "Internal"
                 releases = repo.get_releases()
                 current_release = "N/A"
-                latest_build_tag = "N/A"
-                
-                # Get the latest release
                 for release in releases:
                     if not release.prerelease:
                         current_release = release.tag_name
                         break
 
-                # Get the latest build tag
-                tags = repo.get_tags()
-                if tags:
-                    latest_build_tag = tags[0].name  # Get the most recent tag
-
                 min_essentials_version = extract_min_essentials_version(repo)
 
-                file.write(f"| [{repo.name}]({repo.html_url}) | {visibility} | {current_release} | {latest_build_tag} | {min_essentials_version} |\n")
+                file.write(f"| [{repo.name}]({repo.html_url}) | {visibility} | {current_release} | {min_essentials_version} |\n")
 
 def main():
     logging.debug("Starting script.")
