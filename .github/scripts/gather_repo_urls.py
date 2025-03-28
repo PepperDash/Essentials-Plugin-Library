@@ -39,42 +39,34 @@ def generate_markdown_file(repos):
     total_release_na = 0
 
     with open('README.md', 'w', newline='\n') as file:
-        file.write("# Essentials Plugin Library\n\n")
+        file.write("# Essentials Plugin Library\n\n\n")
         
-        try:
-            # Iterate through repos to calculate counts
-            for repo in sorted(repos, key=lambda x: x.name):
-                if repo.name.startswith('epi-'):
-                    total_epi_repos += 1
-                    releases = repo.get_releases()
-                    current_release = "N/A"
-                    latest_build_tag = "N/A"
+        # Iterate through repos to calculate counts
+        for repo in sorted(repos, key=lambda x: x.name):
+            if repo.name.startswith('epi-'):
+                total_epi_repos += 1
+                releases = repo.get_releases()
+                current_release = "N/A"
+                latest_build_tag = "N/A"
+                
+                # Get the latest release
+                for release in releases:
+                    if not release.prerelease:
+                        current_release = release.tag_name
+                        break
 
-                    # Get the latest release
-                    if releases:
-                        for release in releases:
-                            if not release.prerelease:
-                                current_release = release.tag_name
-                                break
-                    else:
-                        logging.warning(f"No releases found for repository: {repo.name}")
+                # Get the latest build tag
+                tags = repo.get_tags()
+                if tags:
+                    latest_build_tag = tags[0].name  # Get the most recent tag
 
-                    # Get the latest build tag
-                    tags = repo.get_tags()
-                    if tags:
-                        latest_build_tag = tags[0].name  # Get the most recent tag
-                    else:
-                        logging.warning(f"No tags found for repository: {repo.name}")
-
-                    # Count based on release version
-                    if current_release.startswith("1."):
-                        total_release_1_x += 1
-                    elif current_release.startswith("2."):
-                        total_release_2_x += 1
-                    elif current_release == "N/A":
-                        total_release_na += 1
-        except Exception as e:
-            logging.error(f"Error processing repositories: {e}")
+                # Count based on release version
+                if current_release.startswith("1."):
+                    total_release_1_x += 1
+                elif current_release.startswith("2."):
+                    total_release_2_x += 1
+                elif current_release == "N/A":
+                    total_release_na += 1
 
         # Write the counts to the markdown file in a table format
         file.write("| Metric                 | Count |\n")
@@ -98,23 +90,15 @@ def generate_markdown_file(repos):
                 latest_build_tag = "N/A"
                 
                 # Get the latest release
-                if releases:
-                    for release in releases:
-                        if not release.prerelease:
-                            current_release = release.tag_name
-                            break
-                else:
-                    logging.warning(f"No releases found for repository: {repo.name}")
+                for release in releases:
+                    if not release.prerelease:
+                        current_release = release.tag_name
+                        break
 
                 # Get the latest build tag
                 tags = repo.get_tags()
                 if tags:
                     latest_build_tag = tags[0].name  # Get the most recent tag
-                else:
-                    logging.warning(f"No tags found for repository: {repo.name}")
-
-                logging.debug(f"Number of releases for {repo.name}: {len(releases)}")
-                logging.debug(f"Number of tags for {repo.name}: {len(tags)}")
 
                 min_essentials_version = extract_min_essentials_version(repo)
 
