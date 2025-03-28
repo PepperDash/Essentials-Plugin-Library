@@ -145,11 +145,15 @@ def main():
     # Authenticate with GitHub
     g = Github(token)
 
+    rate_limit = g.get_rate_limit()
+    logging.debug(f"Rate limit: {rate_limit}")
+
     try:
         org = g.get_organization(org_name)
-        repos = list(org.get_repos(type='all'))  # Convert PaginatedList to a list
-        logging.debug(f"Number of repos before filtering: {len(repos)}")
-        generate_markdown_file(repos)
+        repos = org.get_repos(type='all')  # Keep as PaginatedList
+        repo_list = [repo for repo in repos]  # Convert to list manually if needed
+        logging.debug(f"Number of repos before filtering: {len(repo_list)}")
+        generate_markdown_file(repo_list)
     except Exception as e:
         logging.error(f"Error accessing organization or repositories: {e}")
 
