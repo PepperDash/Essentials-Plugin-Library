@@ -152,8 +152,14 @@ def main():
         org = g.get_organization(org_name)
         repos = org.get_repos(type='all')
         logging.debug(f"Repos object type: {type(repos)}")
-        repo_list = list(repos)
-        logging.debug(f"Number of repos after conversion: {len(repo_list)}")
+
+        # Explicitly iterate over the PaginatedList to collect repositories
+        repo_list = []
+        for repo in repos:
+            logging.debug(f"Fetched repo: {repo.name}")
+            repo_list.append(repo)
+        logging.debug(f"Number of repos after iteration: {len(repo_list)}")
+
         generate_markdown_file(repo_list)
     except Exception as e:
         logging.error(f"Error accessing organization or repositories: {e}")
