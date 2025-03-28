@@ -13,7 +13,6 @@ on:
 
 jobs:
   gather-repo-urls:
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/feature/add-total-counts' 
     runs-on: ubuntu-latest
     steps:
     - name: Log branch and event type
