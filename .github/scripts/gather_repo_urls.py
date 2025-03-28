@@ -65,6 +65,7 @@ def generate_markdown_file(repos):
                     if tags:
                         latest_build_tag = tags[0].name  # Get the most recent tag
                     else:
+                        latest_build_tag = "N/A"  # Handle empty tags list
                         logging.warning(f"No tags found for repository: {repo.name}")
 
                     # Count based on release version
@@ -94,11 +95,14 @@ def generate_markdown_file(repos):
             if repo.name.startswith('epi-'):
                 logging.debug(f"Processing repo: {repo.name}, Public: {not repo.private}")
                 visibility = "Public" if not repo.private else "Internal"
-                releases = repo.get_releases()
-                tags = repo.get_tags()
+
+                # Convert PaginatedList to list before accessing
+                releases = list(repo.get_releases())
+                tags = list(repo.get_tags())
+
                 current_release = "N/A"
                 latest_build_tag = "N/A"
-                
+
                 # Get the latest release
                 if releases:
                     for release in releases:
@@ -112,6 +116,7 @@ def generate_markdown_file(repos):
                 if tags:
                     latest_build_tag = tags[0].name  # Get the most recent tag
                 else:
+                    latest_build_tag = "N/A"  # Handle empty tags list
                     logging.warning(f"No tags found for repository: {repo.name}")
 
                 logging.debug(f"Number of releases for {repo.name}: {len(releases)}")
@@ -147,6 +152,9 @@ def main():
 
     rate_limit = g.get_rate_limit()
     logging.debug(f"Rate limit: {rate_limit}")
+    if rate_limit.core.remaining == 0:
+        logging.error("GitHub API rate limit exceeded. Please wait before retrying.")
+        return
 
     try:
         org = g.get_organization(org_name)
