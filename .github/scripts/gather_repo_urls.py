@@ -39,34 +39,37 @@ def generate_markdown_file(repos):
     total_release_na = 0
 
     with open('README.md', 'w', newline='\n') as file:
-        file.write("# Essentials Plugin Library\n\n\n")
+        file.write("# Essentials Plugin Library\n\n")
         
-        # Iterate through repos to calculate counts
-        for repo in sorted(repos, key=lambda x: x.name):
-            if repo.name.startswith('epi-'):
-                total_epi_repos += 1
-                releases = repo.get_releases()
-                current_release = "N/A"
-                latest_build_tag = "N/A"
-                
-                # Get the latest release
-                for release in releases:
-                    if not release.prerelease:
-                        current_release = release.tag_name
-                        break
+        try:
+            # Iterate through repos to calculate counts
+            for repo in sorted(repos, key=lambda x: x.name):
+                if repo.name.startswith('epi-'):
+                    total_epi_repos += 1
+                    releases = repo.get_releases()
+                    current_release = "N/A"
+                    latest_build_tag = "N/A"
 
-                # Get the latest build tag
-                tags = repo.get_tags()
-                if tags:
-                    latest_build_tag = tags[0].name  # Get the most recent tag
+                    # Get the latest release
+                    for release in releases:
+                        if not release.prerelease:
+                            current_release = release.tag_name
+                            break
 
-                # Count based on release version
-                if current_release.startswith("1."):
-                    total_release_1_x += 1
-                elif current_release.startswith("2."):
-                    total_release_2_x += 1
-                elif current_release == "N/A":
-                    total_release_na += 1
+                    # Get the latest build tag
+                    tags = repo.get_tags()
+                    if tags:
+                        latest_build_tag = tags[0].name  # Get the most recent tag
+
+                    # Count based on release version
+                    if current_release.startswith("1."):
+                        total_release_1_x += 1
+                    elif current_release.startswith("2."):
+                        total_release_2_x += 1
+                    elif current_release == "N/A":
+                        total_release_na += 1
+        except Exception as e:
+            logging.error(f"Error processing repositories: {e}")
 
         # Write the counts to the markdown file in a table format
         file.write("| Metric                 | Count |\n")
