@@ -3,9 +3,9 @@
 | Metric                 | Count |
 |------------------------|-------|
 | Total repos            | 106 |
-| Total Essentials v1    | 48 |
-| Total Essentials v2    | 5 |
-| Total Essentials N/A   | 35 |
+| Total Essentials v1    | 45 |
+| Total Essentials v2    | 4 |
+| Total Essentials N/A   | 33 |
 
 
 | Repository                          | Visibility | Release | Build Output | Min Essentials |
@@ -21,12 +21,12 @@
 | [epi-barco-crp](https://github.com/PepperDash/epi-barco-crp) | Public | N/A | 0.0.1-beta-6 | 1.10.0 |
 | [epi-barco-event-master](https://github.com/PepperDash/epi-barco-event-master) | Internal | 1.0.0 | v1.1.0-feature-replace-http.5 | 1.9.7 |
 | [epi-barco-g60](https://github.com/PepperDash/epi-barco-g60) | Public | 1.0.2 | 1.0.2 | 1.10.3 |
-| [epi-biamp-tesira](https://github.com/PepperDash/epi-biamp-tesira) | Public | 2.5.1 | v2.6.0-feature-4-series.4 | 1.8.1 |
+| [epi-biamp-tesira](https://github.com/PepperDash/epi-biamp-tesira) | Public | v3.0.1 | v3.0.2-feature-4SeriesRelease.1 | 1.8.1 |
 | [epi-blackmagic-videohub](https://github.com/PepperDash/epi-blackmagic-videohub) | Internal | N/A | 0.0.1-hotfix-3 | 1.6.4 |
 | [epi-bss-soundweb](https://github.com/PepperDash/epi-bss-soundweb) | Internal | N/A | 0.0.1-beta-5 | N/A |
 | [epi-camera-visca](https://github.com/PepperDash/epi-camera-visca) | Public | N/A | 0.0.0-buildtype-buildnumber | 1.7.5 |
 | [epi-christie-projector](https://github.com/PepperDash/epi-christie-projector) | Public | N/A | 0.0.1-alpha-2 | 1.10.3 |
-| [epi-cisco-cli](https://github.com/PepperDash/epi-cisco-cli) | Internal | v1.4.1 | v1.5.0-net8.1 | 2.0.0 |
+| [epi-cisco-cli](https://github.com/PepperDash/epi-cisco-cli) | Internal | v1.4.2 | v1.5.0-net8.1 | 2.0.0 |
 | [epi-cisco-navigator-room](https://github.com/PepperDash/epi-cisco-navigator-room) | Internal | v1.1.0 | v1.2.0-warmup-cooldown-issues.4 | N/A |
 | [epi-clearone-converge-pro](https://github.com/PepperDash/epi-clearone-converge-pro) | Public | 1.1.0 | 1.1.0 | 1.8.4 |
 | [epi-clearone-convergepro2](https://github.com/PepperDash/epi-clearone-convergepro2) | Public | 1.1.0 | 1.1.0 | 1.13.4 |
@@ -37,9 +37,9 @@
 | [epi-crestron-dmmd6xN](https://github.com/PepperDash/epi-crestron-dmmd6xN) | Public | 1.0.2 | 1.0.2 | N/A |
 | [epi-crestron-fusion](https://github.com/PepperDash/epi-crestron-fusion) | Public | 1.0.3 | v1.1.0-feature-4-series.2 | 1.5.5 |
 | [epi-crestron-hdwp4k401c](https://github.com/PepperDash/epi-crestron-hdwp4k401c) | Public | 1.0.1 | 1.0.2-beta-1 | N/A |
-| [epi-crestron-io](https://github.com/PepperDash/epi-crestron-io) | Internal | v1.1.0 | v2.0.0-release.2 | 2.0.0 |
+| [epi-crestron-io](https://github.com/PepperDash/epi-crestron-io) | Internal | v2.0.1 | v2.0.1 | 2.0.0 |
 | [epi-crestron-iptable_editor](https://github.com/PepperDash/epi-crestron-iptable_editor) | Public | 1.1.2 | 1.1.2 | 1.6.7 |
-| [epi-crestron-nvx](https://github.com/PepperDash/epi-crestron-nvx) | Public | v3.3.0 | v3.3.1-essentials-mc-updates.2 | N/A |
+| [epi-crestron-nvx](https://github.com/PepperDash/epi-crestron-nvx) | Public | v3.3.3 | v3.3.3 | N/A |
 | [epi-crestron-touchpanels](https://github.com/PepperDash/epi-crestron-touchpanels) | Internal | N/A | N/A | 1.7.5 |
 | [epi-denton-cor-tap](https://github.com/PepperDash/epi-denton-cor-tap) | Public | 0.2.2 | 0.2.2 | 1.9.0 |
 | [epi-dsp-shure](https://github.com/PepperDash/epi-dsp-shure) | Internal | N/A | v1.0.0-feat-4-series-only-plugin.3 | 1.6.4 |
@@ -55,9 +55,9 @@
 | [epi-exterity-stb](https://github.com/PepperDash/epi-exterity-stb) | Internal | N/A | 0.0.1-alpha-11 | 1.6.4 |
 | [epi-extron-dmp](https://github.com/PepperDash/epi-extron-dmp) | Internal | N/A | 0.0.1-alpha-25 | 1.8.4 |
 | [epi-extron-quantum](https://github.com/PepperDash/epi-extron-quantum) | Public | v1.0.1 | v1.0.2-hotfixUpdateOnlineOnResponseReceived.1 | 1.13.3 |
-| [epi-generic-cec-display](https://github.com/PepperDash/epi-generic-cec-display) | Public | v1.0.0 | v1.0.0 | 1.6.7 |
-| [epi-jbl-soundBar](https://github.com/PepperDash/epi-jbl-soundBar) | Internal | v0.10.0 | v0.10.0 | 2.0.0 |
-| [epi-lg-display](https://github.com/PepperDash/epi-lg-display) | Public | 1.0.4 | v1.1.0-feature-4-series.8 | 1.8.0 |
+| [epi-generic-cec-display](https://github.com/PepperDash/epi-generic-cec-display) | Public | v1.0.0 | v1.1.0-discrete-power.14 | 1.6.7 |
+| [epi-jbl-soundBar](https://github.com/PepperDash/epi-jbl-soundBar) | Internal | v1.0.0 | v1.0.0 | 2.0.0 |
+| [epi-lg-display](https://github.com/PepperDash/epi-lg-display) | Public | 1.0.4 | v1.1.0-feature-4-series.9 | 1.8.0 |
 | [epi-lutron-grx](https://github.com/PepperDash/epi-lutron-grx) | Internal | 1.0.0 | 1.0.1-beta-7 | 1.6.1 |
 | [epi-lutron-quantum](https://github.com/PepperDash/epi-lutron-quantum) | Public | 1.0.3 | v1.0.1 | N/A |
 | [epi-magewell-proconvert](https://github.com/PepperDash/epi-magewell-proconvert) | Internal | N/A | 0.0.1-alpha-1 | 1.15.3 |
@@ -73,24 +73,24 @@
 | [epi-newtek-spark](https://github.com/PepperDash/epi-newtek-spark) | Internal | N/A | 0.0.1-alpha-3 | 1.6.4 |
 | [epi-panasonic-camera-http](https://github.com/PepperDash/epi-panasonic-camera-http) | Public | 1.2.0 | vremove-master | 1.8.5 |
 | [epi-panasonic-camera-serial](https://github.com/PepperDash/epi-panasonic-camera-serial) | Internal | N/A | 0.0.1-beta-8 | N/A |
-| [epi-panasonic-projector](https://github.com/PepperDash/epi-panasonic-projector) | Public | 1.1.0 | v1.2.0-feature-4series-and-actions-udpates.9 | 1.7.5 |
+| [epi-panasonic-projector](https://github.com/PepperDash/epi-panasonic-projector) | Public | v1.2.1 | v1.2.1 | 2.0.0 |
 | [epi-panopto-cloud](https://github.com/PepperDash/epi-panopto-cloud) | Public | N/A | v1.1 | 1.12.8 |
 | [epi-pjlink](https://github.com/PepperDash/epi-pjlink) | Public | N/A | N/A | 1.8.1 |
 | [epi-planar-clarity](https://github.com/PepperDash/epi-planar-clarity) | Internal | 1.0.0 | v00.02 | 1.11.1 |
-| [epi-planar-qe-dispaly](https://github.com/PepperDash/epi-planar-qe-dispaly) | Public | 1.0.0 | v1.1.0-feature-4-series.1 | 1.11.1 |
+| [epi-planar-qe-dispaly](https://github.com/PepperDash/epi-planar-qe-dispaly) | Public | v1.1.0 | v1.1.0 | 1.11.1 |
 | [epi-poly-room](https://github.com/PepperDash/epi-poly-room) | Internal | N/A | 1.0.0-beta.1 | 1.11.0 |
-| [epi-primeview-display](https://github.com/PepperDash/epi-primeview-display) | Internal | N/A | v1.0.0-feature-4series.2 | N/A |
+| [epi-primeview-display](https://github.com/PepperDash/epi-primeview-display) | Internal | v1.0.0 | v1.0.0 | 1.6.7 |
 | [epi-purelinkav-swicther](https://github.com/PepperDash/epi-purelinkav-swicther) | Public | 1.1.1 | 1.1.1 | 1.5.5 |
 | [epi-qsc-qsysdsp](https://github.com/PepperDash/epi-qsc-qsysdsp) | Public | v3.1.0 | v3.1.0 | 2.0.0 |
 | [epi-roku-mediaplayer](https://github.com/PepperDash/epi-roku-mediaplayer) | Internal | N/A | 0.0.1-alpha-1 | 1.5.5 |
-| [epi-samsung-mdc-display](https://github.com/PepperDash/epi-samsung-mdc-display) | Public | v1.4.0 | v1.4.0 | 1.16.1 |
+| [epi-samsung-mdc-display](https://github.com/PepperDash/epi-samsung-mdc-display) | Public | v1.5.0 | v1.5.0 | 1.16.1 |
 | [epi-seimens-enlighted](https://github.com/PepperDash/epi-seimens-enlighted) | Internal | 1.0.4 | 1.0.5-beta-9 | 1.9.7 |
 | [epi-sharp-display](https://github.com/PepperDash/epi-sharp-display) | Public | 1.0.2 | 1.0.3-beta-25 | 1.9.1 |
 | [epi-shure-mxa](https://github.com/PepperDash/epi-shure-mxa) | Internal | 1.0.2 | 1.0.2 | 1.7.5 |
 | [epi-shure-mxw](https://github.com/PepperDash/epi-shure-mxw) | Public | 2.1.1 | 2.1.1 | 1.6.6 |
 | [epi-shure-ulxd](https://github.com/PepperDash/epi-shure-ulxd) | Public | 2.0.0 | 2.0.0 | 1.12.0 |
 | [epi-snapone-wattbox](https://github.com/PepperDash/epi-snapone-wattbox) | Public | 2.3.4 | 2.3.4 | 1.12.2 |
-| [epi-sony-bravia](https://github.com/PepperDash/epi-sony-bravia) | Public | v2.3.0 | v2.4.0-hotfix-picture-mode-feature.2 | 1.8.5 |
+| [epi-sony-bravia](https://github.com/PepperDash/epi-sony-bravia) | Public | v2.4.0 | v2.4.1-fix-interfaces.1 | 1.8.5 |
 | [epi-sony-projector](https://github.com/PepperDash/epi-sony-projector) | Internal | N/A | 0.0.1-alpha-7 | 1.6.4 |
 | [epi-switcher-digitalmedia](https://github.com/PepperDash/epi-switcher-digitalmedia) | Internal | N/A | N/A | 1.6.4 |
 | [epi-symetrix-dsp](https://github.com/PepperDash/epi-symetrix-dsp) | Public | N/A | 1.0.0-rc-7 | N/A |
@@ -110,8 +110,8 @@
 | [epi-utilities-timer-scheduled](https://github.com/PepperDash/epi-utilities-timer-scheduled) | Internal | 1.0.4 | 1.0.5-beta-3 | 1.9.0 |
 | [epi-utility-tcpproxy](https://github.com/PepperDash/epi-utility-tcpproxy) | Public | N/A | N/A | 1.6.4 |
 | [epi-vaddio-camera](https://github.com/PepperDash/epi-vaddio-camera) | Internal | 1.1.0 | 1.1.0 | 1.10.3 |
-| [epi-videoCodec-ciscoExtended](https://github.com/PepperDash/epi-videoCodec-ciscoExtended) | Public | 1.5.1 | v1.6.0-iHasWebView.7 | 1.15.2 |
-| [epi-vytio-iptv](https://github.com/PepperDash/epi-vytio-iptv) | Internal | N/A | v0.2.0-feature-add-4series.2 | 1.5.5 |
+| [epi-videoCodec-ciscoExtended](https://github.com/PepperDash/epi-videoCodec-ciscoExtended) | Public | v1.7.0 | v1.7.0 | 1.15.2 |
+| [epi-vytio-iptv](https://github.com/PepperDash/epi-vytio-iptv) | Internal | v0.2.0 | v0.3.0-merge-fix.1 | 1.16.1 |
 | [epi-yamaha-YXC](https://github.com/PepperDash/epi-yamaha-YXC) | Internal | N/A | 0.0.1-alpha-2 | 1.10.2 |
 | [epi-yamaha-cs700](https://github.com/PepperDash/epi-yamaha-cs700) | Internal | N/A | N/A | N/A |
 | [epi-yamaha-mixer](https://github.com/PepperDash/epi-yamaha-mixer) | Internal | 1.0.0 | 1.0.0 | 1.6.2 |
