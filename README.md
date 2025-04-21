@@ -39,7 +39,7 @@
 | [epi-crestron-hdwp4k401c](https://github.com/PepperDash/epi-crestron-hdwp4k401c) | Public | 1.0.1 | 1.0.2-beta-1 | N/A |
 | [epi-crestron-io](https://github.com/PepperDash/epi-crestron-io) | Internal | v2.0.1 | v2.0.1 | 2.0.0 |
 | [epi-crestron-iptable_editor](https://github.com/PepperDash/epi-crestron-iptable_editor) | Public | 1.1.2 | 1.1.2 | 1.6.7 |
-| [epi-crestron-nvx](https://github.com/PepperDash/epi-crestron-nvx) | Public | v3.3.3 | v3.4.0-essentials-version.1 | N/A |
+| [epi-crestron-nvx](https://github.com/PepperDash/epi-crestron-nvx) | Public | v3.4.0 | v3.4.0 | N/A |
 | [epi-crestron-touchpanels](https://github.com/PepperDash/epi-crestron-touchpanels) | Internal | N/A | N/A | 1.7.5 |
 | [epi-denton-cor-tap](https://github.com/PepperDash/epi-denton-cor-tap) | Public | 0.2.2 | 0.2.2 | 1.9.0 |
 | [epi-dsp-shure](https://github.com/PepperDash/epi-dsp-shure) | Internal | N/A | v1.0.0-feat-4-series-only-plugin.3 | 1.6.4 |
@@ -62,7 +62,7 @@
 | [epi-lutron-quantum](https://github.com/PepperDash/epi-lutron-quantum) | Public | 1.0.3 | v1.0.1 | N/A |
 | [epi-magewell-proconvert](https://github.com/PepperDash/epi-magewell-proconvert) | Internal | N/A | 0.0.1-alpha-1 | 1.15.3 |
 | [epi-matrox-monarch](https://github.com/PepperDash/epi-matrox-monarch) | Internal | 1.0.8 | vempty_string_triggers_config_update | 1.7.4 |
-| [epi-megapixel-helios](https://github.com/PepperDash/epi-megapixel-helios) | Public | 1.4.0 | 1.4.0 | 1.16.0 |
+| [epi-megapixel-helios](https://github.com/PepperDash/epi-megapixel-helios) | Public | 1.4.0 | 1.4.1-beta-44 | 1.16.0 |
 | [epi-mersive-solstice](https://github.com/PepperDash/epi-mersive-solstice) | Public | 1.1.0 | 1.1.1-beta-11 | 1.8.0 |
 | [epi-mst-consoleCommands](https://github.com/PepperDash/epi-mst-consoleCommands) | Internal | N/A | N/A | 1.6.4 |
 | [epi-multi-display-room](https://github.com/PepperDash/epi-multi-display-room) | Internal | N/A | N/A | 1.6.4 |
@@ -77,7 +77,7 @@
 | [epi-panopto-cloud](https://github.com/PepperDash/epi-panopto-cloud) | Public | N/A | v1.1 | 1.12.8 |
 | [epi-pjlink](https://github.com/PepperDash/epi-pjlink) | Public | N/A | N/A | 1.8.1 |
 | [epi-planar-clarity](https://github.com/PepperDash/epi-planar-clarity) | Internal | 1.0.0 | v00.02 | 1.11.1 |
-| [epi-planar-qe-dispaly](https://github.com/PepperDash/epi-planar-qe-dispaly) | Public | v1.1.0 | v1.1.0 | 1.11.1 |
+| [epi-planar-qe-display](https://github.com/PepperDash/epi-planar-qe-display) | Public | v1.1.0 | v1.1.0 | 1.11.1 |
 | [epi-poly-room](https://github.com/PepperDash/epi-poly-room) | Internal | N/A | 1.0.0-beta.1 | 1.11.0 |
 | [epi-primeview-display](https://github.com/PepperDash/epi-primeview-display) | Internal | v1.0.0 | v1.0.0 | 1.6.7 |
 | [epi-purelinkav-swicther](https://github.com/PepperDash/epi-purelinkav-swicther) | Public | 1.1.1 | 1.1.1 | 1.5.5 |
@@ -106,12 +106,12 @@
 | [epi-utilities-idigitalinputaction](https://github.com/PepperDash/epi-utilities-idigitalinputaction) | Internal | 1.0.0 | 1.0.0 | 1.9.1 |
 | [epi-utilities-routeCycle](https://github.com/PepperDash/epi-utilities-routeCycle) | Internal | 1.0.0 | 1.0.0 | 1.15.2 |
 | [epi-utilities-sendemail](https://github.com/PepperDash/epi-utilities-sendemail) | Internal | N/A | N/A | 1.10.1 |
-| [epi-utilities-timer](https://github.com/PepperDash/epi-utilities-timer) | Public | 1.2.1 | v1.0.4 | 1.16.0 |
+| [epi-utilities-timer](https://github.com/PepperDash/epi-utilities-timer) | Public | 1.2.1 | v1.0.5-4-series-updates.1 | 1.16.0 |
 | [epi-utilities-timer-scheduled](https://github.com/PepperDash/epi-utilities-timer-scheduled) | Internal | 1.0.4 | 1.0.5-beta-3 | 1.9.0 |
 | [epi-utility-tcpproxy](https://github.com/PepperDash/epi-utility-tcpproxy) | Public | N/A | N/A | 1.6.4 |
 | [epi-vaddio-camera](https://github.com/PepperDash/epi-vaddio-camera) | Internal | 1.1.0 | 1.1.0 | 1.10.3 |
 | [epi-videoCodec-ciscoExtended](https://github.com/PepperDash/epi-videoCodec-ciscoExtended) | Public | v1.7.0 | v1.7.0 | 1.15.2 |
-| [epi-vytio-iptv](https://github.com/PepperDash/epi-vytio-iptv) | Internal | v0.3.2 | v0.3.2 | 1.16.1 |
+| [epi-vytio-iptv](https://github.com/PepperDash/epi-vytio-iptv) | Internal | v0.3.2 | v0.4.0-24-to-60-presets.1 | 1.16.1 |
 | [epi-yamaha-YXC](https://github.com/PepperDash/epi-yamaha-YXC) | Internal | N/A | 0.0.1-alpha-2 | 1.10.2 |
 | [epi-yamaha-cs700](https://github.com/PepperDash/epi-yamaha-cs700) | Internal | N/A | N/A | N/A |
 | [epi-yamaha-mixer](https://github.com/PepperDash/epi-yamaha-mixer) | Internal | 1.0.0 | 1.0.0 | 1.6.2 |
