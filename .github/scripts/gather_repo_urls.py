@@ -96,7 +96,7 @@ def process_repositories(repo_list):
         # Write the table rows
         for repo in sorted(repo_list, key=lambda x: x.name):
             if repo.name.startswith('epi-'):
-                logging.debug(f"Processing repo: {repo.name}, Public: {not repo.private}")
+                logging.debug(f"Processing Repository: {repo.name}, Visibility: {'Public' if not repo.private else 'Internal/Private'}")
                 visibility = "Public" if not repo.private else "Internal"
 
                 # Convert PaginatedList to list before accessing
