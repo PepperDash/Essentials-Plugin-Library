@@ -1,4 +1,4 @@
-name: Gather Repo URLs
+name: Gather Plugin URLs
 
 on:
   push: # Trigger the workflow on any push event
@@ -12,7 +12,7 @@ on:
     - cron: '0 5 * * *' # Runs every day at 0500 UTC
 
 jobs:
-  gather-repo-urls:
+  gather-plugin-urls:
     runs-on: ubuntu-latest
     steps:
     - name: Log branch and event type
