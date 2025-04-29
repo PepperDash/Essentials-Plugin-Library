@@ -111,7 +111,7 @@
 | [epi-utility-tcpproxy](https://github.com/PepperDash/epi-utility-tcpproxy) | Public | N/A | N/A | 1.6.4 |
 | [epi-vaddio-camera](https://github.com/PepperDash/epi-vaddio-camera) | Internal | 1.1.0 | 1.1.0 | 1.10.3 |
 | [epi-videoCodec-ciscoExtended](https://github.com/PepperDash/epi-videoCodec-ciscoExtended) | Public | v1.7.0 | v1.7.0 | 1.15.2 |
-| [epi-vytio-iptv](https://github.com/PepperDash/epi-vytio-iptv) | Internal | v0.3.2 | v0.4.0-24-to-60-presets.1 | 1.16.1 |
+| [epi-vytio-iptv](https://github.com/PepperDash/epi-vytio-iptv) | Internal | v0.3.2 | v0.4.0-preset-name-feedbacks.1 | 1.16.1 |
 | [epi-yamaha-YXC](https://github.com/PepperDash/epi-yamaha-YXC) | Internal | N/A | 0.0.1-alpha-2 | 1.10.2 |
 | [epi-yamaha-cs700](https://github.com/PepperDash/epi-yamaha-cs700) | Internal | N/A | N/A | N/A |
 | [epi-yamaha-mixer](https://github.com/PepperDash/epi-yamaha-mixer) | Internal | 1.0.0 | 1.0.0 | 1.6.2 |
