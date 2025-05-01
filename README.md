@@ -16,7 +16,7 @@
 | [epi-apc-pdu](https://github.com/PepperDash/epi-apc-pdu) | Public | 1.2.4 | v2.0.0-use-ssh-net-4-series.1 | 1.15.0 |
 | [epi-atlona-ome](https://github.com/PepperDash/epi-atlona-ome) | Public | 1.1.3 | 1.1.3 | 1.13.4 |
 | [epi-avocor-display](https://github.com/PepperDash/epi-avocor-display) | Internal | 1.0.0 | 1.0.0 | 1.9.5 |
-| [epi-avr-marantz](https://github.com/PepperDash/epi-avr-marantz) | Public | v1.0.2 | v1.0.3-UpdateEssentials.1 | 2.4.4 |
+| [epi-avr-marantz](https://github.com/PepperDash/epi-avr-marantz) | Public | v1.0.3 | v1.0.3 | 2.4.4 |
 | [epi-axis-camera](https://github.com/PepperDash/epi-axis-camera) | Public | N/A | 1.0.0-rc-5 | N/A |
 | [epi-barco-crp](https://github.com/PepperDash/epi-barco-crp) | Public | N/A | 0.0.1-beta-6 | 1.10.0 |
 | [epi-barco-event-master](https://github.com/PepperDash/epi-barco-event-master) | Internal | 1.0.0 | v1.1.0-feature-replace-http.5 | 1.9.7 |
@@ -37,7 +37,7 @@
 | [epi-crestron-dmmd6xN](https://github.com/PepperDash/epi-crestron-dmmd6xN) | Public | 1.0.2 | 1.0.2 | N/A |
 | [epi-crestron-fusion](https://github.com/PepperDash/epi-crestron-fusion) | Public | 1.0.3 | v1.1.0-feature-4-series.2 | 1.5.5 |
 | [epi-crestron-hdwp4k401c](https://github.com/PepperDash/epi-crestron-hdwp4k401c) | Public | 1.0.1 | 1.0.2-beta-1 | N/A |
-| [epi-crestron-io](https://github.com/PepperDash/epi-crestron-io) | Internal | v2.0.1 | v2.1.0-gwexer-add.2 | 2.0.0 |
+| [epi-crestron-io](https://github.com/PepperDash/epi-crestron-io) | Internal | v2.1.0 | v2.1.0 | 2.0.0 |
 | [epi-crestron-iptable_editor](https://github.com/PepperDash/epi-crestron-iptable_editor) | Public | 1.1.2 | 1.1.2 | 1.6.7 |
 | [epi-crestron-nvx](https://github.com/PepperDash/epi-crestron-nvx) | Public | v3.5.1 | v3.5.1 | N/A |
 | [epi-crestron-touchpanels](https://github.com/PepperDash/epi-crestron-touchpanels) | Internal | N/A | N/A | 1.7.5 |
@@ -98,7 +98,7 @@
 | [epi-test-plugin2](https://github.com/PepperDash/epi-test-plugin2) | Internal | N/A | v1.0.0 | 1.6.4 |
 | [epi-tripleplay-server](https://github.com/PepperDash/epi-tripleplay-server) | Public | 1.0.4 | 1.0.5-beta-2 | 1.9.1 |
 | [epi-tripplite-padm](https://github.com/PepperDash/epi-tripplite-padm) | Internal | N/A | 0.0.1-alpha-9 | N/A |
-| [epi-uintled-colorlightZ6](https://github.com/PepperDash/epi-uintled-colorlightZ6) | Public | v1.0.0 | v1.1.0-workflow-updates.1 | 1.5.5 |
+| [epi-uintled-colorlightZ6](https://github.com/PepperDash/epi-uintled-colorlightZ6) | Public | v1.0.0 | v1.1.0-workflow-updates.6 | 1.5.5 |
 | [epi-utilities-customvalues](https://github.com/PepperDash/epi-utilities-customvalues) | Public | v1.0.0 | v1.1.0-development.1 | 1.10.0 |
 | [epi-utilities-deviceInfo](https://github.com/PepperDash/epi-utilities-deviceInfo) | Public | 0.0.1 | 0.0.1 | 1.6.4 |
 | [epi-utilities-devicemonitor](https://github.com/PepperDash/epi-utilities-devicemonitor) | Public | v2.0.0 | v2.0.0 | 2.4.4 |
