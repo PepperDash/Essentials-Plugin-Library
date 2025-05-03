@@ -98,7 +98,7 @@
 | [epi-test-plugin2](https://github.com/PepperDash/epi-test-plugin2) | Internal | N/A | v1.0.0 | 1.6.4 |
 | [epi-tripleplay-server](https://github.com/PepperDash/epi-tripleplay-server) | Public | 1.0.4 | 1.0.5-beta-2 | 1.9.1 |
 | [epi-tripplite-padm](https://github.com/PepperDash/epi-tripplite-padm) | Internal | N/A | 0.0.1-alpha-9 | N/A |
-| [epi-uintled-colorlightZ6](https://github.com/PepperDash/epi-uintled-colorlightZ6) | Public | v1.0.0 | v1.1.0-workflow-updates.21 | 1.5.5 |
+| [epi-uintled-colorlightZ6](https://github.com/PepperDash/epi-uintled-colorlightZ6) | Public | v1.0.0 | v1.1.0-workflow-updates.24 | 1.5.5 |
 | [epi-utilities-customvalues](https://github.com/PepperDash/epi-utilities-customvalues) | Public | v1.0.0 | v1.1.0-development.1 | 1.10.0 |
 | [epi-utilities-deviceInfo](https://github.com/PepperDash/epi-utilities-deviceInfo) | Public | 0.0.1 | 0.0.1 | 1.6.4 |
 | [epi-utilities-devicemonitor](https://github.com/PepperDash/epi-utilities-devicemonitor) | Public | v2.0.0 | v2.0.0 | 2.4.4 |
