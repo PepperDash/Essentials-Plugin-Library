@@ -73,7 +73,7 @@
 | [epi-newtek-spark](https://github.com/PepperDash/epi-newtek-spark) | Internal | N/A | 0.0.1-alpha-3 | 1.6.4 |
 | [epi-panasonic-camera-http](https://github.com/PepperDash/epi-panasonic-camera-http) | Public | 1.2.0 | vremove-master | 1.8.5 |
 | [epi-panasonic-camera-serial](https://github.com/PepperDash/epi-panasonic-camera-serial) | Internal | N/A | 0.0.1-beta-8 | N/A |
-| [epi-panasonic-projector](https://github.com/PepperDash/epi-panasonic-projector) | Public | v1.2.1 | v1.2.1 | 2.0.0 |
+| [epi-panasonic-projector](https://github.com/PepperDash/epi-panasonic-projector) | Public | v1.2.1 | v1.3.0-feature-essentials-version.1 | 2.0.0 |
 | [epi-panopto-cloud](https://github.com/PepperDash/epi-panopto-cloud) | Public | N/A | v1.1 | 1.12.8 |
 | [epi-pjlink](https://github.com/PepperDash/epi-pjlink) | Public | N/A | N/A | 1.8.1 |
 | [epi-planar-clarity](https://github.com/PepperDash/epi-planar-clarity) | Internal | 1.0.0 | v00.02 | 1.11.1 |
@@ -83,7 +83,7 @@
 | [epi-purelinkav-swicther](https://github.com/PepperDash/epi-purelinkav-swicther) | Public | 1.1.1 | 1.1.1 | 1.5.5 |
 | [epi-qsc-qsysdsp](https://github.com/PepperDash/epi-qsc-qsysdsp) | Public | v3.1.0 | v3.1.0 | 2.0.0 |
 | [epi-roku-mediaplayer](https://github.com/PepperDash/epi-roku-mediaplayer) | Internal | N/A | 0.0.1-alpha-1 | 1.5.5 |
-| [epi-samsung-mdc-display](https://github.com/PepperDash/epi-samsung-mdc-display) | Public | v1.5.0 | v1.5.0 | 1.16.1 |
+| [epi-samsung-mdc-display](https://github.com/PepperDash/epi-samsung-mdc-display) | Public | v1.5.0 | v1.6.0-feature-essentials-version.1 | 1.16.1 |
 | [epi-seimens-enlighted](https://github.com/PepperDash/epi-seimens-enlighted) | Internal | 1.0.4 | 1.0.5-beta-9 | 1.9.7 |
 | [epi-sharp-display](https://github.com/PepperDash/epi-sharp-display) | Public | 1.0.2 | 1.0.3-beta-25 | 1.9.1 |
 | [epi-shure-mxa](https://github.com/PepperDash/epi-shure-mxa) | Internal | 1.0.2 | 1.0.2 | 1.7.5 |
