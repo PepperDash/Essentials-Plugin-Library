@@ -21,7 +21,7 @@
 | [epi-barco-crp](https://github.com/PepperDash/epi-barco-crp) | Public | N/A | 0.0.1-beta-6 | 1.10.0 |
 | [epi-barco-event-master](https://github.com/PepperDash/epi-barco-event-master) | Internal | 1.0.0 | v1.1.0-feature-replace-http.5 | 1.9.7 |
 | [epi-barco-g60](https://github.com/PepperDash/epi-barco-g60) | Public | 1.0.2 | 1.0.2 | 1.10.3 |
-| [epi-biamp-tesira](https://github.com/PepperDash/epi-biamp-tesira) | Public | v3.0.3 | v3.0.3 | 1.8.1 |
+| [epi-biamp-tesira](https://github.com/PepperDash/epi-biamp-tesira) | Public | v3.0.3 | v3.0.4-ph-presetSave.1 | 1.8.1 |
 | [epi-blackmagic-videohub](https://github.com/PepperDash/epi-blackmagic-videohub) | Internal | N/A | 0.0.1-hotfix-3 | 1.6.4 |
 | [epi-bss-soundweb](https://github.com/PepperDash/epi-bss-soundweb) | Internal | N/A | 0.0.1-beta-5 | N/A |
 | [epi-camera-visca](https://github.com/PepperDash/epi-camera-visca) | Public | N/A | 0.0.0-buildtype-buildnumber | 1.7.5 |
@@ -98,7 +98,7 @@
 | [epi-test-plugin2](https://github.com/PepperDash/epi-test-plugin2) | Internal | N/A | v1.0.0 | 1.6.4 |
 | [epi-tripleplay-server](https://github.com/PepperDash/epi-tripleplay-server) | Public | 1.0.4 | 1.0.5-beta-2 | 1.9.1 |
 | [epi-tripplite-padm](https://github.com/PepperDash/epi-tripplite-padm) | Internal | N/A | 0.0.1-alpha-9 | N/A |
-| [epi-uintled-colorlightZ6](https://github.com/PepperDash/epi-uintled-colorlightZ6) | Public | v1.0.0 | v1.1.0-workflow-updates.24 | 1.5.5 |
+| [epi-uintled-colorlightZ6](https://github.com/PepperDash/epi-uintled-colorlightZ6) | Public | v1.0.0 | v1.1.0-workflow-updates.34 | 1.5.5 |
 | [epi-utilities-customvalues](https://github.com/PepperDash/epi-utilities-customvalues) | Public | v1.0.0 | v1.1.0-development.1 | 1.10.0 |
 | [epi-utilities-deviceInfo](https://github.com/PepperDash/epi-utilities-deviceInfo) | Public | 0.0.1 | 0.0.1 | 1.6.4 |
 | [epi-utilities-devicemonitor](https://github.com/PepperDash/epi-utilities-devicemonitor) | Public | v2.0.0 | v2.0.0 | 2.4.4 |
