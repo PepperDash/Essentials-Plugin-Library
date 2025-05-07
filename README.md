@@ -2,15 +2,15 @@
 
 | Metric                 | Count |
 |------------------------|-------|
-| Total repos            | 106 |
+| Total repos            | 105 |
 | Total Essentials v1    | 41 |
 | Total Essentials v2    | 3 |
-| Total Essentials N/A   | 33 |
+| Total Essentials N/A   | 32 |
 
 
 | Repository                          | Visibility | Release | Build Output | Min Essentials |
 |-------------------------------------|------------|---------|--------------|----------------|
-| [epi-1beyond-automate-vx](https://github.com/PepperDash/epi-1beyond-automate-vx) | Public | v2.0.0 | v2.0.1-feature-add-interfaces-and-messengers.1 | 2.0.0 |
+| [epi-1beyond-automate-vx](https://github.com/PepperDash/epi-1beyond-automate-vx) | Public | v2.0.0 | v2.1.0-feature-add-interfaces-and-messengers.1 | 2.0.0 |
 | [epi-acuity-fresco](https://github.com/PepperDash/epi-acuity-fresco) | Public | 1.0.0 | 1.0.0 | 1.9.7 |
 | [epi-analogWay-aquilon](https://github.com/PepperDash/epi-analogWay-aquilon) | Internal | 1.0.1 | v1.1.0-feature-add-messenger.3 | N/A |
 | [epi-apc-pdu](https://github.com/PepperDash/epi-apc-pdu) | Public | 1.2.4 | v2.0.0-use-ssh-net-4-series.1 | 1.15.0 |
@@ -64,7 +64,6 @@
 | [epi-matrox-monarch](https://github.com/PepperDash/epi-matrox-monarch) | Internal | 1.0.8 | vempty_string_triggers_config_update | 1.7.4 |
 | [epi-megapixel-helios](https://github.com/PepperDash/epi-megapixel-helios) | Public | v1.4.0 | v1.5.0-4-series-updates.2 | 1.16.0 |
 | [epi-mersive-solstice](https://github.com/PepperDash/epi-mersive-solstice) | Public | 1.1.0 | 1.1.1-beta-11 | 1.8.0 |
-| [epi-mst-consoleCommands](https://github.com/PepperDash/epi-mst-consoleCommands) | Internal | N/A | N/A | 1.6.4 |
 | [epi-multi-display-room](https://github.com/PepperDash/epi-multi-display-room) | Internal | N/A | N/A | 1.6.4 |
 | [epi-nanolumens-hSeries](https://github.com/PepperDash/epi-nanolumens-hSeries) | Internal | v1.0.0 | v1.0.0 | 2.0.0 |
 | [epi-nec-common-ascii](https://github.com/PepperDash/epi-nec-common-ascii) | Public | 1.0.2 | 1.0.3-hotfix-7 | 1.6.5 |
