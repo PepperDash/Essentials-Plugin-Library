@@ -21,7 +21,7 @@
 | [epi-barco-crp](https://github.com/PepperDash/epi-barco-crp) | Public | N/A | 0.0.1-beta-6 | 1.10.0 |
 | [epi-barco-event-master](https://github.com/PepperDash/epi-barco-event-master) | Internal | 1.0.0 | v1.1.0-feature-replace-http.5 | 1.9.7 |
 | [epi-barco-g60](https://github.com/PepperDash/epi-barco-g60) | Public | 1.0.2 | 1.0.2 | 1.10.3 |
-| [epi-biamp-tesira](https://github.com/PepperDash/epi-biamp-tesira) | Public | v3.0.3 | v3.0.4-ph-presetSave.1 | 1.8.1 |
+| [epi-biamp-tesira](https://github.com/PepperDash/epi-biamp-tesira) | Public | v3.0.3 | v3.0.4-revert-to-3series-workflow.3 | 1.8.1 |
 | [epi-blackmagic-videohub](https://github.com/PepperDash/epi-blackmagic-videohub) | Internal | N/A | 0.0.1-hotfix-3 | 1.6.4 |
 | [epi-bss-soundweb](https://github.com/PepperDash/epi-bss-soundweb) | Internal | N/A | 0.0.1-beta-5 | N/A |
 | [epi-camera-visca](https://github.com/PepperDash/epi-camera-visca) | Public | N/A | 0.0.0-buildtype-buildnumber | 1.7.5 |
