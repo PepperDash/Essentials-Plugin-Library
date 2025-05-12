@@ -105,7 +105,7 @@
 | [epi-utilities-idigitalinputaction](https://github.com/PepperDash/epi-utilities-idigitalinputaction) | Internal | 1.0.0 | 1.0.0 | 1.9.1 |
 | [epi-utilities-routeCycle](https://github.com/PepperDash/epi-utilities-routeCycle) | Internal | 1.0.0 | 1.0.0 | 1.15.2 |
 | [epi-utilities-sendemail](https://github.com/PepperDash/epi-utilities-sendemail) | Internal | N/A | N/A | 1.10.1 |
-| [epi-utilities-timer](https://github.com/PepperDash/epi-utilities-timer) | Public | 1.2.1 | v2.0.0-4-series-updates.3 | 1.16.0 |
+| [epi-utilities-timer](https://github.com/PepperDash/epi-utilities-timer) | Public | 1.2.1 | v2.0.0-4-series-updates.6 | 1.16.0 |
 | [epi-utilities-timer-scheduled](https://github.com/PepperDash/epi-utilities-timer-scheduled) | Internal | 1.0.4 | 1.0.5-beta-3 | 1.9.0 |
 | [epi-utility-tcpproxy](https://github.com/PepperDash/epi-utility-tcpproxy) | Public | N/A | N/A | 1.6.4 |
 | [epi-vaddio-camera](https://github.com/PepperDash/epi-vaddio-camera) | Internal | 1.1.0 | 1.1.0 | 1.10.3 |
