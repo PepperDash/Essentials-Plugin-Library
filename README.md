@@ -45,7 +45,7 @@
 | [epi-dsp-shure](https://github.com/PepperDash/epi-dsp-shure) | Internal | N/A | v1.0.0-feat-4-series-only-plugin.3 | 1.6.4 |
 | [epi-encelium-x](https://github.com/PepperDash/epi-encelium-x) | Internal | 1.0.1 | 1.0.2-hotfix-20 | 1.10.4 |
 | [epi-epiphan-pearl](https://github.com/PepperDash/epi-epiphan-pearl) | Public | 1.0.0 | 1.0.1-hotfix-5 | 1.12.8 |
-| [epi-epson-projector](https://github.com/PepperDash/epi-epson-projector) | Public |  | v3.0.0-IHasInputs.3 | 1.8.1 |
+| [epi-epson-projector](https://github.com/PepperDash/epi-epson-projector) | Public | untagged-083316b3433ecdd7ecaf | v3.0.0 | 2.4.7 |
 | [epi-epson-projectors-4series](https://github.com/PepperDash/epi-epson-projectors-4series) | Internal | v1.0.0 | v1.0.0 | 2.0.0 |
 | [epi-esi-mediaserver](https://github.com/PepperDash/epi-esi-mediaserver) | Internal | N/A | v0.1.0-feature-4-series.2 | 1.15.5 |
 | [epi-essentials-mobile-control](https://github.com/PepperDash/epi-essentials-mobile-control) | Public | v4.6.0 | v4.6.0 | 1.12.5 |
@@ -82,7 +82,7 @@
 | [epi-purelinkav-swicther](https://github.com/PepperDash/epi-purelinkav-swicther) | Public | 1.1.1 | 1.1.1 | 1.5.5 |
 | [epi-qsc-qsysdsp](https://github.com/PepperDash/epi-qsc-qsysdsp) | Public | v3.1.0 | v3.1.0 | 2.0.0 |
 | [epi-roku-mediaplayer](https://github.com/PepperDash/epi-roku-mediaplayer) | Internal | N/A | 0.0.1-alpha-1 | 1.5.5 |
-| [epi-samsung-mdc-display](https://github.com/PepperDash/epi-samsung-mdc-display) | Public | v1.5.1 | v1.6.0-feature-essentials-version.1 | 2.4.7 |
+| [epi-samsung-mdc-display](https://github.com/PepperDash/epi-samsung-mdc-display) | Public | v1.5.2 | v1.6.0-feature-essentials-version.1 | 2.4.7 |
 | [epi-seimens-enlighted](https://github.com/PepperDash/epi-seimens-enlighted) | Internal | 1.0.4 | 1.0.5-beta-9 | 1.9.7 |
 | [epi-sharp-display](https://github.com/PepperDash/epi-sharp-display) | Public | 1.0.2 | 1.0.3-beta-25 | 1.9.1 |
 | [epi-shure-mxa](https://github.com/PepperDash/epi-shure-mxa) | Internal | 1.0.2 | 1.0.2 | 1.7.5 |
