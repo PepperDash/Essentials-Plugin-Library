@@ -57,7 +57,7 @@
 | [epi-extron-quantum](https://github.com/PepperDash/epi-extron-quantum) | Public | v1.0.1 | v1.0.2-hotfixUpdateOnlineOnResponseReceived.1 | 1.13.3 |
 | [epi-generic-cec-display](https://github.com/PepperDash/epi-generic-cec-display) | Public | v1.1.0 | v1.1.0 | 1.6.7 |
 | [epi-jbl-soundBar](https://github.com/PepperDash/epi-jbl-soundBar) | Internal | v1.0.0 | v1.0.0 | 2.0.0 |
-| [epi-lg-display](https://github.com/PepperDash/epi-lg-display) | Public | 1.0.4 | v1.1.0-feature-4-series.9 | 1.8.0 |
+| [epi-lg-display](https://github.com/PepperDash/epi-lg-display) | Public | 1.0.4 | v1.1.0-feature-set-inputs-labels-fr-config.1 | 1.8.0 |
 | [epi-lutron-grx](https://github.com/PepperDash/epi-lutron-grx) | Internal | 1.0.0 | 1.0.1-beta-7 | 1.6.1 |
 | [epi-lutron-quantum](https://github.com/PepperDash/epi-lutron-quantum) | Public | 1.0.3 | v1.0.1 | N/A |
 | [epi-magewell-proconvert](https://github.com/PepperDash/epi-magewell-proconvert) | Internal | N/A | 0.0.1-alpha-1 | 1.15.3 |
@@ -67,7 +67,7 @@
 | [epi-multi-display-room](https://github.com/PepperDash/epi-multi-display-room) | Internal | N/A | N/A | 1.6.4 |
 | [epi-nanolumens-hSeries](https://github.com/PepperDash/epi-nanolumens-hSeries) | Internal | v1.0.0 | v1.0.0 | 2.0.0 |
 | [epi-nec-common-ascii](https://github.com/PepperDash/epi-nec-common-ascii) | Public | 1.0.2 | 1.0.3-hotfix-7 | 1.6.5 |
-| [epi-nec-display](https://github.com/PepperDash/epi-nec-display) | Internal | 1.0.1 | v1.1.0-feature-4-series.12 | N/A |
+| [epi-nec-display](https://github.com/PepperDash/epi-nec-display) | Internal | 1.0.1 | v1.1.0-feature-set-inputs-labels-fr-config.1 | N/A |
 | [epi-netgear-cli](https://github.com/PepperDash/epi-netgear-cli) | Public | v1.3.1 | v1.3.2-change-connection.1 | 2.0.0 |
 | [epi-newtek-spark](https://github.com/PepperDash/epi-newtek-spark) | Internal | N/A | 0.0.1-alpha-3 | 1.6.4 |
 | [epi-panasonic-camera-http](https://github.com/PepperDash/epi-panasonic-camera-http) | Public | 1.2.0 | vremove-master | 1.8.5 |
