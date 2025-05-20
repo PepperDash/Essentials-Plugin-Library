@@ -101,7 +101,7 @@
 | [epi-uintled-colorlightZ6](https://github.com/PepperDash/epi-uintled-colorlightZ6) | Public | v1.0.0 | v1.1.0-workflow-updates.34 | 1.5.5 |
 | [epi-utilities-customvalues](https://github.com/PepperDash/epi-utilities-customvalues) | Public | v1.0.0 | v1.1.0-development.1 | 1.10.0 |
 | [epi-utilities-deviceInfo](https://github.com/PepperDash/epi-utilities-deviceInfo) | Public | 0.0.1 | 0.0.1 | 1.6.4 |
-| [epi-utilities-devicemonitor](https://github.com/PepperDash/epi-utilities-devicemonitor) | Public | v2.0.0 | v2.0.0 | 2.4.4 |
+| [epi-utilities-devicemonitor](https://github.com/PepperDash/epi-utilities-devicemonitor) | Public | v2.0.0 | v2.0.1-feature-swap-info-verbose-log-level.3 | 2.4.4 |
 | [epi-utilities-i18n](https://github.com/PepperDash/epi-utilities-i18n) | Public | 1.0.5 | 1.0.5 | 1.6.4 |
 | [epi-utilities-idigitalinputaction](https://github.com/PepperDash/epi-utilities-idigitalinputaction) | Internal | 1.0.0 | 1.0.0 | 1.9.1 |
 | [epi-utilities-routeCycle](https://github.com/PepperDash/epi-utilities-routeCycle) | Internal | 1.0.0 | 1.0.0 | 1.15.2 |
@@ -110,7 +110,7 @@
 | [epi-utilities-timer-scheduled](https://github.com/PepperDash/epi-utilities-timer-scheduled) | Internal | 1.0.4 | 1.0.5-beta-3 | 1.9.0 |
 | [epi-utility-tcpproxy](https://github.com/PepperDash/epi-utility-tcpproxy) | Public | N/A | N/A | 1.6.4 |
 | [epi-vaddio-camera](https://github.com/PepperDash/epi-vaddio-camera) | Internal | 1.1.0 | 1.1.0 | 1.10.3 |
-| [epi-videoCodec-ciscoExtended](https://github.com/PepperDash/epi-videoCodec-ciscoExtended) | Public | v1.7.0 | v1.7.0 | 1.15.2 |
+| [epi-videoCodec-ciscoExtended](https://github.com/PepperDash/epi-videoCodec-ciscoExtended) | Public | v1.7.0 | v1.8.0-feature-UI-extension-custom-icon-xml.1 | 1.15.2 |
 | [epi-vytio-iptv](https://github.com/PepperDash/epi-vytio-iptv) | Internal | v0.3.2 | v0.4.0-preset-name-feedbacks.1 | 1.16.1 |
 | [epi-yamaha-YXC](https://github.com/PepperDash/epi-yamaha-YXC) | Internal | N/A | 0.0.1-alpha-2 | 1.10.2 |
 | [epi-yamaha-cs700](https://github.com/PepperDash/epi-yamaha-cs700) | Internal | N/A | N/A | N/A |
