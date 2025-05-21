@@ -3,7 +3,7 @@
 | Metric                 | Count |
 |------------------------|-------|
 | Total repos            | 106 |
-| Total Essentials v1    | 40 |
+| Total Essentials v1    | 38 |
 | Total Essentials v2    | 3 |
 | Total Essentials N/A   | 33 |
 
@@ -58,7 +58,7 @@
 | [epi-extron-quantum](https://github.com/PepperDash/epi-extron-quantum) | Public | v1.0.1 | v1.0.2-hotfixUpdateOnlineOnResponseReceived.1 | 1.13.3 |
 | [epi-generic-cec-display](https://github.com/PepperDash/epi-generic-cec-display) | Public | v1.1.0 | v1.1.0 | 1.6.7 |
 | [epi-jbl-soundBar](https://github.com/PepperDash/epi-jbl-soundBar) | Internal | v1.0.0 | v1.0.0 | 2.0.0 |
-| [epi-lg-display](https://github.com/PepperDash/epi-lg-display) | Public | 1.0.4 | v1.1.0-feature-set-inputs-labels-fr-config.1 | 1.8.0 |
+| [epi-lg-display](https://github.com/PepperDash/epi-lg-display) | Public | v2.0.0 | v2.0.0 | 1.8.0 |
 | [epi-lutron-grx](https://github.com/PepperDash/epi-lutron-grx) | Internal | 1.0.0 | 1.0.1-beta-7 | 1.6.1 |
 | [epi-lutron-quantum](https://github.com/PepperDash/epi-lutron-quantum) | Public | 1.0.3 | v1.0.1 | N/A |
 | [epi-magewell-proconvert](https://github.com/PepperDash/epi-magewell-proconvert) | Internal | N/A | 0.0.1-alpha-1 | 1.15.3 |
@@ -68,7 +68,7 @@
 | [epi-multi-display-room](https://github.com/PepperDash/epi-multi-display-room) | Internal | N/A | N/A | 1.6.4 |
 | [epi-nanolumens-hSeries](https://github.com/PepperDash/epi-nanolumens-hSeries) | Internal | v1.0.0 | v1.0.0 | 2.0.0 |
 | [epi-nec-common-ascii](https://github.com/PepperDash/epi-nec-common-ascii) | Public | 1.0.2 | 1.0.3-hotfix-7 | 1.6.5 |
-| [epi-nec-display](https://github.com/PepperDash/epi-nec-display) | Internal | 1.0.1 | v1.1.0-feature-set-inputs-labels-fr-config.1 | N/A |
+| [epi-nec-display](https://github.com/PepperDash/epi-nec-display) | Internal | v1.1.0 | v1.1.0 | 1.16.0 |
 | [epi-netgear-cli](https://github.com/PepperDash/epi-netgear-cli) | Public | v1.3.1 | v1.3.2-change-connection.1 | 2.0.0 |
 | [epi-newtek-spark](https://github.com/PepperDash/epi-newtek-spark) | Internal | N/A | 0.0.1-alpha-3 | 1.6.4 |
 | [epi-panasonic-camera-http](https://github.com/PepperDash/epi-panasonic-camera-http) | Public | 1.2.0 | vremove-master | 1.8.5 |
@@ -104,13 +104,13 @@
 | [epi-utilities-devicemonitor](https://github.com/PepperDash/epi-utilities-devicemonitor) | Public | v2.0.0 | v2.0.1-feature-swap-info-verbose-log-level.3 | 2.4.4 |
 | [epi-utilities-i18n](https://github.com/PepperDash/epi-utilities-i18n) | Public | 1.0.5 | 1.0.5 | 1.6.4 |
 | [epi-utilities-idigitalinputaction](https://github.com/PepperDash/epi-utilities-idigitalinputaction) | Internal | 1.0.0 | 1.0.0 | 1.9.1 |
-| [epi-utilities-routeCycle](https://github.com/PepperDash/epi-utilities-routeCycle) | Internal | 1.0.0 | 1.0.0 | 1.15.2 |
+| [epi-utilities-routeCycle](https://github.com/PepperDash/epi-utilities-routeCycle) | Internal | 1.0.0 | v1.0.0-feature-4-series-updates.2 | 1.15.2 |
 | [epi-utilities-sendemail](https://github.com/PepperDash/epi-utilities-sendemail) | Internal | N/A | N/A | 1.10.1 |
 | [epi-utilities-timer](https://github.com/PepperDash/epi-utilities-timer) | Public | v2.0.0 | v2.0.0 | 2.4.4 |
 | [epi-utilities-timer-scheduled](https://github.com/PepperDash/epi-utilities-timer-scheduled) | Internal | 1.0.4 | 1.0.5-beta-3 | 1.9.0 |
 | [epi-utility-tcpproxy](https://github.com/PepperDash/epi-utility-tcpproxy) | Public | N/A | N/A | 1.6.4 |
 | [epi-vaddio-camera](https://github.com/PepperDash/epi-vaddio-camera) | Internal | 1.1.0 | 1.1.0 | 1.10.3 |
-| [epi-videoCodec-ciscoExtended](https://github.com/PepperDash/epi-videoCodec-ciscoExtended) | Public | v1.7.0 | v1.8.0-feature-UI-extension-custom-icon-xml.1 | 1.15.2 |
+| [epi-videoCodec-ciscoExtended](https://github.com/PepperDash/epi-videoCodec-ciscoExtended) | Public | v1.7.0 | v1.8.0-feature-base64-png-icons-in-navigatorIcons.1 | 1.15.2 |
 | [epi-vytio-iptv](https://github.com/PepperDash/epi-vytio-iptv) | Internal | v0.3.2 | v0.4.0-preset-name-feedbacks.1 | 1.16.1 |
 | [epi-yamaha-YXC](https://github.com/PepperDash/epi-yamaha-YXC) | Internal | N/A | 0.0.1-alpha-2 | 1.10.2 |
 | [epi-yamaha-cs700](https://github.com/PepperDash/epi-yamaha-cs700) | Internal | N/A | N/A | N/A |
