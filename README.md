@@ -104,7 +104,7 @@
 | [epi-utilities-devicemonitor](https://github.com/PepperDash/epi-utilities-devicemonitor) | Public | v2.0.0 | v2.0.1-feature-swap-info-verbose-log-level.3 | 2.4.4 |
 | [epi-utilities-i18n](https://github.com/PepperDash/epi-utilities-i18n) | Public | 1.0.5 | 1.0.5 | 1.6.4 |
 | [epi-utilities-idigitalinputaction](https://github.com/PepperDash/epi-utilities-idigitalinputaction) | Internal | 1.0.0 | 1.0.0 | 1.9.1 |
-| [epi-utilities-routeCycle](https://github.com/PepperDash/epi-utilities-routeCycle) | Internal | 1.0.0 | v1.0.0-feature-4-series-updates.2 | 1.15.2 |
+| [epi-utilities-routeCycle](https://github.com/PepperDash/epi-utilities-routeCycle) | Internal | 1.0.0 | v1.0.0-feature-4-series-updates.5 | 1.15.2 |
 | [epi-utilities-sendemail](https://github.com/PepperDash/epi-utilities-sendemail) | Internal | N/A | N/A | 1.10.1 |
 | [epi-utilities-timer](https://github.com/PepperDash/epi-utilities-timer) | Public | v2.0.0 | v2.0.0 | 2.4.4 |
 | [epi-utilities-timer-scheduled](https://github.com/PepperDash/epi-utilities-timer-scheduled) | Internal | 1.0.4 | 1.0.5-beta-3 | 1.9.0 |
