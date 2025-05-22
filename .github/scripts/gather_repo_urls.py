@@ -2,6 +2,7 @@ from github import Github
 import os
 import logging
 import re
+import concurrent.futures  # Add this import
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -29,6 +30,51 @@ def extract_min_essentials_version(repo):
         logging.error(f"Error processing repo {repo.name}: {e}")
     return "N/A"
 
+def process_single_repo(repo, max_repo_name, max_release, max_build_tag, max_min_essentials):
+    """
+    Processes a single repository and returns the data needed for the markdown table.
+    """
+    if not repo.name.startswith('epi-'):
+        return None
+
+    logging.debug(f"Processing Repository: {repo.name}, Visibility: {'Public' if not repo.private else 'Internal/Private'}")
+    visibility = "Public" if not repo.private else "Internal"
+
+    # Convert PaginatedList to list before accessing
+    releases = list(repo.get_releases())
+    tags = list(repo.get_tags())
+
+    current_release = "N/A"
+    latest_build_tag = "N/A"
+
+    # Get the latest release
+    if releases:
+        for release in releases:
+            if not release.prerelease:
+                current_release = release.tag_name
+                break
+
+    # Get the latest build tag
+    if tags:
+        latest_build_tag = tags[0].name  # Get the most recent tag
+
+    min_essentials_version = extract_min_essentials_version(repo)
+
+    repo_name = truncate(repo.name, max_repo_name)
+    release = truncate(current_release, max_release)
+    build_tag = truncate(latest_build_tag, max_build_tag)
+    min_essentials = truncate(min_essentials_version, max_min_essentials)
+
+    return {
+        "repo_name": repo_name,
+        "repo_url": repo.html_url,
+        "visibility": visibility,
+        "release": release,
+        "build_tag": build_tag,
+        "min_essentials": min_essentials,
+        "current_release": current_release
+    }
+
 def process_repositories(repo_list):
     """
     Processes the repositories to calculate counts and generate the markdown file.
@@ -47,45 +93,30 @@ def process_repositories(repo_list):
     max_build_tag = 24
     max_min_essentials = 8
 
+    # --- CONCURRENT PROCESSING START ---
+    results = []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        futures = [
+            executor.submit(
+                process_single_repo, repo, max_repo_name, max_release, max_build_tag, max_min_essentials
+            )
+            for repo in repo_list
+        ]
+        for future in concurrent.futures.as_completed(futures):
+            result = future.result()
+            if result:
+                results.append(result)
+                total_epi_repos += 1
+                if result["current_release"].startswith("1."):
+                    total_release_1_x += 1
+                elif result["current_release"].startswith("2."):
+                    total_release_2_x += 1
+                elif result["current_release"] == "N/A":
+                    total_release_na += 1
+    # --- CONCURRENT PROCESSING END ---
+
     with open('README.md', 'w', newline='\n') as file:
         file.write("# Essentials Plugin Library\n\n")
-
-        # Iterate through repos to calculate counts
-        for repo in sorted(repo_list, key=lambda x: x.name):
-            if repo.name.startswith('epi-'):
-                logging.debug(f"Processing repository: {repo.name}")
-                total_epi_repos += 1
-
-                # Convert PaginatedList to list before accessing
-                releases = list(repo.get_releases())
-                tags = list(repo.get_tags())
-
-                current_release = "N/A"
-                latest_build_tag = "N/A"
-
-                # Get the latest release
-                if releases:
-                    for release in releases:
-                        if not release.prerelease:
-                            current_release = release.tag_name
-                            break
-                else:
-                    logging.warning(f"No releases found for repository: {repo.name}")
-
-                # Get the latest build tag
-                if tags:
-                    latest_build_tag = tags[0].name  # Get the most recent tag
-                else:
-                    latest_build_tag = "N/A"  # Handle empty tags list
-                    logging.warning(f"No tags found for repository: {repo.name}")
-
-                # Count based on release version
-                if current_release.startswith("1."):
-                    total_release_1_x += 1
-                elif current_release.startswith("2."):
-                    total_release_2_x += 1
-                elif current_release == "N/A":
-                    total_release_na += 1
 
         # Write the counts to the markdown file in a table format
         file.write("| Metric                 | Count |\n")
@@ -100,37 +131,10 @@ def process_repositories(repo_list):
         file.write("|-------------------------------------|------------|---------|--------------|----------------|\n")
 
         # Write the table rows
-        for repo in sorted(repo_list, key=lambda x: x.name):
-            if repo.name.startswith('epi-'):
-                logging.debug(f"Processing Repository: {repo.name}, Visibility: {'Public' if not repo.private else 'Internal/Private'}")
-                visibility = "Public" if not repo.private else "Internal"
-
-                # Convert PaginatedList to list before accessing
-                releases = list(repo.get_releases())
-                tags = list(repo.get_tags())
-
-                current_release = "N/A"
-                latest_build_tag = "N/A"
-
-                # Get the latest release
-                if releases:
-                    for release in releases:
-                        if not release.prerelease:
-                            current_release = release.tag_name
-                            break
-
-                # Get the latest build tag
-                if tags:
-                    latest_build_tag = tags[0].name  # Get the most recent tag
-
-                min_essentials_version = extract_min_essentials_version(repo)
-
-                repo_name = truncate(repo.name, max_repo_name)
-                release = truncate(current_release, max_release)
-                build_tag = truncate(latest_build_tag, max_build_tag)
-                min_essentials = truncate(min_essentials_version, max_min_essentials)
-
-                file.write(f"| [{repo_name}]({repo.html_url}) | {visibility} | {release} | {build_tag} | {min_essentials} |\n")
+        for result in sorted(results, key=lambda x: x["repo_name"]):
+            file.write(
+                f"| [{result['repo_name']}]({result['repo_url']}) | {result['visibility']} | {result['release']} | {result['build_tag']} | {result['min_essentials']} |\n"
+            )
 
 
 def truncate(s, max_length):
