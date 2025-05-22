@@ -41,6 +41,12 @@ def process_repositories(repo_list):
     total_release_2_x = 0
     total_release_na = 0
 
+    # Define maximum lengths for truncation
+    max_repo_name = 32
+    max_release = 10
+    max_build_tag = 24
+    max_min_essentials = 8
+
     with open('README.md', 'w', newline='\n') as file:
         file.write("# Essentials Plugin Library\n\n")
 
@@ -119,7 +125,16 @@ def process_repositories(repo_list):
 
                 min_essentials_version = extract_min_essentials_version(repo)
 
-                file.write(f"| [{repo.name}]({repo.html_url}) | {visibility} | {current_release} | {latest_build_tag} | {min_essentials_version} |\n")
+                repo_name = truncate(repo.name, max_repo_name)
+                release = truncate(current_release, max_release)
+                build_tag = truncate(latest_build_tag, max_build_tag)
+                min_essentials = truncate(min_essentials_version, max_min_essentials)
+
+                file.write(f"| [{repo_name}]({repo.html_url}) | {visibility} | {release} | {build_tag} | {min_essentials} |\n")
+
+
+def truncate(s, max_length):
+    return s if len(s) <= max_length else s[:max_length - 3] + "..."
 
 
 def main():
