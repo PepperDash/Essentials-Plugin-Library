@@ -2,6 +2,8 @@ name: Gather Plugin URLs
 
 on:
   push: # Trigger the workflow on any push event
+    branches:
+      - main
   workflow_dispatch: # Allow manual triggering of the workflow
     inputs:
       mode:
@@ -13,6 +15,7 @@ on:
 
 jobs:
   gather-plugin-urls:
+    if: github.ref == 'refs/heads/main' || github.event_name != 'schedule'
     runs-on: ubuntu-latest
     steps:
     - name: Log branch and event type
