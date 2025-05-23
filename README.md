@@ -12,7 +12,7 @@
 |-------------------------------------|------------|---------|--------------|----------------|
 | [epi-1beyond-automate-vx](https://github.com/PepperDash/epi-1beyond-automate-vx) | Public | v2.0.0 | v2.1.0-feature-add-in... | 2.0.0 |
 | [epi-acuity-fresco](https://github.com/PepperDash/epi-acuity-fresco) | Public | 1.0.0 | 1.0.0 | 1.9.7 |
-| [epi-airserver-connect](https://github.com/PepperDash/epi-airserver-connect) | Internal | N/A | N/A | 1.6.4 |
+| [epi-airserver-connect](https://github.com/PepperDash/epi-airserver-connect) | Internal | N/A | v1.0.0-development.1 | 1.6.4 |
 | [epi-analogWay-aquilon](https://github.com/PepperDash/epi-analogWay-aquilon) | Internal | 1.0.1 | v1.1.0-feature-add-me... | N/A |
 | [epi-apc-pdu](https://github.com/PepperDash/epi-apc-pdu) | Public | 1.2.4 | v2.0.0-use-ssh-net-4-... | 1.15.0 |
 | [epi-atlona-ome](https://github.com/PepperDash/epi-atlona-ome) | Public | 1.1.3 | 1.1.3 | 1.13.4 |
