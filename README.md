@@ -3,7 +3,7 @@
 | Metric                 | Count |
 |------------------------|-------|
 | Total repos            | 106 |
-| Total Essentials v1    | 38 |
+| Total Essentials v1    | 37 |
 | Total Essentials v2    | 3 |
 | Total Essentials N/A   | 33 |
 
@@ -26,7 +26,7 @@
 | [epi-blackmagic-videohub](https://github.com/PepperDash/epi-blackmagic-videohub) | Internal | N/A | 0.0.1-hotfix-3 | 1.6.4 |
 | [epi-bss-soundweb](https://github.com/PepperDash/epi-bss-soundweb) | Internal | N/A | 0.0.1-beta-5 | N/A |
 | [epi-camera-visca](https://github.com/PepperDash/epi-camera-visca) | Public | N/A | 0.0.0-buildtype-build... | 1.7.5 |
-| [epi-christie-projector](https://github.com/PepperDash/epi-christie-projector) | Public | N/A | 0.0.1-alpha-2 | 1.10.3 |
+| [epi-christie-projector](https://github.com/PepperDash/epi-christie-projector) | Public | N/A | v1.0.0-feature-4-seri... | 1.10.3 |
 | [epi-cisco-cli](https://github.com/PepperDash/epi-cisco-cli) | Internal | v1.4.2 | v1.5.0-net8.1 | 2.0.0 |
 | [epi-cisco-navigator-room](https://github.com/PepperDash/epi-cisco-navigator-room) | Internal | v1.1.0 | v1.2.0-warmup-cooldow... | N/A |
 | [epi-clearone-converge-pro](https://github.com/PepperDash/epi-clearone-converge-pro) | Public | 1.1.0 | 1.1.0 | 1.8.4 |
@@ -40,7 +40,7 @@
 | [epi-crestron-hdwp4k401c](https://github.com/PepperDash/epi-crestron-hdwp4k401c) | Public | 1.0.1 | 1.0.2-beta-1 | N/A |
 | [epi-crestron-io](https://github.com/PepperDash/epi-crestron-io) | Internal | v2.1.0 | v2.1.0 | 2.0.0 |
 | [epi-crestron-iptable_editor](https://github.com/PepperDash/epi-crestron-iptable_editor) | Public | 1.1.2 | 1.1.2 | 1.6.7 |
-| [epi-crestron-nvx](https://github.com/PepperDash/epi-crestron-nvx) | Public | v3.5.1 | v3.5.1 | N/A |
+| [epi-crestron-nvx](https://github.com/PepperDash/epi-crestron-nvx) | Public | v3.5.1 | v3.5.2-feature-DmNvx3... | N/A |
 | [epi-crestron-touchpanels](https://github.com/PepperDash/epi-crestron-touchpanels) | Internal | N/A | N/A | 1.7.5 |
 | [epi-denton-cor-tap](https://github.com/PepperDash/epi-denton-cor-tap) | Public | 0.2.2 | 0.2.2 | 1.9.0 |
 | [epi-dsp-shure](https://github.com/PepperDash/epi-dsp-shure) | Internal | N/A | v1.0.0-feat-4-series-... | 1.6.4 |
@@ -76,7 +76,7 @@
 | [epi-panasonic-projector](https://github.com/PepperDash/epi-panasonic-projector) | Public | v1.2.1 | v1.3.0-feature-essent... | 2.0.0 |
 | [epi-panopto-cloud](https://github.com/PepperDash/epi-panopto-cloud) | Public | N/A | v1.1 | 1.12.8 |
 | [epi-pjlink](https://github.com/PepperDash/epi-pjlink) | Public | N/A | N/A | 1.8.1 |
-| [epi-planar-clarity](https://github.com/PepperDash/epi-planar-clarity) | Internal | 1.0.0 | v00.02 | 1.11.1 |
+| [epi-planar-clarity](https://github.com/PepperDash/epi-planar-clarity) | Internal | v1.0.0 | v2.0.0-4s-workflow.1 | 1.11.1 |
 | [epi-planar-qe-display](https://github.com/PepperDash/epi-planar-qe-display) | Public | v1.1.0 | v1.1.0 | 1.11.1 |
 | [epi-poly-room](https://github.com/PepperDash/epi-poly-room) | Internal | N/A | 1.0.0-beta.1 | 1.11.0 |
 | [epi-primeview-display](https://github.com/PepperDash/epi-primeview-display) | Internal | v1.0.0 | v1.0.0 | 1.6.7 |
@@ -104,7 +104,7 @@
 | [epi-utilities-devicemonitor](https://github.com/PepperDash/epi-utilities-devicemonitor) | Public | v2.0.0 | v2.0.1-feature-swap-i... | 2.4.4 |
 | [epi-utilities-i18n](https://github.com/PepperDash/epi-utilities-i18n) | Public | 1.0.5 | 1.0.5 | 1.6.4 |
 | [epi-utilities-idigitalinputac...](https://github.com/PepperDash/epi-utilities-idigitalinputaction) | Internal | 1.0.0 | 1.0.0 | 1.9.1 |
-| [epi-utilities-routeCycle](https://github.com/PepperDash/epi-utilities-routeCycle) | Internal | 1.0.0 | v1.0.0-feature-4-seri... | 1.15.2 |
+| [epi-utilities-routeCycle](https://github.com/PepperDash/epi-utilities-routeCycle) | Internal | 1.0.0 | v1.0.0 | 1.15.2 |
 | [epi-utilities-sendemail](https://github.com/PepperDash/epi-utilities-sendemail) | Internal | N/A | N/A | 1.10.1 |
 | [epi-utilities-timer](https://github.com/PepperDash/epi-utilities-timer) | Public | v2.0.0 | v2.0.0 | 2.4.4 |
 | [epi-utilities-timer-scheduled](https://github.com/PepperDash/epi-utilities-timer-scheduled) | Internal | 1.0.4 | 1.0.5-beta-3 | 1.9.0 |
