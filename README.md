@@ -28,7 +28,7 @@
 | [epi-camera-visca](https://github.com/PepperDash/epi-camera-visca) | Public | N/A | 0.0.0-buildtype-build... | 1.7.5 |
 | [epi-christie-projector](https://github.com/PepperDash/epi-christie-projector) | Public | N/A | v1.0.0-feature-4-seri... | 1.10.3 |
 | [epi-cisco-cli](https://github.com/PepperDash/epi-cisco-cli) | Internal | v1.4.2 | v1.5.0-net8.1 | 2.0.0 |
-| [epi-cisco-navigator-room](https://github.com/PepperDash/epi-cisco-navigator-room) | Internal | v1.1.0 | v1.2.0-warmup-cooldow... | N/A |
+| [epi-cisco-navigator-room](https://github.com/PepperDash/epi-cisco-navigator-room) | Internal | v1.3.0 | v1.4.0-tuner-messenge... | N/A |
 | [epi-clearone-converge-pro](https://github.com/PepperDash/epi-clearone-converge-pro) | Public | 1.1.0 | 1.1.0 | 1.8.4 |
 | [epi-clearone-convergepro2](https://github.com/PepperDash/epi-clearone-convergepro2) | Public | 1.1.0 | 1.1.0 | 1.13.4 |
 | [epi-contemporaryresearch-tuner](https://github.com/PepperDash/epi-contemporaryresearch-tuner) | Public | 1.0.2 | v1.1.0-feature-device... | 1.7.6 |
@@ -68,8 +68,8 @@
 | [epi-multi-display-room](https://github.com/PepperDash/epi-multi-display-room) | Internal | N/A | N/A | 1.6.4 |
 | [epi-nanolumens-hSeries](https://github.com/PepperDash/epi-nanolumens-hSeries) | Internal | v1.0.0 | v1.0.0 | 2.0.0 |
 | [epi-nec-common-ascii](https://github.com/PepperDash/epi-nec-common-ascii) | Public | 1.0.2 | 1.0.3-hotfix-7 | 1.6.5 |
-| [epi-nec-display](https://github.com/PepperDash/epi-nec-display) | Internal | v1.1.0 | v1.1.0 | 1.16.0 |
-| [epi-netgear-cli](https://github.com/PepperDash/epi-netgear-cli) | Public | v1.3.1 | v1.3.2-change-connect... | 2.0.0 |
+| [epi-nec-display](https://github.com/PepperDash/epi-nec-display) | Public | v1.1.1 | v2.0.0-fix-build.2 | 1.16.0 |
+| [epi-netgear-cli](https://github.com/PepperDash/epi-netgear-cli) | Public | v1.3.2 | v1.3.2 | 2.0.0 |
 | [epi-newtek-spark](https://github.com/PepperDash/epi-newtek-spark) | Internal | N/A | 0.0.1-alpha-3 | 1.6.4 |
 | [epi-panasonic-camera-http](https://github.com/PepperDash/epi-panasonic-camera-http) | Public | 1.2.0 | vremove-master | 1.8.5 |
 | [epi-panasonic-camera-serial](https://github.com/PepperDash/epi-panasonic-camera-serial) | Internal | N/A | 0.0.1-beta-8 | N/A |
