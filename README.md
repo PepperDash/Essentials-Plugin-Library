@@ -68,7 +68,7 @@
 | [epi-multi-display-room](https://github.com/PepperDash/epi-multi-display-room) | Internal | N/A | N/A | 1.6.4 |
 | [epi-nanolumens-hSeries](https://github.com/PepperDash/epi-nanolumens-hSeries) | Internal | v1.0.0 | v1.0.0 | 2.0.0 |
 | [epi-nec-common-ascii](https://github.com/PepperDash/epi-nec-common-ascii) | Public | 1.0.2 | 1.0.3-hotfix-7 | 1.6.5 |
-| [epi-nec-display](https://github.com/PepperDash/epi-nec-display) | Public | v1.1.1 | v2.0.0-fix-build.2 | 1.16.0 |
+| [epi-nec-display](https://github.com/PepperDash/epi-nec-display) | Public | v2.0.0 | v2.0.0 | 1.16.0 |
 | [epi-netgear-cli](https://github.com/PepperDash/epi-netgear-cli) | Public | v1.3.2 | v1.3.2 | 2.0.0 |
 | [epi-newtek-spark](https://github.com/PepperDash/epi-newtek-spark) | Internal | N/A | 0.0.1-alpha-3 | 1.6.4 |
 | [epi-panasonic-camera-http](https://github.com/PepperDash/epi-panasonic-camera-http) | Public | 1.2.0 | vremove-master | 1.8.5 |
