@@ -3,7 +3,7 @@
 | Metric                 | Count |
 |------------------------|-------|
 | Total repos            | 106 |
-| Total Essentials v1    | 37 |
+| Total Essentials v1    | 36 |
 | Total Essentials v2    | 3 |
 | Total Essentials N/A   | 33 |
 
@@ -104,7 +104,7 @@
 | [epi-utilities-devicemonitor](https://github.com/PepperDash/epi-utilities-devicemonitor) | Public | v2.0.0 | v2.0.1-feature-swap-i... | 2.4.4 |
 | [epi-utilities-i18n](https://github.com/PepperDash/epi-utilities-i18n) | Public | 1.0.5 | 1.0.5 | 1.6.4 |
 | [epi-utilities-idigitalinputac...](https://github.com/PepperDash/epi-utilities-idigitalinputaction) | Internal | 1.0.0 | 1.0.0 | 1.9.1 |
-| [epi-utilities-routeCycle](https://github.com/PepperDash/epi-utilities-routeCycle) | Internal | 1.0.0 | v1.0.0 | 1.15.2 |
+| [epi-utilities-routeCycle](https://github.com/PepperDash/epi-utilities-routeCycle) | Internal | v2.0.0 | v2.0.0 | 2.4.4 |
 | [epi-utilities-sendemail](https://github.com/PepperDash/epi-utilities-sendemail) | Internal | N/A | N/A | 1.10.1 |
 | [epi-utilities-timer](https://github.com/PepperDash/epi-utilities-timer) | Public | v2.0.0 | v2.0.0 | 2.4.4 |
 | [epi-utilities-timer-scheduled](https://github.com/PepperDash/epi-utilities-timer-scheduled) | Internal | 1.0.4 | 1.0.5-beta-3 | 1.9.0 |
