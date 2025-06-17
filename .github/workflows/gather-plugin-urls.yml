@@ -11,7 +11,7 @@ on:
         required: true
         default: 'production'
   schedule: # Trigger the workflow on a schedule
-    - cron: '0 5 * * *' # Runs every day at 0500 UTC
+    - cron: '0 5 * * 1' # Runs every Monday at 0500 UTC
 
 jobs:
   gather-plugin-urls:
