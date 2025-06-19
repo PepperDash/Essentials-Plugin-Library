@@ -3,9 +3,9 @@
 | Metric                 | Count |
 |------------------------|-------|
 | Total repos            | 106 |
-| Total Essentials v1    | 54 |
-| Total Essentials v2    | 11 |
-| Total Essentials N/A   | 33 |
+| Total Essentials v1    | 78 |
+| Total Essentials v2    | 16 |
+| Total Essentials N/A   | 12 |
 
 
 | Repository                          | Visibility | Release | Build Output | Min Essentials |
@@ -110,7 +110,7 @@
 | [epi-utilities-timer-scheduled](https://github.com/PepperDash/epi-utilities-timer-scheduled) | Internal | 1.0.4 | 1.0.5-beta-3 | 1.9.0 |
 | [epi-utility-tcpproxy](https://github.com/PepperDash/epi-utility-tcpproxy) | Public | N/A | N/A | 1.6.4 |
 | [epi-vaddio-camera](https://github.com/PepperDash/epi-vaddio-camera) | Internal | 1.1.0 | 1.1.0 | 1.10.3 |
-| [epi-videoCodec-ciscoExtended](https://github.com/PepperDash/epi-videoCodec-ciscoExtended) | Public | v1.9.0 | v1.9.0 | 1.15.2 |
+| [epi-videoCodec-ciscoExtended](https://github.com/PepperDash/epi-videoCodec-ciscoExtended) | Public | v1.9.0 | v1.9.1-hotfix-close-w... | 1.15.2 |
 | [epi-vytio-iptv](https://github.com/PepperDash/epi-vytio-iptv) | Internal | v0.3.2 | v0.4.0-preset-name-fe... | 1.16.1 |
 | [epi-yamaha-YXC](https://github.com/PepperDash/epi-yamaha-YXC) | Internal | N/A | 0.0.1-alpha-2 | 1.10.2 |
 | [epi-yamaha-cs700](https://github.com/PepperDash/epi-yamaha-cs700) | Internal | N/A | N/A | N/A |
