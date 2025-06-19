@@ -107,12 +107,12 @@ def process_repositories(repo_list):
             if result:
                 results.append(result)
                 total_epi_repos += 1
-                norm = normalize_release_tag(result["current_release"], result["repo_name"])
+                norm = normalize_release_tag(result["min_essentials"], result["repo_name"])
                 if norm == "1":
                     total_release_1_x += 1
                 elif norm == "2":
                     total_release_2_x += 1
-                elif result["current_release"] == "N/A":
+                elif result["min_essentials"] == "N/A":
                     total_release_na += 1
     # --- CONCURRENT PROCESSING END ---
 
