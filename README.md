@@ -46,7 +46,7 @@
 | [epi-dsp-shure](https://github.com/PepperDash/epi-dsp-shure) | Internal | N/A | v1.0.0-feat-4-series-... | 1.6.4 |
 | [epi-encelium-x](https://github.com/PepperDash/epi-encelium-x) | Internal | 1.0.1 | 1.0.2-hotfix-20 | 1.10.4 |
 | [epi-epiphan-pearl](https://github.com/PepperDash/epi-epiphan-pearl) | Public | 1.0.0 | 1.0.1-hotfix-5 | 1.12.8 |
-| [epi-epson-projector](https://github.com/PepperDash/epi-epson-projector) | Public | untagge... | v3.1.0-warming-coolin... | 2.4.7 |
+| [epi-epson-projector](https://github.com/PepperDash/epi-epson-projector) | Public | untagge... | v3.1.0 | 2.4.7 |
 | [epi-epson-projectors-4series](https://github.com/PepperDash/epi-epson-projectors-4series) | Internal | v1.0.0 | v1.0.0 | 2.0.0 |
 | [epi-esi-mediaserver](https://github.com/PepperDash/epi-esi-mediaserver) | Internal | N/A | v0.1.0-feature-4-seri... | 1.15.5 |
 | [epi-essentials-mobile-control](https://github.com/PepperDash/epi-essentials-mobile-control) | Public | v4.6.0 | v4.6.0 | 1.12.5 |
