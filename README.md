@@ -3,9 +3,9 @@
 | Metric                 | Count |
 |------------------------|-------|
 | Total repos            | 106 |
-| Total Essentials v1    | 36 |
-| Total Essentials v2    | 3 |
-| Total Essentials N/A   | 33 |
+| Total Essentials v1    | 78 |
+| Total Essentials v2    | 16 |
+| Total Essentials N/A   | 12 |
 
 
 | Repository                          | Visibility | Release | Build Output | Min Essentials |
@@ -46,7 +46,7 @@
 | [epi-dsp-shure](https://github.com/PepperDash/epi-dsp-shure) | Internal | N/A | v1.0.0-feat-4-series-... | 1.6.4 |
 | [epi-encelium-x](https://github.com/PepperDash/epi-encelium-x) | Internal | 1.0.1 | 1.0.2-hotfix-20 | 1.10.4 |
 | [epi-epiphan-pearl](https://github.com/PepperDash/epi-epiphan-pearl) | Public | 1.0.0 | 1.0.1-hotfix-5 | 1.12.8 |
-| [epi-epson-projector](https://github.com/PepperDash/epi-epson-projector) | Public | untagge... | v3.0.0 | 2.4.7 |
+| [epi-epson-projector](https://github.com/PepperDash/epi-epson-projector) | Public | untagge... | v3.1.0 | 2.4.7 |
 | [epi-epson-projectors-4series](https://github.com/PepperDash/epi-epson-projectors-4series) | Internal | v1.0.0 | v1.0.0 | 2.0.0 |
 | [epi-esi-mediaserver](https://github.com/PepperDash/epi-esi-mediaserver) | Internal | N/A | v0.1.0-feature-4-seri... | 1.15.5 |
 | [epi-essentials-mobile-control](https://github.com/PepperDash/epi-essentials-mobile-control) | Public | v4.6.0 | v4.6.0 | 1.12.5 |
@@ -58,7 +58,7 @@
 | [epi-extron-quantum](https://github.com/PepperDash/epi-extron-quantum) | Public | v1.0.1 | v1.0.2-hotfixUpdateOn... | 1.13.3 |
 | [epi-generic-cec-display](https://github.com/PepperDash/epi-generic-cec-display) | Public | v1.1.0 | v1.1.0 | 1.6.7 |
 | [epi-jbl-soundBar](https://github.com/PepperDash/epi-jbl-soundBar) | Internal | v1.0.0 | v1.0.0 | 2.0.0 |
-| [epi-lg-display](https://github.com/PepperDash/epi-lg-display) | Public | v2.0.0 | v2.0.0 | 1.8.0 |
+| [epi-lg-display](https://github.com/PepperDash/epi-lg-display) | Public | v2.1.1 | v2.1.1 | 1.8.0 |
 | [epi-lutron-grx](https://github.com/PepperDash/epi-lutron-grx) | Internal | 1.0.0 | 1.0.1-beta-7 | 1.6.1 |
 | [epi-lutron-quantum](https://github.com/PepperDash/epi-lutron-quantum) | Public | 1.0.3 | v1.0.1 | N/A |
 | [epi-magewell-proconvert](https://github.com/PepperDash/epi-magewell-proconvert) | Internal | N/A | 0.0.1-alpha-1 | 1.15.3 |
@@ -110,7 +110,7 @@
 | [epi-utilities-timer-scheduled](https://github.com/PepperDash/epi-utilities-timer-scheduled) | Internal | 1.0.4 | 1.0.5-beta-3 | 1.9.0 |
 | [epi-utility-tcpproxy](https://github.com/PepperDash/epi-utility-tcpproxy) | Public | N/A | N/A | 1.6.4 |
 | [epi-vaddio-camera](https://github.com/PepperDash/epi-vaddio-camera) | Internal | 1.1.0 | 1.1.0 | 1.10.3 |
-| [epi-videoCodec-ciscoExtended](https://github.com/PepperDash/epi-videoCodec-ciscoExtended) | Public | v1.7.0 | v1.8.0-feature-base64... | 1.15.2 |
+| [epi-videoCodec-ciscoExtended](https://github.com/PepperDash/epi-videoCodec-ciscoExtended) | Public | v1.9.0 | v1.9.1-hotfix-close-w... | 1.15.2 |
 | [epi-vytio-iptv](https://github.com/PepperDash/epi-vytio-iptv) | Internal | v0.3.2 | v0.4.0-preset-name-fe... | 1.16.1 |
 | [epi-yamaha-YXC](https://github.com/PepperDash/epi-yamaha-YXC) | Internal | N/A | 0.0.1-alpha-2 | 1.10.2 |
 | [epi-yamaha-cs700](https://github.com/PepperDash/epi-yamaha-cs700) | Internal | N/A | N/A | N/A |

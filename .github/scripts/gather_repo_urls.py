@@ -107,11 +107,12 @@ def process_repositories(repo_list):
             if result:
                 results.append(result)
                 total_epi_repos += 1
-                if result["current_release"].startswith("1."):
+                norm = normalize_release_tag(result["min_essentials"], result["repo_name"])
+                if norm == "1":
                     total_release_1_x += 1
-                elif result["current_release"].startswith("2."):
+                elif norm == "2":
                     total_release_2_x += 1
-                elif result["current_release"] == "N/A":
+                elif result["min_essentials"] == "N/A":
                     total_release_na += 1
     # --- CONCURRENT PROCESSING END ---
 
@@ -140,6 +141,19 @@ def process_repositories(repo_list):
 def truncate(s, max_length):
     return s if len(s) <= max_length else s[:max_length - 3] + "..."
 
+
+def normalize_release_tag(tag, repo_name=None):
+    """
+    Normalize the release tag to handle 'v1.', '1.', etc.
+    Returns the major version as a string, or None if not matched.
+    """
+    print(f"[normalize_release_tag] Repo: '{repo_name}', Raw tag value: '{tag}'")  # Debug print
+    if tag and tag != "N/A":
+        m = re.match(r"v?(\d+)\.", tag)
+        if m:
+            print(f"[normalize_release_tag] Repo: '{repo_name}', Matched major version: '{m.group(1)}'")  # Debug print
+            return m.group(1)
+    return None
 
 def main():
     logging.debug("Starting script.")
