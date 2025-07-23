@@ -118,7 +118,7 @@ def process_repositories(repo_list):
 
     with open('README.md', 'w', newline='\n') as file:
         file.write("# Essentials Plugin Library\n\n")
-
+        file.write(f"[Click here to see the Readme Diff](https://pepperdash.github.io/Essentials-Plugin-Library/readme-diff.html)\n")
         # Write the counts to the markdown file in a table format
         file.write("| Metric                 | Count |\n")
         file.write("|------------------------|-------|\n")
