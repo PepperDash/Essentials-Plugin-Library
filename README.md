@@ -1,5 +1,7 @@
 # Essentials Plugin Library
 
+[Click here to see the README diff](readme-diff.html)
+
 | Metric                 | Count |
 |------------------------|-------|
 | Total repos            | 107 |
