@@ -44,7 +44,7 @@
 | [epi-crestron-touchpanels](https://github.com/PepperDash/epi-crestron-touchpanels) | Internal | N/A | N/A | 1.7.5 |
 | [epi-denton-cor-tap](https://github.com/PepperDash/epi-denton-cor-tap) | Public | 0.2.2 | 0.2.2 | 1.9.0 |
 | [epi-dsan-limitimer](https://github.com/PepperDash/epi-dsan-limitimer) | Internal | N/A | v1.0.0-stateDev.3 | 1.6.4 |
-| [epi-dsp-shure](https://github.com/PepperDash/epi-dsp-shure) | Internal | N/A | v1.0.0-feat-4-series-... | 1.6.4 |
+| [epi-dsp-shure](https://github.com/PepperDash/epi-dsp-shure) | Public | v1.0.0 | v1.0.0 | 1.16.0 |
 | [epi-encelium-x](https://github.com/PepperDash/epi-encelium-x) | Internal | 1.0.1 | 1.0.2-hotfix-20 | 1.10.4 |
 | [epi-epiphan-pearl](https://github.com/PepperDash/epi-epiphan-pearl) | Public | 1.0.0 | 1.0.1-hotfix-5 | 1.12.8 |
 | [epi-epson-projector](https://github.com/PepperDash/epi-epson-projector) | Public | v3.1.0 | v3.1.0 | 2.4.7 |
