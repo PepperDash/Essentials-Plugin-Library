@@ -18,6 +18,7 @@ jobs:
     if: github.ref == 'refs/heads/main' || github.event_name != 'schedule'
     runs-on: ubuntu-latest
     steps:
+    
     - name: Log branch and event type
       run: |
         echo "Branch: ${{ github.ref }}"
@@ -27,28 +28,54 @@ jobs:
         else
           echo "This is not a scheduled run."
         fi
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v4 
+    
+    - name: Save previous README as README.old.md
+      run: cp README.md README.old.md   
+    
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: '3.x'
+    
     - name: Install dependencies
       run: pip install PyGithub
+    
     - name: Gather repo URLs
       env:
         GITHUB_TOKEN: ${{ secrets.PEPPERDASH_ORG_READ }}
         ORG_NAME: 'PepperDash'
         MODE: ${{ github.event.inputs.mode }}
       run: python .github/scripts/gather_repo_urls.py
+    
     - name: Upload Markdown file
       uses: actions/upload-artifact@v4
       with:
         name: all-repos-list
         path: README.md
+    
     - name: Commit and push README.md
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add README.md
         git commit -m "Update README.md" || echo "No changes to commit"
+        git push
+    
+    - name: Save new README as README.new.md
+      run: cp README.md README.new.md
+    
+    - name: Generate unified diff
+      run: diff -u README.old.md README.new.md > readme.diff || true
+    
+    - name: Install diff2html
+      run: npm install -g diff2html-cli
+    
+    - name: Generate HTML visual diff
+      run: diff2html -i file -s side -F readme-diff.html -- readme.diff
+    
+    - name: Commit and push README diff HTML
+      run: |
+        git add readme-diff.html
+        git commit -m "Add README diff HTML artifact [skip ci]" || echo "No changes to commit"
         git push
