@@ -1,7 +1,5 @@
 # Essentials Plugin Library
 
-[Click here to see the Readme diff](https://pepperdash.github.io/Essentials-Plugin-Library/readme-diff.html)
-
 | Metric                 | Count |
 |------------------------|-------|
 | Total repos            | 107 |
