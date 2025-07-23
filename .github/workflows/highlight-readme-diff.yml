@@ -30,7 +30,7 @@ jobs:
           cp README.md README.new.md
           git checkout origin/main -- README.md
           mv README.md README.old.md
-          git checkout -
+          git restore README.md
 
       - name: Generate unified diff
         run: |
