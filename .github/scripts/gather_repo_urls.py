@@ -62,14 +62,16 @@ def extract_pepperdash_essentials_package_version(repo):
                 # Check .csproj files for PackageReference
                 elif file_content.name.endswith(".csproj"):
                     logging.debug(f"Found csproj file: {file_content.path}")
-                    if file_data is None:
-                        file_data = repo.get_contents(file_content.path).decoded_content.decode("utf-8")
+                    file_data = repo.get_contents(file_content.path).decoded_content.decode("utf-8")
                     # Look for PackageReference to PepperDashEssentials (attribute order agnostic)
-                    match = re.search(r'<PackageReference\b[^>]*\bInclude="PepperDashEssentials"[^>]*\bVersion="([^"]+)"', file_data)
-                    if match:
-                        version = match.group(1).strip()
-                        logging.debug(f"Found PepperDashEssentials version in csproj: {version}")
-                        return version
+                    for pkg_match in re.finditer(r'<PackageReference\b[^>]*>', file_data):
+                        pkg_tag = pkg_match.group(0)
+                        include_match = re.search(r'Include="([^"]+)"', pkg_tag)
+                        version_match = re.search(r'Version="([^"]+)"', pkg_tag)
+                        if include_match and include_match.group(1) == "PepperDashEssentials" and version_match:
+                            version = version_match.group(1).strip()
+                            logging.debug(f"Found PepperDashEssentials version in csproj: {version}")
+                            return version
                     
                     # Also check for the alternative format
                     match = re.search(r'<PackageReference\s+Include="PepperDashEssentials"[^>]*>\s*<Version>([^<]+)</Version>', file_data, re.DOTALL)
