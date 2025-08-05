@@ -1,10 +1,50 @@
 from github import Github
+from github import RateLimitExceededException
 import os
 import logging
 import re
-import concurrent.futures  # Add this import
+import concurrent.futures
+import time
+import random
 
 logging.basicConfig(level=logging.DEBUG)
+
+def handle_rate_limit(g, operation_name="API operation"):
+    """
+    Check rate limit and wait if necessary before making API calls.
+    """
+    try:
+        rate_limit = g.get_rate_limit()
+        core_remaining = rate_limit.core.remaining
+        core_reset_time = rate_limit.core.reset
+        
+        logging.debug(f"Rate limit status for {operation_name}: {core_remaining} requests remaining")
+        
+        if core_remaining < 10:  # Conservative threshold
+            wait_time = (core_reset_time - time.time()) + 5  # Add 5 second buffer
+            if wait_time > 0:
+                logging.warning(f"Rate limit nearly exceeded. Waiting {wait_time:.1f} seconds before {operation_name}")
+                time.sleep(wait_time)
+    except Exception as e:
+        logging.warning(f"Could not check rate limit: {e}")
+
+def retry_with_backoff(func, max_retries=3, base_delay=1):
+    """
+    Retry a function with exponential backoff for rate limit and network errors.
+    """
+    for attempt in range(max_retries):
+        try:
+            return func()
+        except Exception as e:
+            error_str = str(e).lower()
+            if "rate limit" in error_str or "403" in error_str or "502" in error_str or "503" in error_str:
+                if attempt < max_retries - 1:
+                    delay = base_delay * (2 ** attempt) + random.uniform(0, 1)
+                    logging.warning(f"Rate limit or server error encountered, retrying in {delay:.1f} seconds (attempt {attempt + 1}/{max_retries}): {e}")
+                    time.sleep(delay)
+                    continue
+            raise e
+    return None
 
 def extract_min_essentials_version(repo):
     """
@@ -12,14 +52,31 @@ def extract_min_essentials_version(repo):
     """
     logging.debug(f"Searching for MinimumEssentialsFrameworkVersion in repo: {repo.name}")
     try:
-        contents = repo.get_contents("")
+        def get_contents():
+            return repo.get_contents("")
+        
+        contents = retry_with_backoff(get_contents)
+        if not contents:
+            return "N/A"
+            
         while contents:
             file_content = contents.pop(0)
             if file_content.type == "dir":
-                contents.extend(repo.get_contents(file_content.path))
+                def get_dir_contents():
+                    return repo.get_contents(file_content.path)
+                dir_contents = retry_with_backoff(get_dir_contents)
+                if dir_contents:
+                    contents.extend(dir_contents)
             elif file_content.type == "file" and "factory" in file_content.name.lower() and file_content.name.endswith(".cs"):
                 logging.debug(f"Found potential file: {file_content.path}")
-                file_data = repo.get_contents(file_content.path).decoded_content.decode("utf-8")
+                
+                def get_file_content():
+                    return repo.get_contents(file_content.path).decoded_content.decode("utf-8")
+                
+                file_data = retry_with_backoff(get_file_content)
+                if not file_data:
+                    continue
+                    
                 # Adjusted regex to capture only the version string before ";"
                 match = re.search(r'MinimumEssentialsFrameworkVersion\s*=\s*"([^"]+)"\s*;', file_data)
                 if match:
@@ -36,11 +93,21 @@ def extract_pepperdash_essentials_package_version(repo):
     """
     logging.debug(f"Searching for PepperDashEssentials package reference in repo: {repo.name}")
     try:
-        contents = repo.get_contents("")
+        def get_contents():
+            return repo.get_contents("")
+        
+        contents = retry_with_backoff(get_contents)
+        if not contents:
+            return "N/A"
+            
         while contents:
             file_content = contents.pop(0)
             if file_content.type == "dir":
-                contents.extend(repo.get_contents(file_content.path))
+                def get_dir_contents():
+                    return repo.get_contents(file_content.path)
+                dir_contents = retry_with_backoff(get_dir_contents)
+                if dir_contents:
+                    contents.extend(dir_contents)
             elif file_content.type == "file":
                 # Fetch file content only once per file
                 file_data = None
@@ -48,7 +115,14 @@ def extract_pepperdash_essentials_package_version(repo):
                 # Check packages.config files
                 if file_content.name == "packages.config":
                     logging.debug(f"Found packages.config file: {file_content.path}")
-                    file_data = repo.get_contents(file_content.path).decoded_content.decode("utf-8")
+                    
+                    def get_packages_config():
+                        return repo.get_contents(file_content.path).decoded_content.decode("utf-8")
+                    
+                    file_data = retry_with_backoff(get_packages_config)
+                    if not file_data:
+                        continue
+                        
                     # Look for PepperDashEssentials package in packages.config (attribute order agnostic)
                     for pkg_match in re.finditer(r'<package\b[^>]*>', file_data):
                         pkg_tag = pkg_match.group(0)
@@ -62,7 +136,14 @@ def extract_pepperdash_essentials_package_version(repo):
                 # Check .csproj files for PackageReference
                 elif file_content.name.endswith(".csproj"):
                     logging.debug(f"Found csproj file: {file_content.path}")
-                    file_data = repo.get_contents(file_content.path).decoded_content.decode("utf-8")
+                    
+                    def get_csproj_content():
+                        return repo.get_contents(file_content.path).decoded_content.decode("utf-8")
+                    
+                    file_data = retry_with_backoff(get_csproj_content)
+                    if not file_data:
+                        continue
+                        
                     # Look for PackageReference to PepperDashEssentials (attribute order agnostic)
                     for pkg_match in re.finditer(r'<PackageReference\b[^>]*>', file_data):
                         pkg_tag = pkg_match.group(0)
@@ -83,7 +164,7 @@ def extract_pepperdash_essentials_package_version(repo):
         logging.error(f"Error processing repo {repo.name}: {e}")
     return "N/A"
 
-def process_single_repo(repo, max_repo_name, max_release, max_build_tag, max_min_essentials):
+def process_single_repo(repo, max_repo_name, max_release, max_build_tag, max_min_essentials, g=None):
     """
     Processes a single repository and returns the data needed for the markdown table.
     """
@@ -91,11 +172,22 @@ def process_single_repo(repo, max_repo_name, max_release, max_build_tag, max_min
         return None
 
     logging.debug(f"Processing Repository: {repo.name}, Visibility: {'Public' if not repo.private else 'Internal/Private'}")
+    
+    # Check rate limit before processing each repo
+    if g:
+        handle_rate_limit(g, f"processing repo {repo.name}")
+    
     visibility = "Public" if not repo.private else "Internal"
 
-    # Convert PaginatedList to list before accessing
-    releases = list(repo.get_releases())
-    tags = list(repo.get_tags())
+    # Convert PaginatedList to list before accessing with rate limit handling
+    def get_releases():
+        return list(repo.get_releases())
+    
+    def get_tags():
+        return list(repo.get_tags())
+    
+    releases = retry_with_backoff(get_releases) or []
+    tags = retry_with_backoff(get_tags) or []
 
     current_release = "N/A"
     latest_build_tag = "N/A"
@@ -131,7 +223,7 @@ def process_single_repo(repo, max_repo_name, max_release, max_build_tag, max_min
         "current_release": current_release
     }
 
-def process_repositories(repo_list):
+def process_repositories(repo_list, g):
     """
     Processes the repositories to calculate counts and generate the markdown file.
     """
@@ -149,12 +241,16 @@ def process_repositories(repo_list):
     max_build_tag = 24
     max_min_essentials = 8
 
+    # Check initial rate limit
+    handle_rate_limit(g, "starting repository processing")
+
     # --- CONCURRENT PROCESSING START ---
+    # Reduced max_workers to be more conservative with rate limits
     results = []
-    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
         futures = [
             executor.submit(
-                process_single_repo, repo, max_repo_name, max_release, max_build_tag, max_min_essentials
+                process_single_repo, repo, max_repo_name, max_release, max_build_tag, max_min_essentials, g
             )
             for repo in repo_list
         ]
@@ -273,20 +369,42 @@ def main():
 
     try:
         org = g.get_organization(org_name)
-        repos = org.get_repos(type='all')
+        
+        def get_repos():
+            return org.get_repos(type='all')
+        
+        repos = retry_with_backoff(get_repos)
+        if not repos:
+            logging.error("Failed to fetch repositories after retries")
+            return
+            
         logging.debug(f"Repos object type: {type(repos)}")
+
+        # Check rate limit before iterating through repos
+        handle_rate_limit(g, "fetching repository list")
 
         # Explicitly iterate over the PaginatedList to collect repositories
         repo_list = []
         for repo in repos:
             logging.debug(f"Fetched repo: {repo.name}")
             repo_list.append(repo)
+            
+            # Check rate limit periodically during repo fetching
+            if len(repo_list) % 20 == 0:  # Check every 20 repos
+                handle_rate_limit(g, f"fetching repositories (processed {len(repo_list)})")
+                
         logging.debug(f"Number of repos after iteration: {len(repo_list)}")
 
         # Process the repositories after the list is fully populated
-        process_repositories(repo_list)
+        process_repositories(repo_list, g)
     except Exception as e:
         logging.error(f"Error accessing organization or repositories: {e}")
+        # Log rate limit info if available
+        try:
+            rate_limit = g.get_rate_limit()
+            logging.error(f"Current rate limit: {rate_limit.core.remaining}/{rate_limit.core.limit} remaining, resets at {rate_limit.core.reset}")
+        except:
+            pass
 
 
 if __name__ == "__main__":
