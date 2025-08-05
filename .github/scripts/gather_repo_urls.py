@@ -172,6 +172,20 @@ def process_repositories(repo_list):
                     total_release_na += 1
     # --- CONCURRENT PROCESSING END ---
 
+    # Separate results by Essentials version
+    essentials_1_repos = []
+    essentials_2_repos = []
+    other_repos = []
+    
+    for result in results:
+        norm = normalize_release_tag(result["package_version"], result["repo_name"])
+        if norm == "1":
+            essentials_1_repos.append(result)
+        elif norm == "2":
+            essentials_2_repos.append(result)
+        else:
+            other_repos.append(result)
+
     with open('README.md', 'w', newline='\n') as file:
         file.write("# Essentials Plugin Library\n\n")
         file.write(f"[Click here to see the Readme Diff](https://pepperdash.github.io/Essentials-Plugin-Library/readme-diff.html)\n")
@@ -183,15 +197,37 @@ def process_repositories(repo_list):
         file.write(f"| Total Essentials v2    | {total_release_2_x} |\n")
         file.write(f"| Total Essentials N/A   | {total_release_na} |\n\n\n")
 
-        # Write the table header
-        file.write("| Repository                          | Visibility | Release | Build Output | Min Essentials | Package Version |\n")
-        file.write("|-------------------------------------|------------|---------|--------------|----------------|----------------|\n")
+        # Write Essentials 1 table
+        if essentials_1_repos:
+            file.write("## Essentials Framework v1 Repositories\n\n")
+            file.write("| Repository                          | Visibility | Release | Build Output | Min Essentials | Package Version |\n")
+            file.write("|-------------------------------------|------------|---------|--------------|----------------|----------------|\n")
+            for result in sorted(essentials_1_repos, key=lambda x: x["repo_name"]):
+                file.write(
+                    f"| [{result['repo_name']}]({result['repo_url']}) | {result['visibility']} | {result['release']} | {result['build_tag']} | {result['min_essentials']} | {result['package_version']} |\n"
+                )
+            file.write("\n")
 
-        # Write the table rows
-        for result in sorted(results, key=lambda x: x["repo_name"]):
-            file.write(
-                f"| [{result['repo_name']}]({result['repo_url']}) | {result['visibility']} | {result['release']} | {result['build_tag']} | {result['min_essentials']} | {result['package_version']} |\n"
-            )
+        # Write Essentials 2 table
+        if essentials_2_repos:
+            file.write("## Essentials Framework v2 Repositories\n\n")
+            file.write("| Repository                          | Visibility | Release | Build Output | Min Essentials | Package Version |\n")
+            file.write("|-------------------------------------|------------|---------|--------------|----------------|----------------|\n")
+            for result in sorted(essentials_2_repos, key=lambda x: x["repo_name"]):
+                file.write(
+                    f"| [{result['repo_name']}]({result['repo_url']}) | {result['visibility']} | {result['release']} | {result['build_tag']} | {result['min_essentials']} | {result['package_version']} |\n"
+                )
+            file.write("\n")
+
+        # Write other repositories table (N/A or unclear versions)
+        if other_repos:
+            file.write("## Other Repositories\n\n")
+            file.write("| Repository                          | Visibility | Release | Build Output | Min Essentials | Package Version |\n")
+            file.write("|-------------------------------------|------------|---------|--------------|----------------|----------------|\n")
+            for result in sorted(other_repos, key=lambda x: x["repo_name"]):
+                file.write(
+                    f"| [{result['repo_name']}]({result['repo_url']}) | {result['visibility']} | {result['release']} | {result['build_tag']} | {result['min_essentials']} | {result['package_version']} |\n"
+                )
 
 
 def truncate(s, max_length):
