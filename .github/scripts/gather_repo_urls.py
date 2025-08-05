@@ -30,6 +30,50 @@ def extract_min_essentials_version(repo):
         logging.error(f"Error processing repo {repo.name}: {e}")
     return "N/A"
 
+def extract_pepperdash_essentials_package_version(repo):
+    """
+    Extracts the PepperDashEssentials package version from packages.config or .csproj files.
+    """
+    logging.debug(f"Searching for PepperDashEssentials package reference in repo: {repo.name}")
+    try:
+        contents = repo.get_contents("")
+        while contents:
+            file_content = contents.pop(0)
+            if file_content.type == "dir":
+                contents.extend(repo.get_contents(file_content.path))
+            elif file_content.type == "file":
+                # Check packages.config files
+                if file_content.name == "packages.config":
+                    logging.debug(f"Found packages.config file: {file_content.path}")
+                    file_data = repo.get_contents(file_content.path).decoded_content.decode("utf-8")
+                    # Look for PepperDashEssentials package in packages.config
+                    match = re.search(r'<package\s+id="PepperDashEssentials"\s+version="([^"]+)"', file_data)
+                    if match:
+                        version = match.group(1).strip()
+                        logging.debug(f"Found PepperDashEssentials version in packages.config: {version}")
+                        return version
+                
+                # Check .csproj files for PackageReference
+                elif file_content.name.endswith(".csproj"):
+                    logging.debug(f"Found csproj file: {file_content.path}")
+                    file_data = repo.get_contents(file_content.path).decoded_content.decode("utf-8")
+                    # Look for PackageReference to PepperDashEssentials
+                    match = re.search(r'<PackageReference\s+Include="PepperDashEssentials"\s+Version="([^"]+)"', file_data)
+                    if match:
+                        version = match.group(1).strip()
+                        logging.debug(f"Found PepperDashEssentials version in csproj: {version}")
+                        return version
+                    
+                    # Also check for the alternative format
+                    match = re.search(r'<PackageReference\s+Include="PepperDashEssentials"[^>]*>\s*<Version>([^<]+)</Version>', file_data, re.DOTALL)
+                    if match:
+                        version = match.group(1).strip()
+                        logging.debug(f"Found PepperDashEssentials version in csproj (Version element): {version}")
+                        return version
+    except Exception as e:
+        logging.error(f"Error processing repo {repo.name}: {e}")
+    return "N/A"
+
 def process_single_repo(repo, max_repo_name, max_release, max_build_tag, max_min_essentials):
     """
     Processes a single repository and returns the data needed for the markdown table.
@@ -59,11 +103,13 @@ def process_single_repo(repo, max_repo_name, max_release, max_build_tag, max_min
         latest_build_tag = tags[0].name  # Get the most recent tag
 
     min_essentials_version = extract_min_essentials_version(repo)
+    package_version = extract_pepperdash_essentials_package_version(repo)
 
     repo_name = truncate(repo.name, max_repo_name)
     release = truncate(current_release, max_release)
     build_tag = truncate(latest_build_tag, max_build_tag)
     min_essentials = truncate(min_essentials_version, max_min_essentials)
+    pkg_version = truncate(package_version, max_min_essentials)
 
     return {
         "repo_name": repo_name,
@@ -72,6 +118,7 @@ def process_single_repo(repo, max_repo_name, max_release, max_build_tag, max_min
         "release": release,
         "build_tag": build_tag,
         "min_essentials": min_essentials,
+        "package_version": pkg_version,
         "current_release": current_release
     }
 
@@ -128,13 +175,13 @@ def process_repositories(repo_list):
         file.write(f"| Total Essentials N/A   | {total_release_na} |\n\n\n")
 
         # Write the table header
-        file.write("| Repository                          | Visibility | Release | Build Output | Min Essentials |\n")
-        file.write("|-------------------------------------|------------|---------|--------------|----------------|\n")
+        file.write("| Repository                          | Visibility | Release | Build Output | Min Essentials | Package Version |\n")
+        file.write("|-------------------------------------|------------|---------|--------------|----------------|----------------|\n")
 
         # Write the table rows
         for result in sorted(results, key=lambda x: x["repo_name"]):
             file.write(
-                f"| [{result['repo_name']}]({result['repo_url']}) | {result['visibility']} | {result['release']} | {result['build_tag']} | {result['min_essentials']} |\n"
+                f"| [{result['repo_name']}]({result['repo_url']}) | {result['visibility']} | {result['release']} | {result['build_tag']} | {result['min_essentials']} | {result['package_version']} |\n"
             )
 
 
