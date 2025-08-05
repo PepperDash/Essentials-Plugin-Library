@@ -4,9 +4,9 @@
 | Metric                 | Count |
 |------------------------|-------|
 | Total repos            | 107 |
-| Total Essentials v1    | 79 |
-| Total Essentials v2    | 17 |
-| Total Essentials N/A   | 11 |
+| Total Essentials v1    | 92 |
+| Total Essentials v2    | 11 |
+| Total Essentials N/A   | 3 |
 
 
 | Repository                          | Visibility | Release | Build Output | Min Essentials | Package Version |
