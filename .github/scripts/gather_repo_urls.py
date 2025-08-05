@@ -42,23 +42,30 @@ def extract_pepperdash_essentials_package_version(repo):
             if file_content.type == "dir":
                 contents.extend(repo.get_contents(file_content.path))
             elif file_content.type == "file":
+                # Fetch file content only once per file
+                file_data = None
+                
                 # Check packages.config files
                 if file_content.name == "packages.config":
                     logging.debug(f"Found packages.config file: {file_content.path}")
                     file_data = repo.get_contents(file_content.path).decoded_content.decode("utf-8")
-                    # Look for PepperDashEssentials package in packages.config
-                    match = re.search(r'<package\s+id="PepperDashEssentials"\s+version="([^"]+)"', file_data)
-                    if match:
-                        version = match.group(1).strip()
-                        logging.debug(f"Found PepperDashEssentials version in packages.config: {version}")
-                        return version
+                    # Look for PepperDashEssentials package in packages.config (attribute order agnostic)
+                    for pkg_match in re.finditer(r'<package\b[^>]*>', file_data):
+                        pkg_tag = pkg_match.group(0)
+                        id_match = re.search(r'id="([^"]+)"', pkg_tag)
+                        version_match = re.search(r'version="([^"]+)"', pkg_tag)
+                        if id_match and id_match.group(1) == "PepperDashEssentials" and version_match:
+                            version = version_match.group(1).strip()
+                            logging.debug(f"Found PepperDashEssentials version in packages.config: {version}")
+                            return version
                 
                 # Check .csproj files for PackageReference
                 elif file_content.name.endswith(".csproj"):
                     logging.debug(f"Found csproj file: {file_content.path}")
-                    file_data = repo.get_contents(file_content.path).decoded_content.decode("utf-8")
-                    # Look for PackageReference to PepperDashEssentials
-                    match = re.search(r'<PackageReference\s+Include="PepperDashEssentials"\s+Version="([^"]+)"', file_data)
+                    if file_data is None:
+                        file_data = repo.get_contents(file_content.path).decoded_content.decode("utf-8")
+                    # Look for PackageReference to PepperDashEssentials (attribute order agnostic)
+                    match = re.search(r'<PackageReference\b[^>]*\bInclude="PepperDashEssentials"[^>]*\bVersion="([^"]+)"', file_data)
                     if match:
                         version = match.group(1).strip()
                         logging.debug(f"Found PepperDashEssentials version in csproj: {version}")
@@ -154,7 +161,7 @@ def process_repositories(repo_list):
             if result:
                 results.append(result)
                 total_epi_repos += 1
-                norm = normalize_release_tag(result["min_essentials"], result["repo_name"])
+                norm = normalize_release_tag(result["package_version"], result["repo_name"])
                 if norm == "1":
                     total_release_1_x += 1
                 elif norm == "2":
