@@ -48,9 +48,18 @@ def retry_with_backoff(func, max_retries=3, base_delay=1):
 
 def extract_min_essentials_version(repo):
     """
-    Extracts the MinimumEssentialsFrameworkVersion from the CS file containing 'factory' in its name.
+    Extracts the minimum Essentials version using priority order:
+    1. PepperDashEssentials package reference from .csproj files
+    2. MinimumEssentialsFrameworkVersion from factory .cs files 
+    3. PepperDashEssentials package reference from packages.config files
     """
-    logging.debug(f"Searching for MinimumEssentialsFrameworkVersion in repo: {repo.name}")
+    logging.debug(f"Searching for minimum Essentials version in repo: {repo.name}")
+    
+    # Storage for all found versions
+    csproj_package_version = None
+    factory_version = None
+    packages_config_version = None
+    
     try:
         def get_contents():
             return repo.get_contents("")
@@ -67,22 +76,99 @@ def extract_min_essentials_version(repo):
                 dir_contents = retry_with_backoff(get_dir_contents)
                 if dir_contents:
                     contents.extend(dir_contents)
-            elif file_content.type == "file" and "factory" in file_content.name.lower() and file_content.name.endswith(".cs"):
-                logging.debug(f"Found potential file: {file_content.path}")
-                
-                def get_file_content():
-                    return repo.get_contents(file_content.path).decoded_content.decode("utf-8")
-                
-                file_data = retry_with_backoff(get_file_content)
-                if not file_data:
-                    continue
+            elif file_content.type == "file":
+                # Check .csproj files for PepperDashEssentials package reference (Priority 1)
+                if file_content.name.endswith(".csproj") and not csproj_package_version:
+                    logging.debug(f"Found csproj file: {file_content.path}")
                     
-                # Adjusted regex to capture only the version string before ";"
-                match = re.search(r'MinimumEssentialsFrameworkVersion\s*=\s*"([^"]+)"\s*;', file_data)
-                if match:
-                    version = match.group(1).strip()  # Extract and clean the version string
-                    logging.debug(f"Found MinimumEssentialsFrameworkVersion: {version}")
-                    return version
+                    def get_csproj_content():
+                        return repo.get_contents(file_content.path).decoded_content.decode("utf-8")
+                    
+                    file_data = retry_with_backoff(get_csproj_content)
+                    if not file_data:
+                        continue
+                        
+                    # Look for PackageReference to PepperDashEssentials (attribute order agnostic)
+                    for pkg_match in re.finditer(r'<PackageReference\b[^>]*>', file_data):
+                        pkg_tag = pkg_match.group(0)
+                        include_match = re.search(r'Include="([^"]+)"', pkg_tag)
+                        version_match = re.search(r'Version="([^"]+)"', pkg_tag)
+                        if include_match and include_match.group(1) == "PepperDashEssentials" and version_match:
+                            csproj_package_version = version_match.group(1).strip()
+                            logging.debug(f"Found PepperDashEssentials version in csproj: {csproj_package_version}")
+                            break
+                    
+                    # Also check for the alternative format if not found yet
+                    if not csproj_package_version:
+                        match = re.search(r'<PackageReference\s+Include="PepperDashEssentials"[^>]*>\s*<Version>([^<]+)</Version>', file_data, re.DOTALL)
+                        if match:
+                            csproj_package_version = match.group(1).strip()
+                            logging.debug(f"Found PepperDashEssentials version in csproj (Version element): {csproj_package_version}")
+                
+                # Check factory CS files for MinimumEssentialsFrameworkVersion (Priority 2)
+                elif "factory" in file_content.name.lower() and file_content.name.endswith(".cs") and not factory_version:
+                    logging.debug(f"Found potential factory file: {file_content.path}")
+                    
+                    def get_file_content():
+                        return repo.get_contents(file_content.path).decoded_content.decode("utf-8")
+                    
+                    file_data = retry_with_backoff(get_file_content)
+                    if not file_data:
+                        continue
+                        
+                    # Pattern 1: MinimumEssentialsFrameworkVersion = "version"; (original pattern)
+                    match = re.search(r'MinimumEssentialsFrameworkVersion\s*=\s*"([^"]+)"\s*;', file_data)
+                    if match:
+                        factory_version = match.group(1).strip()
+                        logging.debug(f"Found MinimumEssentialsFrameworkVersion in factory file: {factory_version}")
+                    elif not factory_version:
+                        # Pattern 2: public const string MinumumEssentialsVersion = "version"; (alternate pattern found in some repos)
+                        match = re.search(r'const\s+string\s+MinumumEssentialsVersion\s*=\s*"([^"]+)"\s*;', file_data)
+                        if match:
+                            factory_version = match.group(1).strip()
+                            logging.debug(f"Found MinumumEssentialsVersion (const) in factory file: {factory_version}")
+                        elif not factory_version:
+                            # Pattern 3: MinumumEssentialsVersion = "version"; (without const keyword)
+                            match = re.search(r'MinumumEssentialsVersion\s*=\s*"([^"]+)"\s*;', file_data)
+                            if match:
+                                factory_version = match.group(1).strip()
+                                logging.debug(f"Found MinumumEssentialsVersion in factory file: {factory_version}")
+                
+                # Check packages.config files for PepperDashEssentials package (Priority 3)
+                elif file_content.name == "packages.config" and not packages_config_version:
+                    logging.debug(f"Found packages.config file: {file_content.path}")
+                    
+                    def get_packages_config():
+                        return repo.get_contents(file_content.path).decoded_content.decode("utf-8")
+                    
+                    file_data = retry_with_backoff(get_packages_config)
+                    if not file_data:
+                        continue
+                        
+                    # Look for PepperDashEssentials package in packages.config (attribute order agnostic)
+                    for pkg_match in re.finditer(r'<package\b[^>]*>', file_data):
+                        pkg_tag = pkg_match.group(0)
+                        id_match = re.search(r'id="([^"]+)"', pkg_tag)
+                        version_match = re.search(r'version="([^"]+)"', pkg_tag)
+                        if id_match and id_match.group(1) == "PepperDashEssentials" and version_match:
+                            packages_config_version = version_match.group(1).strip()
+                            logging.debug(f"Found PepperDashEssentials version in packages.config: {packages_config_version}")
+                            break
+        
+        # Apply priority logic to determine which version to return
+        if csproj_package_version:
+            logging.debug(f"Using .csproj PepperDashEssentials package version: {csproj_package_version}")
+            return csproj_package_version
+        elif factory_version and factory_version != "N/A":
+            logging.debug(f"Using factory file version: {factory_version}")
+            return factory_version
+        elif packages_config_version:
+            logging.debug(f"Using packages.config PepperDashEssentials version: {packages_config_version}")
+            return packages_config_version
+        else:
+            logging.debug("No minimum Essentials version found")
+            return "N/A"
+            
     except Exception as e:
         logging.error(f"Error processing repo {repo.name}: {e}")
     return "N/A"
@@ -293,23 +379,23 @@ def process_repositories(repo_list, g):
         file.write(f"| Total Essentials v2    | {total_release_2_x} |\n")
         file.write(f"| Total Essentials N/A   | {total_release_na} |\n\n\n")
 
-        # Write Essentials 1 table
-        if essentials_1_repos:
-            file.write("## Essentials Framework v1 Repositories\n\n")
-            file.write("| Repository                          | Visibility | Release | Build Output | Min Essentials | Package Version |\n")
-            file.write("|-------------------------------------|------------|---------|--------------|----------------|----------------|\n")
-            for result in sorted(essentials_1_repos, key=lambda x: x["repo_name"]):
-                file.write(
-                    f"| [{result['repo_name']}]({result['repo_url']}) | {result['visibility']} | {result['release']} | {result['build_tag']} | {result['min_essentials']} | {result['package_version']} |\n"
-                )
-            file.write("\n")
-
-        # Write Essentials 2 table
+        # Write Essentials 2 table first (as requested - v2 should come before v1)
         if essentials_2_repos:
             file.write("## Essentials Framework v2 Repositories\n\n")
             file.write("| Repository                          | Visibility | Release | Build Output | Min Essentials | Package Version |\n")
             file.write("|-------------------------------------|------------|---------|--------------|----------------|----------------|\n")
             for result in sorted(essentials_2_repos, key=lambda x: x["repo_name"]):
+                file.write(
+                    f"| [{result['repo_name']}]({result['repo_url']}) | {result['visibility']} | {result['release']} | {result['build_tag']} | {result['min_essentials']} | {result['package_version']} |\n"
+                )
+            file.write("\n")
+
+        # Write Essentials 1 table second
+        if essentials_1_repos:
+            file.write("## Essentials Framework v1 Repositories\n\n")
+            file.write("| Repository                          | Visibility | Release | Build Output | Min Essentials | Package Version |\n")
+            file.write("|-------------------------------------|------------|---------|--------------|----------------|----------------|\n")
+            for result in sorted(essentials_1_repos, key=lambda x: x["repo_name"]):
                 file.write(
                     f"| [{result['repo_name']}]({result['repo_url']}) | {result['visibility']} | {result['release']} | {result['build_tag']} | {result['min_essentials']} | {result['package_version']} |\n"
                 )
