@@ -48,7 +48,8 @@ def retry_with_backoff(func, max_retries=3, base_delay=1):
 
 def extract_min_essentials_version(repo):
     """
-    Extracts the MinimumEssentialsFrameworkVersion from the CS file containing 'factory' in its name.
+    Extracts the MinimumEssentialsFrameworkVersion from CS files containing 'factory' in their name,
+    or from .csproj files where it might be defined as an XML element or property.
     """
     logging.debug(f"Searching for MinimumEssentialsFrameworkVersion in repo: {repo.name}")
     try:
@@ -67,22 +68,57 @@ def extract_min_essentials_version(repo):
                 dir_contents = retry_with_backoff(get_dir_contents)
                 if dir_contents:
                     contents.extend(dir_contents)
-            elif file_content.type == "file" and "factory" in file_content.name.lower() and file_content.name.endswith(".cs"):
-                logging.debug(f"Found potential file: {file_content.path}")
-                
-                def get_file_content():
-                    return repo.get_contents(file_content.path).decoded_content.decode("utf-8")
-                
-                file_data = retry_with_backoff(get_file_content)
-                if not file_data:
-                    continue
+            elif file_content.type == "file":
+                # Check factory CS files (original logic)
+                if "factory" in file_content.name.lower() and file_content.name.endswith(".cs"):
+                    logging.debug(f"Found potential factory file: {file_content.path}")
                     
-                # Adjusted regex to capture only the version string before ";"
-                match = re.search(r'MinimumEssentialsFrameworkVersion\s*=\s*"([^"]+)"\s*;', file_data)
-                if match:
-                    version = match.group(1).strip()  # Extract and clean the version string
-                    logging.debug(f"Found MinimumEssentialsFrameworkVersion: {version}")
-                    return version
+                    def get_file_content():
+                        return repo.get_contents(file_content.path).decoded_content.decode("utf-8")
+                    
+                    file_data = retry_with_backoff(get_file_content)
+                    if not file_data:
+                        continue
+                        
+                    # Adjusted regex to capture only the version string before ";"
+                    match = re.search(r'MinimumEssentialsFrameworkVersion\s*=\s*"([^"]+)"\s*;', file_data)
+                    if match:
+                        version = match.group(1).strip()  # Extract and clean the version string
+                        logging.debug(f"Found MinimumEssentialsFrameworkVersion in factory file: {version}")
+                        return version
+                
+                # Also check .csproj files for MinimumEssentialsFrameworkVersion (new logic)
+                elif file_content.name.endswith(".csproj"):
+                    logging.debug(f"Found csproj file: {file_content.path}")
+                    
+                    def get_csproj_content():
+                        return repo.get_contents(file_content.path).decoded_content.decode("utf-8")
+                    
+                    file_data = retry_with_backoff(get_csproj_content)
+                    if not file_data:
+                        continue
+                        
+                    # Look for MinimumEssentialsFrameworkVersion in XML format
+                    # Pattern 1: <MinimumEssentialsFrameworkVersion>version</MinimumEssentialsFrameworkVersion>
+                    match = re.search(r'<MinimumEssentialsFrameworkVersion>([^<]+)</MinimumEssentialsFrameworkVersion>', file_data)
+                    if match:
+                        version = match.group(1).strip()
+                        logging.debug(f"Found MinimumEssentialsFrameworkVersion in csproj (XML element): {version}")
+                        return version
+                    
+                    # Pattern 2: <Property Name="MinimumEssentialsFrameworkVersion">version</Property>
+                    match = re.search(r'<Property\s+Name="MinimumEssentialsFrameworkVersion">([^<]+)</Property>', file_data)
+                    if match:
+                        version = match.group(1).strip()
+                        logging.debug(f"Found MinimumEssentialsFrameworkVersion in csproj (Property element): {version}")
+                        return version
+                    
+                    # Pattern 3: MinimumEssentialsFrameworkVersion="version" (attribute style)
+                    match = re.search(r'MinimumEssentialsFrameworkVersion="([^"]+)"', file_data)
+                    if match:
+                        version = match.group(1).strip()
+                        logging.debug(f"Found MinimumEssentialsFrameworkVersion in csproj (attribute): {version}")
+                        return version
     except Exception as e:
         logging.error(f"Error processing repo {repo.name}: {e}")
     return "N/A"
