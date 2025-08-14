@@ -80,11 +80,25 @@ def extract_min_essentials_version(repo):
                     if not file_data:
                         continue
                         
-                    # Adjusted regex to capture only the version string before ";"
+                    # Pattern 1: MinimumEssentialsFrameworkVersion = "version"; (original pattern)
                     match = re.search(r'MinimumEssentialsFrameworkVersion\s*=\s*"([^"]+)"\s*;', file_data)
                     if match:
                         version = match.group(1).strip()  # Extract and clean the version string
                         logging.debug(f"Found MinimumEssentialsFrameworkVersion in factory file: {version}")
+                        return version
+                    
+                    # Pattern 2: public const string MinumumEssentialsVersion = "version"; (alternate pattern found in some repos)
+                    match = re.search(r'const\s+string\s+MinumumEssentialsVersion\s*=\s*"([^"]+)"\s*;', file_data)
+                    if match:
+                        version = match.group(1).strip()
+                        logging.debug(f"Found MinumumEssentialsVersion (const) in factory file: {version}")
+                        return version
+                    
+                    # Pattern 3: MinumumEssentialsVersion = "version"; (without const keyword)
+                    match = re.search(r'MinumumEssentialsVersion\s*=\s*"([^"]+)"\s*;', file_data)
+                    if match:
+                        version = match.group(1).strip()
+                        logging.debug(f"Found MinumumEssentialsVersion in factory file: {version}")
                         return version
                 
                 # Also check .csproj files for MinimumEssentialsFrameworkVersion (new logic)
