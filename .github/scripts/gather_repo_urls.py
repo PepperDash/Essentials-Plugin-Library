@@ -345,7 +345,7 @@ def process_repositories(repo_list, g):
             if result:
                 results.append(result)
                 total_epi_repos += 1
-                norm = normalize_release_tag(result["package_version"], result["repo_name"])
+                norm = normalize_release_tag(result["min_essentials"], result["repo_name"])
                 if norm == "1":
                     total_release_1_x += 1
                 elif norm == "2":
@@ -360,7 +360,7 @@ def process_repositories(repo_list, g):
     other_repos = []
     
     for result in results:
-        norm = normalize_release_tag(result["package_version"], result["repo_name"])
+        norm = normalize_release_tag(result["min_essentials"], result["repo_name"])
         if norm == "1":
             essentials_1_repos.append(result)
         elif norm == "2":
