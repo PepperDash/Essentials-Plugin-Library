@@ -1,31 +1,174 @@
 from github import Github
+from github import RateLimitExceededException
 import os
 import logging
 import re
-import concurrent.futures  # Add this import
+import concurrent.futures
+import time
+import random
 
 logging.basicConfig(level=logging.DEBUG)
 
+def handle_rate_limit(g, operation_name="API operation"):
+    """
+    Check rate limit and wait if necessary before making API calls.
+    """
+    try:
+        rate_limit = g.get_rate_limit()
+        core_remaining = rate_limit.core.remaining
+        core_reset_time = rate_limit.core.reset
+        
+        logging.debug(f"Rate limit status for {operation_name}: {core_remaining} requests remaining")
+        
+        if core_remaining < 10:  # Conservative threshold
+            wait_time = (core_reset_time - time.time()) + 5  # Add 5 second buffer
+            if wait_time > 0:
+                logging.warning(f"Rate limit nearly exceeded. Waiting {wait_time:.1f} seconds before {operation_name}")
+                time.sleep(wait_time)
+    except Exception as e:
+        logging.warning(f"Could not check rate limit: {e}")
+
+def retry_with_backoff(func, max_retries=3, base_delay=1):
+    """
+    Retry a function with exponential backoff for rate limit and network errors.
+    """
+    for attempt in range(max_retries):
+        try:
+            return func()
+        except Exception as e:
+            error_str = str(e).lower()
+            if "rate limit" in error_str or "403" in error_str or "502" in error_str or "503" in error_str:
+                if attempt < max_retries - 1:
+                    delay = base_delay * (2 ** attempt) + random.uniform(0, 1)
+                    logging.warning(f"Rate limit or server error encountered, retrying in {delay:.1f} seconds (attempt {attempt + 1}/{max_retries}): {e}")
+                    time.sleep(delay)
+                    continue
+            raise e
+    return None
+
 def extract_min_essentials_version(repo):
     """
-    Extracts the MinimumEssentialsFrameworkVersion from the CS file containing 'factory' in its name.
+    Extracts the minimum Essentials version using priority order:
+    1. PepperDashEssentials package reference from .csproj files
+    2. MinimumEssentialsFrameworkVersion from factory .cs files 
+    3. PepperDashEssentials package reference from packages.config files
     """
-    logging.debug(f"Searching for MinimumEssentialsFrameworkVersion in repo: {repo.name}")
+    logging.debug(f"Searching for minimum Essentials version in repo: {repo.name}")
+    
+    # Storage for all found versions
+    csproj_package_version = None
+    factory_version = None
+    packages_config_version = None
+    
     try:
-        contents = repo.get_contents("")
+        def get_contents():
+            return repo.get_contents("")
+        
+        contents = retry_with_backoff(get_contents)
+        if not contents:
+            return "N/A"
+            
         while contents:
             file_content = contents.pop(0)
             if file_content.type == "dir":
-                contents.extend(repo.get_contents(file_content.path))
-            elif file_content.type == "file" and "factory" in file_content.name.lower() and file_content.name.endswith(".cs"):
-                logging.debug(f"Found potential file: {file_content.path}")
-                file_data = repo.get_contents(file_content.path).decoded_content.decode("utf-8")
-                # Adjusted regex to capture only the version string before ";"
-                match = re.search(r'MinimumEssentialsFrameworkVersion\s*=\s*"([^"]+)"\s*;', file_data)
-                if match:
-                    version = match.group(1).strip()  # Extract and clean the version string
-                    logging.debug(f"Found MinimumEssentialsFrameworkVersion: {version}")
-                    return version
+                def get_dir_contents():
+                    return repo.get_contents(file_content.path)
+                dir_contents = retry_with_backoff(get_dir_contents)
+                if dir_contents:
+                    contents.extend(dir_contents)
+            elif file_content.type == "file":
+                # Check .csproj files for PepperDashEssentials package reference (Priority 1)
+                if file_content.name.endswith(".csproj") and not csproj_package_version:
+                    logging.debug(f"Found csproj file: {file_content.path}")
+                    
+                    def get_csproj_content():
+                        return repo.get_contents(file_content.path).decoded_content.decode("utf-8")
+                    
+                    file_data = retry_with_backoff(get_csproj_content)
+                    if not file_data:
+                        continue
+                        
+                    # Look for PackageReference to PepperDashEssentials (attribute order agnostic)
+                    for pkg_match in re.finditer(r'<PackageReference\b[^>]*>', file_data):
+                        pkg_tag = pkg_match.group(0)
+                        include_match = re.search(r'Include="([^"]+)"', pkg_tag)
+                        version_match = re.search(r'Version="([^"]+)"', pkg_tag)
+                        if include_match and include_match.group(1) == "PepperDashEssentials" and version_match:
+                            csproj_package_version = version_match.group(1).strip()
+                            logging.debug(f"Found PepperDashEssentials version in csproj: {csproj_package_version}")
+                            break
+                    
+                    # Also check for the alternative format if not found yet
+                    if not csproj_package_version:
+                        match = re.search(r'<PackageReference\s+Include="PepperDashEssentials"[^>]*>\s*<Version>([^<]+)</Version>', file_data, re.DOTALL)
+                        if match:
+                            csproj_package_version = match.group(1).strip()
+                            logging.debug(f"Found PepperDashEssentials version in csproj (Version element): {csproj_package_version}")
+                
+                # Check factory CS files for MinimumEssentialsFrameworkVersion (Priority 2)
+                elif "factory" in file_content.name.lower() and file_content.name.endswith(".cs") and not factory_version:
+                    logging.debug(f"Found potential factory file: {file_content.path}")
+                    
+                    def get_file_content():
+                        return repo.get_contents(file_content.path).decoded_content.decode("utf-8")
+                    
+                    file_data = retry_with_backoff(get_file_content)
+                    if not file_data:
+                        continue
+                        
+                    # Pattern 1: MinimumEssentialsFrameworkVersion = "version"; (original pattern)
+                    match = re.search(r'MinimumEssentialsFrameworkVersion\s*=\s*"([^"]+)"\s*;', file_data)
+                    if match:
+                        factory_version = match.group(1).strip()
+                        logging.debug(f"Found MinimumEssentialsFrameworkVersion in factory file: {factory_version}")
+                    elif not factory_version:
+                        # Pattern 2: public const string MinumumEssentialsVersion = "version"; (alternate pattern found in some repos)
+                        match = re.search(r'const\s+string\s+MinumumEssentialsVersion\s*=\s*"([^"]+)"\s*;', file_data)
+                        if match:
+                            factory_version = match.group(1).strip()
+                            logging.debug(f"Found MinumumEssentialsVersion (const) in factory file: {factory_version}")
+                        elif not factory_version:
+                            # Pattern 3: MinumumEssentialsVersion = "version"; (without const keyword)
+                            match = re.search(r'MinumumEssentialsVersion\s*=\s*"([^"]+)"\s*;', file_data)
+                            if match:
+                                factory_version = match.group(1).strip()
+                                logging.debug(f"Found MinumumEssentialsVersion in factory file: {factory_version}")
+                
+                # Check packages.config files for PepperDashEssentials package (Priority 3)
+                elif file_content.name == "packages.config" and not packages_config_version:
+                    logging.debug(f"Found packages.config file: {file_content.path}")
+                    
+                    def get_packages_config():
+                        return repo.get_contents(file_content.path).decoded_content.decode("utf-8")
+                    
+                    file_data = retry_with_backoff(get_packages_config)
+                    if not file_data:
+                        continue
+                        
+                    # Look for PepperDashEssentials package in packages.config (attribute order agnostic)
+                    for pkg_match in re.finditer(r'<package\b[^>]*>', file_data):
+                        pkg_tag = pkg_match.group(0)
+                        id_match = re.search(r'id="([^"]+)"', pkg_tag)
+                        version_match = re.search(r'version="([^"]+)"', pkg_tag)
+                        if id_match and id_match.group(1) == "PepperDashEssentials" and version_match:
+                            packages_config_version = version_match.group(1).strip()
+                            logging.debug(f"Found PepperDashEssentials version in packages.config: {packages_config_version}")
+                            break
+        
+        # Apply priority logic to determine which version to return
+        if csproj_package_version:
+            logging.debug(f"Using .csproj PepperDashEssentials package version: {csproj_package_version}")
+            return csproj_package_version
+        elif factory_version and factory_version != "N/A":
+            logging.debug(f"Using factory file version: {factory_version}")
+            return factory_version
+        elif packages_config_version:
+            logging.debug(f"Using packages.config PepperDashEssentials version: {packages_config_version}")
+            return packages_config_version
+        else:
+            logging.debug("No minimum Essentials version found")
+            return "N/A"
+            
     except Exception as e:
         logging.error(f"Error processing repo {repo.name}: {e}")
     return "N/A"
@@ -36,11 +179,21 @@ def extract_pepperdash_essentials_package_version(repo):
     """
     logging.debug(f"Searching for PepperDashEssentials package reference in repo: {repo.name}")
     try:
-        contents = repo.get_contents("")
+        def get_contents():
+            return repo.get_contents("")
+        
+        contents = retry_with_backoff(get_contents)
+        if not contents:
+            return "N/A"
+            
         while contents:
             file_content = contents.pop(0)
             if file_content.type == "dir":
-                contents.extend(repo.get_contents(file_content.path))
+                def get_dir_contents():
+                    return repo.get_contents(file_content.path)
+                dir_contents = retry_with_backoff(get_dir_contents)
+                if dir_contents:
+                    contents.extend(dir_contents)
             elif file_content.type == "file":
                 # Fetch file content only once per file
                 file_data = None
@@ -48,7 +201,14 @@ def extract_pepperdash_essentials_package_version(repo):
                 # Check packages.config files
                 if file_content.name == "packages.config":
                     logging.debug(f"Found packages.config file: {file_content.path}")
-                    file_data = repo.get_contents(file_content.path).decoded_content.decode("utf-8")
+                    
+                    def get_packages_config():
+                        return repo.get_contents(file_content.path).decoded_content.decode("utf-8")
+                    
+                    file_data = retry_with_backoff(get_packages_config)
+                    if not file_data:
+                        continue
+                        
                     # Look for PepperDashEssentials package in packages.config (attribute order agnostic)
                     for pkg_match in re.finditer(r'<package\b[^>]*>', file_data):
                         pkg_tag = pkg_match.group(0)
@@ -62,14 +222,23 @@ def extract_pepperdash_essentials_package_version(repo):
                 # Check .csproj files for PackageReference
                 elif file_content.name.endswith(".csproj"):
                     logging.debug(f"Found csproj file: {file_content.path}")
-                    if file_data is None:
-                        file_data = repo.get_contents(file_content.path).decoded_content.decode("utf-8")
+                    
+                    def get_csproj_content():
+                        return repo.get_contents(file_content.path).decoded_content.decode("utf-8")
+                    
+                    file_data = retry_with_backoff(get_csproj_content)
+                    if not file_data:
+                        continue
+                        
                     # Look for PackageReference to PepperDashEssentials (attribute order agnostic)
-                    match = re.search(r'<PackageReference\b[^>]*\bInclude="PepperDashEssentials"[^>]*\bVersion="([^"]+)"', file_data)
-                    if match:
-                        version = match.group(1).strip()
-                        logging.debug(f"Found PepperDashEssentials version in csproj: {version}")
-                        return version
+                    for pkg_match in re.finditer(r'<PackageReference\b[^>]*>', file_data):
+                        pkg_tag = pkg_match.group(0)
+                        include_match = re.search(r'Include="([^"]+)"', pkg_tag)
+                        version_match = re.search(r'Version="([^"]+)"', pkg_tag)
+                        if include_match and include_match.group(1) == "PepperDashEssentials" and version_match:
+                            version = version_match.group(1).strip()
+                            logging.debug(f"Found PepperDashEssentials version in csproj: {version}")
+                            return version
                     
                     # Also check for the alternative format
                     match = re.search(r'<PackageReference\s+Include="PepperDashEssentials"[^>]*>\s*<Version>([^<]+)</Version>', file_data, re.DOTALL)
@@ -81,7 +250,7 @@ def extract_pepperdash_essentials_package_version(repo):
         logging.error(f"Error processing repo {repo.name}: {e}")
     return "N/A"
 
-def process_single_repo(repo, max_repo_name, max_release, max_build_tag, max_min_essentials):
+def process_single_repo(repo, max_repo_name, max_release, max_build_tag, max_min_essentials, g=None):
     """
     Processes a single repository and returns the data needed for the markdown table.
     """
@@ -89,11 +258,22 @@ def process_single_repo(repo, max_repo_name, max_release, max_build_tag, max_min
         return None
 
     logging.debug(f"Processing Repository: {repo.name}, Visibility: {'Public' if not repo.private else 'Internal/Private'}")
+    
+    # Check rate limit before processing each repo
+    if g:
+        handle_rate_limit(g, f"processing repo {repo.name}")
+    
     visibility = "Public" if not repo.private else "Internal"
 
-    # Convert PaginatedList to list before accessing
-    releases = list(repo.get_releases())
-    tags = list(repo.get_tags())
+    # Convert PaginatedList to list before accessing with rate limit handling
+    def get_releases():
+        return list(repo.get_releases())
+    
+    def get_tags():
+        return list(repo.get_tags())
+    
+    releases = retry_with_backoff(get_releases) or []
+    tags = retry_with_backoff(get_tags) or []
 
     current_release = "N/A"
     latest_build_tag = "N/A"
@@ -129,7 +309,7 @@ def process_single_repo(repo, max_repo_name, max_release, max_build_tag, max_min
         "current_release": current_release
     }
 
-def process_repositories(repo_list):
+def process_repositories(repo_list, g):
     """
     Processes the repositories to calculate counts and generate the markdown file.
     """
@@ -147,12 +327,16 @@ def process_repositories(repo_list):
     max_build_tag = 24
     max_min_essentials = 8
 
+    # Check initial rate limit
+    handle_rate_limit(g, "starting repository processing")
+
     # --- CONCURRENT PROCESSING START ---
+    # Reduced max_workers to be more conservative with rate limits
     results = []
-    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
         futures = [
             executor.submit(
-                process_single_repo, repo, max_repo_name, max_release, max_build_tag, max_min_essentials
+                process_single_repo, repo, max_repo_name, max_release, max_build_tag, max_min_essentials, g
             )
             for repo in repo_list
         ]
@@ -161,7 +345,7 @@ def process_repositories(repo_list):
             if result:
                 results.append(result)
                 total_epi_repos += 1
-                norm = normalize_release_tag(result["package_version"], result["repo_name"])
+                norm = normalize_release_tag(result["min_essentials"], result["repo_name"])
                 if norm == "1":
                     total_release_1_x += 1
                 elif norm == "2":
@@ -169,6 +353,20 @@ def process_repositories(repo_list):
                 elif result["min_essentials"] == "N/A":
                     total_release_na += 1
     # --- CONCURRENT PROCESSING END ---
+
+    # Separate results by Essentials version
+    essentials_1_repos = []
+    essentials_2_repos = []
+    other_repos = []
+    
+    for result in results:
+        norm = normalize_release_tag(result["min_essentials"], result["repo_name"])
+        if norm == "1":
+            essentials_1_repos.append(result)
+        elif norm == "2":
+            essentials_2_repos.append(result)
+        else:
+            other_repos.append(result)
 
     with open('README.md', 'w', newline='\n') as file:
         file.write("# Essentials Plugin Library\n\n")
@@ -181,15 +379,37 @@ def process_repositories(repo_list):
         file.write(f"| Total Essentials v2    | {total_release_2_x} |\n")
         file.write(f"| Total Essentials N/A   | {total_release_na} |\n\n\n")
 
-        # Write the table header
-        file.write("| Repository                          | Visibility | Release | Build Output | Min Essentials | Package Version |\n")
-        file.write("|-------------------------------------|------------|---------|--------------|----------------|----------------|\n")
+        # Write Essentials 2 table first (as requested - v2 should come before v1)
+        if essentials_2_repos:
+            file.write("## Essentials Framework v2 Repositories\n\n")
+            file.write("| Repository                          | Visibility | Release | Build Output | Min Essentials | Package Version |\n")
+            file.write("|-------------------------------------|------------|---------|--------------|----------------|----------------|\n")
+            for result in sorted(essentials_2_repos, key=lambda x: x["repo_name"]):
+                file.write(
+                    f"| [{result['repo_name']}]({result['repo_url']}) | {result['visibility']} | {result['release']} | {result['build_tag']} | {result['min_essentials']} | {result['package_version']} |\n"
+                )
+            file.write("\n")
 
-        # Write the table rows
-        for result in sorted(results, key=lambda x: x["repo_name"]):
-            file.write(
-                f"| [{result['repo_name']}]({result['repo_url']}) | {result['visibility']} | {result['release']} | {result['build_tag']} | {result['min_essentials']} | {result['package_version']} |\n"
-            )
+        # Write Essentials 1 table second
+        if essentials_1_repos:
+            file.write("## Essentials Framework v1 Repositories\n\n")
+            file.write("| Repository                          | Visibility | Release | Build Output | Min Essentials | Package Version |\n")
+            file.write("|-------------------------------------|------------|---------|--------------|----------------|----------------|\n")
+            for result in sorted(essentials_1_repos, key=lambda x: x["repo_name"]):
+                file.write(
+                    f"| [{result['repo_name']}]({result['repo_url']}) | {result['visibility']} | {result['release']} | {result['build_tag']} | {result['min_essentials']} | {result['package_version']} |\n"
+                )
+            file.write("\n")
+
+        # Write other repositories table (N/A or unclear versions)
+        if other_repos:
+            file.write("## Other Repositories\n\n")
+            file.write("| Repository                          | Visibility | Release | Build Output | Min Essentials | Package Version |\n")
+            file.write("|-------------------------------------|------------|---------|--------------|----------------|----------------|\n")
+            for result in sorted(other_repos, key=lambda x: x["repo_name"]):
+                file.write(
+                    f"| [{result['repo_name']}]({result['repo_url']}) | {result['visibility']} | {result['release']} | {result['build_tag']} | {result['min_essentials']} | {result['package_version']} |\n"
+                )
 
 
 def truncate(s, max_length):
@@ -235,20 +455,42 @@ def main():
 
     try:
         org = g.get_organization(org_name)
-        repos = org.get_repos(type='all')
+        
+        def get_repos():
+            return org.get_repos(type='all')
+        
+        repos = retry_with_backoff(get_repos)
+        if not repos:
+            logging.error("Failed to fetch repositories after retries")
+            return
+            
         logging.debug(f"Repos object type: {type(repos)}")
+
+        # Check rate limit before iterating through repos
+        handle_rate_limit(g, "fetching repository list")
 
         # Explicitly iterate over the PaginatedList to collect repositories
         repo_list = []
         for repo in repos:
             logging.debug(f"Fetched repo: {repo.name}")
             repo_list.append(repo)
+            
+            # Check rate limit periodically during repo fetching
+            if len(repo_list) % 20 == 0:  # Check every 20 repos
+                handle_rate_limit(g, f"fetching repositories (processed {len(repo_list)})")
+                
         logging.debug(f"Number of repos after iteration: {len(repo_list)}")
 
         # Process the repositories after the list is fully populated
-        process_repositories(repo_list)
+        process_repositories(repo_list, g)
     except Exception as e:
         logging.error(f"Error accessing organization or repositories: {e}")
+        # Log rate limit info if available
+        try:
+            rate_limit = g.get_rate_limit()
+            logging.error(f"Current rate limit: {rate_limit.core.remaining}/{rate_limit.core.limit} remaining, resets at {rate_limit.core.reset}")
+        except:
+            pass
 
 
 if __name__ == "__main__":
