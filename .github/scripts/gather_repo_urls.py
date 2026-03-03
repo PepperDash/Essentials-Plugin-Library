@@ -257,13 +257,15 @@ def process_single_repo(repo, max_repo_name, max_release, max_build_tag, max_min
     if not repo.name.startswith('epi-'):
         return None
 
-    logging.debug(f"Processing Repository: {repo.name}, Visibility: {'Public' if not repo.private else 'Internal/Private'}")
+    # Skip private/internal repositories - only include publicly visible repos
+    if repo.private:
+        return None
+
+    logging.debug(f"Processing Repository: {repo.name}, Visibility: Public")
     
     # Check rate limit before processing each repo
     if g:
         handle_rate_limit(g, f"processing repo {repo.name}")
-    
-    visibility = "Public" if not repo.private else "Internal"
 
     # Convert PaginatedList to list before accessing with rate limit handling
     def get_releases():
@@ -301,7 +303,6 @@ def process_single_repo(repo, max_repo_name, max_release, max_build_tag, max_min
     return {
         "repo_name": repo_name,
         "repo_url": repo.html_url,
-        "visibility": visibility,
         "release": release,
         "build_tag": build_tag,
         "min_essentials": min_essentials,
@@ -382,33 +383,33 @@ def process_repositories(repo_list, g):
         # Write Essentials 2 table first (as requested - v2 should come before v1)
         if essentials_2_repos:
             file.write("## Essentials Framework v2 Repositories\n\n")
-            file.write("| Repository                          | Visibility | Release | Build Output | Min Essentials | Package Version |\n")
-            file.write("|-------------------------------------|------------|---------|--------------|----------------|----------------|\n")
+            file.write("| Repository                          | Release | Build Output | Min Essentials | Package Version |\n")
+            file.write("|-------------------------------------|---------|--------------|----------------|----------------|\n")
             for result in sorted(essentials_2_repos, key=lambda x: x["repo_name"]):
                 file.write(
-                    f"| [{result['repo_name']}]({result['repo_url']}) | {result['visibility']} | {result['release']} | {result['build_tag']} | {result['min_essentials']} | {result['package_version']} |\n"
+                    f"| [{result['repo_name']}]({result['repo_url']}) | {result['release']} | {result['build_tag']} | {result['min_essentials']} | {result['package_version']} |\n"
                 )
             file.write("\n")
 
         # Write Essentials 1 table second
         if essentials_1_repos:
             file.write("## Essentials Framework v1 Repositories\n\n")
-            file.write("| Repository                          | Visibility | Release | Build Output | Min Essentials | Package Version |\n")
-            file.write("|-------------------------------------|------------|---------|--------------|----------------|----------------|\n")
+            file.write("| Repository                          | Release | Build Output | Min Essentials | Package Version |\n")
+            file.write("|-------------------------------------|---------|--------------|----------------|----------------|\n")
             for result in sorted(essentials_1_repos, key=lambda x: x["repo_name"]):
                 file.write(
-                    f"| [{result['repo_name']}]({result['repo_url']}) | {result['visibility']} | {result['release']} | {result['build_tag']} | {result['min_essentials']} | {result['package_version']} |\n"
+                    f"| [{result['repo_name']}]({result['repo_url']}) | {result['release']} | {result['build_tag']} | {result['min_essentials']} | {result['package_version']} |\n"
                 )
             file.write("\n")
 
         # Write other repositories table (N/A or unclear versions)
         if other_repos:
             file.write("## Other Repositories\n\n")
-            file.write("| Repository                          | Visibility | Release | Build Output | Min Essentials | Package Version |\n")
-            file.write("|-------------------------------------|------------|---------|--------------|----------------|----------------|\n")
+            file.write("| Repository                          | Release | Build Output | Min Essentials | Package Version |\n")
+            file.write("|-------------------------------------|---------|--------------|----------------|----------------|\n")
             for result in sorted(other_repos, key=lambda x: x["repo_name"]):
                 file.write(
-                    f"| [{result['repo_name']}]({result['repo_url']}) | {result['visibility']} | {result['release']} | {result['build_tag']} | {result['min_essentials']} | {result['package_version']} |\n"
+                    f"| [{result['repo_name']}]({result['repo_url']}) | {result['release']} | {result['build_tag']} | {result['min_essentials']} | {result['package_version']} |\n"
                 )
 
 
