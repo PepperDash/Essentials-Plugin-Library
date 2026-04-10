@@ -5,8 +5,8 @@
 |------------------------|-------|
 | Total repos            | 70 |
 | Total Essentials v1    | 37 |
-| Total Essentials v2    | 30 |
-| Total Essentials N/A   | 3 |
+| Total Essentials v2    | 31 |
+| Total Essentials N/A   | 2 |
 
 
 ## Essentials Framework v2 Repositories
@@ -20,6 +20,7 @@
 | [epi-birddog-camera](https://github.com/PepperDash/epi-birddog-camera) | N/A | v1.0.0-cmd-queue.2 | 2.18.0 | 2.18.0 |
 | [epi-christie-projector](https://github.com/PepperDash/epi-christie-projector) | v1.2.0 | v1.2.0 | 2.5.1 | 1.10.2 |
 | [epi-crestron-fusion](https://github.com/PepperDash/epi-crestron-fusion) | v2.0.0 | v2.0.1-maintenance-up... | 2.20.5 | 2.20.5 |
+| [epi-crestron-io](https://github.com/PepperDash/epi-crestron-io) | v2.2.0 | v2.2.0 | 2.1.0 | 2.1.0 |
 | [epi-crestron-nvx](https://github.com/PepperDash/epi-crestron-nvx) | v3.12.1 | v3.12.2-fix-usb-follow.1 | 2.24.4 | 2.24.4 |
 | [epi-dsan-limitimer](https://github.com/PepperDash/epi-dsan-limitimer) | v1.0.1 | v1.1.0-feature-add-st... | 2.8.0 | 2.8.0 |
 | [epi-epson-projector](https://github.com/PepperDash/epi-epson-projector) | v3.3.0 | v3.3.1-tcpFix.3 | 2.4.7 | 2.4.7 |
@@ -91,5 +92,4 @@
 | Repository                          | Release | Build Output | Min Essentials | Package Version |
 |-------------------------------------|---------|--------------|----------------|----------------|
 | [epi-axis-camera](https://github.com/PepperDash/epi-axis-camera) | N/A | 1.0.0-rc-5 | N/A | N/A |
-| [epi-crestron-io](https://github.com/PepperDash/epi-crestron-io) | v2.2.0 | v2.2.0 | N/A | N/A |
 | [epi-slack-app](https://github.com/PepperDash/epi-slack-app) | N/A | v1.0.0-initial-develo... | N/A | N/A |
