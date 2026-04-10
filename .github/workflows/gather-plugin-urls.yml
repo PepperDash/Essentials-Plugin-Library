@@ -72,7 +72,12 @@ jobs:
       run: npm install -g diff2html-cli
     
     - name: Generate HTML visual diff
-      run: diff2html -i file -s side -F readme-diff.html -- readme.diff
+      run: |
+        if [ -s readme.diff ]; then
+          diff2html -i file -s side -F readme-diff.html -- readme.diff
+        else
+          echo "No changes detected, skipping diff2html."
+        fi
     
     - name: Commit and push README diff HTML
       run: |
