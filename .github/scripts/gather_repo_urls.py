@@ -77,6 +77,9 @@ def extract_min_essentials_version(repo):
                 if dir_contents:
                     contents.extend(dir_contents)
             elif file_content.type == "file":
+                # Skip macOS AppleDouble/resource fork files
+                if file_content.name.startswith("._"):
+                    continue
                 # Check .csproj files for PepperDashEssentials package reference (Priority 1)
                 if file_content.name.endswith(".csproj") and not csproj_package_version:
                     logging.debug(f"Found csproj file: {file_content.path}")
@@ -84,7 +87,11 @@ def extract_min_essentials_version(repo):
                     def get_csproj_content():
                         return repo.get_contents(file_content.path).decoded_content.decode("utf-8")
                     
-                    file_data = retry_with_backoff(get_csproj_content)
+                    try:
+                        file_data = retry_with_backoff(get_csproj_content)
+                    except UnicodeDecodeError:
+                        logging.warning(f"Skipping non-UTF-8 file: {file_content.path}")
+                        continue
                     if not file_data:
                         continue
                         
@@ -112,7 +119,11 @@ def extract_min_essentials_version(repo):
                     def get_file_content():
                         return repo.get_contents(file_content.path).decoded_content.decode("utf-8")
                     
-                    file_data = retry_with_backoff(get_file_content)
+                    try:
+                        file_data = retry_with_backoff(get_file_content)
+                    except UnicodeDecodeError:
+                        logging.warning(f"Skipping non-UTF-8 file: {file_content.path}")
+                        continue
                     if not file_data:
                         continue
                         
@@ -141,7 +152,11 @@ def extract_min_essentials_version(repo):
                     def get_packages_config():
                         return repo.get_contents(file_content.path).decoded_content.decode("utf-8")
                     
-                    file_data = retry_with_backoff(get_packages_config)
+                    try:
+                        file_data = retry_with_backoff(get_packages_config)
+                    except UnicodeDecodeError:
+                        logging.warning(f"Skipping non-UTF-8 file: {file_content.path}")
+                        continue
                     if not file_data:
                         continue
                         
@@ -195,6 +210,9 @@ def extract_pepperdash_essentials_package_version(repo):
                 if dir_contents:
                     contents.extend(dir_contents)
             elif file_content.type == "file":
+                # Skip macOS AppleDouble/resource fork files
+                if file_content.name.startswith("._"):
+                    continue
                 # Fetch file content only once per file
                 file_data = None
                 
@@ -205,7 +223,11 @@ def extract_pepperdash_essentials_package_version(repo):
                     def get_packages_config():
                         return repo.get_contents(file_content.path).decoded_content.decode("utf-8")
                     
-                    file_data = retry_with_backoff(get_packages_config)
+                    try:
+                        file_data = retry_with_backoff(get_packages_config)
+                    except UnicodeDecodeError:
+                        logging.warning(f"Skipping non-UTF-8 file: {file_content.path}")
+                        continue
                     if not file_data:
                         continue
                         
@@ -226,7 +248,11 @@ def extract_pepperdash_essentials_package_version(repo):
                     def get_csproj_content():
                         return repo.get_contents(file_content.path).decoded_content.decode("utf-8")
                     
-                    file_data = retry_with_backoff(get_csproj_content)
+                    try:
+                        file_data = retry_with_backoff(get_csproj_content)
+                    except UnicodeDecodeError:
+                        logging.warning(f"Skipping non-UTF-8 file: {file_content.path}")
+                        continue
                     if not file_data:
                         continue
                         
