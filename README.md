@@ -18,7 +18,7 @@
 | [epi-avr-marantz](https://github.com/PepperDash/epi-avr-marantz) | v1.1.2 | v1.1.2 | 2.4.7 | 1.15.2 |
 | [epi-biamp-tesira](https://github.com/PepperDash/epi-biamp-tesira) | v3.6.0 | v3.6.1-v2.27.0.1 | 2.17.0 | 1.10.0 |
 | [epi-birddog-camera](https://github.com/PepperDash/epi-birddog-camera) | N/A | v1.0.0-cmd-queue.2 | 2.18.0 | 2.18.0 |
-| [epi-christie-projector](https://github.com/PepperDash/epi-christie-projector) | v1.2.0 | v1.2.0 | 2.5.1 | 1.10.2 |
+| [epi-christie-projector](https://github.com/PepperDash/epi-christie-projector) | v1.2.0 | v1.2.1-feature-inputs... | 2.5.1 | 1.10.2 |
 | [epi-crestron-fusion](https://github.com/PepperDash/epi-crestron-fusion) | v2.0.0 | v2.0.1-maintenance-up... | 2.20.5 | 2.20.5 |
 | [epi-crestron-io](https://github.com/PepperDash/epi-crestron-io) | v2.2.0 | v2.2.0 | 2.1.0 | 2.1.0 |
 | [epi-crestron-nvx](https://github.com/PepperDash/epi-crestron-nvx) | v3.12.1 | v3.12.2-fix-usb-follow.1 | 2.24.4 | 2.24.4 |
