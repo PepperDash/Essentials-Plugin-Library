@@ -74,7 +74,7 @@
 | [epi-panasonic-camera-http](https://github.com/PepperDash/epi-panasonic-camera-http) | v1.2.0 | vremove-master | 1.8.5 | 1.9.0 |
 | [epi-panopto-cloud](https://github.com/PepperDash/epi-panopto-cloud) | v1.0.0 | v1.2.3-feature-4series.1 | 1.12.8 | 1.16.0 |
 | [epi-pjlink](https://github.com/PepperDash/epi-pjlink) | N/A | N/A | 1.8.1 | 1.10.2 |
-| [epi-purelinkav-swicther](https://github.com/PepperDash/epi-purelinkav-swicther) | 1.1.1 | 1.1.1 | 1.5.5 | 1.9.0 |
+| [epi-purelinkav-switcher](https://github.com/PepperDash/epi-purelinkav-switcher) | 1.1.1 | 1.1.1 | 1.5.5 | 1.9.0 |
 | [epi-sharp-display](https://github.com/PepperDash/epi-sharp-display) | v1.0.4 | v1.0.6-feature-4-seri... | 1.9.1 | 1.9.1 |
 | [epi-shure-mxw](https://github.com/PepperDash/epi-shure-mxw) | 2.1.1 | v3.0.0-feature-4-seri... | 1.6.6 | 1.15.5 |
 | [epi-shure-ulxd](https://github.com/PepperDash/epi-shure-ulxd) | 2.0.0 | 2.0.0 | 1.12.0 | 1.12.0 |
