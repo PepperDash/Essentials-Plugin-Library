@@ -3,9 +3,9 @@
 [Click here to see the Readme Diff](https://pepperdash.github.io/Essentials-Plugin-Library/readme-diff.html)
 | Metric                 | Count |
 |------------------------|-------|
-| Total repos            | 70 |
+| Total repos            | 71 |
 | Total Essentials v1    | 37 |
-| Total Essentials v2    | 31 |
+| Total Essentials v2    | 32 |
 | Total Essentials N/A   | 2 |
 
 
@@ -36,6 +36,7 @@
 | [epi-planar-qe-display](https://github.com/PepperDash/epi-planar-qe-display) | v2.1.0 | v2.2.0-v2-model-suppo... | 2.12.1 | 1.11.1 |
 | [epi-qsc-qsysdsp](https://github.com/PepperDash/epi-qsc-qsysdsp) | v3.2.0 | v3.2.1-maintenance-up... | 2.13.1 | 2.13.1 |
 | [epi-samsung-mdc-display](https://github.com/PepperDash/epi-samsung-mdc-display) | v1.6.2 | v1.6.2 | 2.24.3 | 1.16.1 |
+| [epi-samsung-tizenWebsocket](https://github.com/PepperDash/epi-samsung-tizenWebsocket) | v1.0.0 | v1.0.0 | 2.12.1 | 2.12.1 |
 | [epi-sony-bravia](https://github.com/PepperDash/epi-sony-bravia) | v2.5.2 | v2.5.2 | 2.20.0 | 2.20.0 |
 | [epi-udm-cws](https://github.com/PepperDash/epi-udm-cws) | v1.3.0 | v1.3.0 | 2.24.0 | 2.24.0 |
 | [epi-utilities-customvalues](https://github.com/PepperDash/epi-utilities-customvalues) | v1.2.0 | v1.2.0 | 2.5.1 | 2.15.0 |
