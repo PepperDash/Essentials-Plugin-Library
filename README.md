@@ -3,9 +3,9 @@
 [Click here to see the Readme Diff](https://pepperdash.github.io/Essentials-Plugin-Library/readme-diff.html)
 | Metric                 | Count |
 |------------------------|-------|
-| Total repos            | 71 |
+| Total repos            | 72 |
 | Total Essentials v1    | 37 |
-| Total Essentials v2    | 32 |
+| Total Essentials v2    | 33 |
 | Total Essentials N/A   | 2 |
 
 
@@ -18,6 +18,7 @@
 | [epi-avr-marantz](https://github.com/PepperDash/epi-avr-marantz) | v1.1.2 | v1.1.2 | 2.4.7 | 1.15.2 |
 | [epi-biamp-tesira](https://github.com/PepperDash/epi-biamp-tesira) | v3.6.0 | v3.6.1-v2.27.0.1 | 2.17.0 | 1.10.0 |
 | [epi-birddog-camera](https://github.com/PepperDash/epi-birddog-camera) | N/A | v1.0.0-cmd-queue.2 | 2.18.0 | 2.18.0 |
+| [epi-bluesound-bluos](https://github.com/PepperDash/epi-bluesound-bluos) | N/A | v1.0.0-initial-develo... | 2.12.1 | 2.12.1 |
 | [epi-christie-projector](https://github.com/PepperDash/epi-christie-projector) | v1.2.0 | v1.2.1-feature-inputs... | 2.5.1 | 1.10.2 |
 | [epi-crestron-fusion](https://github.com/PepperDash/epi-crestron-fusion) | v2.0.0 | v2.0.1-maintenance-up... | 2.20.5 | 2.20.5 |
 | [epi-crestron-io](https://github.com/PepperDash/epi-crestron-io) | v2.2.0 | v2.2.0 | 2.1.0 | 2.1.0 |
@@ -44,7 +45,7 @@
 | [epi-utilities-password-manager](https://github.com/PepperDash/epi-utilities-password-manager) | v1.0.0 | v1.1.0-essentials-upd... | 2.12.1 | 2.12.1 |
 | [epi-utilities-routeCycle](https://github.com/PepperDash/epi-utilities-routeCycle) | v2.0.2 | v2.0.2 | 2.4.4 | 2.8.0 |
 | [epi-utilities-timer](https://github.com/PepperDash/epi-utilities-timer) | v2.0.0 | v2.0.0 | 2.4.4 | 2.4.4 |
-| [epi-videoCodec-ciscoExtended](https://github.com/PepperDash/epi-videoCodec-ciscoExtended) | v2.8.1 | v2.9.0-feature-track-... | 2.27.0 | 1.15.2 |
+| [epi-videoCodec-ciscoExtended](https://github.com/PepperDash/epi-videoCodec-ciscoExtended) | v2.8.1 | v2.9.0-fix-webview-cl... | 2.27.0 | 1.15.2 |
 
 ## Essentials Framework v1 Repositories
 
