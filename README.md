@@ -22,7 +22,7 @@
 | [epi-christie-projector](https://github.com/PepperDash/epi-christie-projector) | v1.2.0 | v1.2.1-feature-inputs... | 2.5.1 | 1.10.2 |
 | [epi-crestron-fusion](https://github.com/PepperDash/epi-crestron-fusion) | v2.0.0 | v2.0.1-maintenance-up... | 2.20.5 | 2.20.5 |
 | [epi-crestron-io](https://github.com/PepperDash/epi-crestron-io) | v2.2.0 | v2.2.0 | 2.1.0 | 2.1.0 |
-| [epi-crestron-nvx](https://github.com/PepperDash/epi-crestron-nvx) | v3.12.1 | v3.12.2-fix-usb-follow.1 | 2.24.4 | 2.24.4 |
+| [epi-crestron-nvx](https://github.com/PepperDash/epi-crestron-nvx) | v3.12.1 | v3.13.0-enable-config... | 2.24.4 | 2.24.4 |
 | [epi-dsan-limitimer](https://github.com/PepperDash/epi-dsan-limitimer) | v1.0.1 | v1.1.0-feature-add-st... | 2.8.0 | 2.8.0 |
 | [epi-epson-projector](https://github.com/PepperDash/epi-epson-projector) | v3.3.0 | v3.3.1-tcpFix.3 | 2.4.7 | 2.4.7 |
 | [epi-essentials-mobile-control](https://github.com/PepperDash/epi-essentials-mobile-control) | v4.6.0 | v4.6.0 | 2.0.0... | 1.15.4 |
