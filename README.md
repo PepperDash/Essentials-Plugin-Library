@@ -16,7 +16,7 @@
 | [epi-1beyond-automate-vx](https://github.com/PepperDash/epi-1beyond-automate-vx) | v2.0.0 | v2.1.0-feature-reboot... | 2.0.0... | 1.12.8 |
 | [epi-avproedge-acmxYxY](https://github.com/PepperDash/epi-avproedge-acmxYxY) | v1.1.1 | v1.1.2-clear-route.1 | 2.12.4 | 2.12.4 |
 | [epi-avr-marantz](https://github.com/PepperDash/epi-avr-marantz) | v1.1.2 | v1.1.2 | 2.4.7 | 1.15.2 |
-| [epi-biamp-tesira](https://github.com/PepperDash/epi-biamp-tesira) | v3.6.0 | v3.7.0-feature-add-es... | 2.17.0 | 1.10.0 |
+| [epi-biamp-tesira](https://github.com/PepperDash/epi-biamp-tesira) | v3.6.0 | v4.0.0-feature-add-es... | 2.17.0 | 1.10.0 |
 | [epi-birddog-camera](https://github.com/PepperDash/epi-birddog-camera) | N/A | v1.0.0-cmd-queue.2 | 2.18.0 | 2.18.0 |
 | [epi-bluesound-bluos](https://github.com/PepperDash/epi-bluesound-bluos) | N/A | v1.0.0-initial-develo... | 2.12.1 | 2.12.1 |
 | [epi-christie-projector](https://github.com/PepperDash/epi-christie-projector) | v1.2.0 | v1.2.1-feature-inputs... | 2.5.1 | 1.10.2 |
@@ -29,7 +29,7 @@
 | [epi-extron-quantum](https://github.com/PepperDash/epi-extron-quantum) | v1.0.2 | v1.0.3-hotfixUpdateOn... | 2.24.4 | 1.10.2 |
 | [epi-extron-xtp-switch](https://github.com/PepperDash/epi-extron-xtp-switch) | v2.0.0 | v2.0.0 | 2.12.4 | 1.6.9 |
 | [epi-generic-cec-display](https://github.com/PepperDash/epi-generic-cec-display) | v1.1.1 | v1.1.2-feature-4-seri... | 2.1.0 | 2.1.0 |
-| [epi-lg-display](https://github.com/PepperDash/epi-lg-display) | v2.7.0 | v2.8.0-add-activeInpu... | 2.5.1 | 1.9.0 |
+| [epi-lg-display](https://github.com/PepperDash/epi-lg-display) | v2.7.0 | v3.0.0-feature-migrat... | 2.5.1 | 1.9.0 |
 | [epi-nec-display](https://github.com/PepperDash/epi-nec-display) | v2.0.0 | v2.0.1-maintenance-up... | 2.5.1 | 1.16.1 |
 | [epi-netgear-cli](https://github.com/PepperDash/epi-netgear-cli) | v1.3.2 | v1.4.0-feature-add-po... | 2.5.1 | 1.10.2 |
 | [epi-optisigns-graphql](https://github.com/PepperDash/epi-optisigns-graphql) | N/A | v1.0.0-initial-develo... | 2.12.1 | 2.12.1 |
