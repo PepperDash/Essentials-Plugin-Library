@@ -36,7 +36,7 @@
 | [epi-panasonic-projector](https://github.com/PepperDash/epi-panasonic-projector) | v1.3.1 | v1.3.1 | 2.10.0 | 1.11.1 |
 | [epi-planar-qe-display](https://github.com/PepperDash/epi-planar-qe-display) | v2.1.0 | v2.2.0-v2-model-suppo... | 2.12.1 | 1.11.1 |
 | [epi-qsc-qsysdsp](https://github.com/PepperDash/epi-qsc-qsysdsp) | v3.2.0 | v4.0.0-feature-add-es... | 2.13.1 | 2.13.1 |
-| [epi-samsung-mdc-display](https://github.com/PepperDash/epi-samsung-mdc-display) | v1.6.2 | v1.6.2 | 2.24.3 | 1.16.1 |
+| [epi-samsung-mdc-display](https://github.com/PepperDash/epi-samsung-mdc-display) | v1.6.2 | v2.0.0-feature-migrat... | 2.24.3 | 1.16.1 |
 | [epi-samsung-tizenWebsocket](https://github.com/PepperDash/epi-samsung-tizenWebsocket) | v1.0.0 | v1.0.0 | 2.12.1 | 2.12.1 |
 | [epi-sony-bravia](https://github.com/PepperDash/epi-sony-bravia) | v2.5.2 | v2.5.2 | 2.20.0 | 2.20.0 |
 | [epi-udm-cws](https://github.com/PepperDash/epi-udm-cws) | v1.3.0 | v1.3.0 | 2.24.0 | 2.24.0 |
