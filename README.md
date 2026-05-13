@@ -24,7 +24,7 @@
 | [epi-crestron-io](https://github.com/PepperDash/epi-crestron-io) | v2.2.0 | v2.2.0 | 2.1.0 | 2.1.0 |
 | [epi-crestron-nvx](https://github.com/PepperDash/epi-crestron-nvx) | v3.12.1 | v3.13.0-enable-config... | 2.24.4 | 2.24.4 |
 | [epi-dsan-limitimer](https://github.com/PepperDash/epi-dsan-limitimer) | v1.0.1 | v1.1.0-feature-add-st... | 2.8.0 | 2.8.0 |
-| [epi-epson-projector](https://github.com/PepperDash/epi-epson-projector) | v3.3.0 | v3.3.1-tcpFix.3 | 2.4.7 | 2.4.7 |
+| [epi-epson-projector](https://github.com/PepperDash/epi-epson-projector) | v3.3.0 | v3.3.1-tcpFix.4 | 2.4.7 | 2.4.7 |
 | [epi-essentials-mobile-control](https://github.com/PepperDash/epi-essentials-mobile-control) | v4.6.0 | v4.6.0 | 2.0.0... | 1.15.4 |
 | [epi-extron-quantum](https://github.com/PepperDash/epi-extron-quantum) | v1.0.2 | v1.0.3-hotfixUpdateOn... | 2.24.4 | 1.10.2 |
 | [epi-extron-xtp-switch](https://github.com/PepperDash/epi-extron-xtp-switch) | v2.0.0 | v2.0.0 | 2.12.4 | 1.6.9 |
