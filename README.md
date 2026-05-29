@@ -3,9 +3,9 @@
 [Click here to see the Readme Diff](https://pepperdash.github.io/Essentials-Plugin-Library/readme-diff.html)
 | Metric                 | Count |
 |------------------------|-------|
-| Total repos            | 72 |
+| Total repos            | 73 |
 | Total Essentials v1    | 37 |
-| Total Essentials v2    | 33 |
+| Total Essentials v2    | 34 |
 | Total Essentials N/A   | 2 |
 
 
@@ -29,6 +29,7 @@
 | [epi-extron-quantum](https://github.com/PepperDash/epi-extron-quantum) | v1.0.2 | v1.0.3-hotfixUpdateOn... | 2.24.4 | 1.10.2 |
 | [epi-extron-xtp-switch](https://github.com/PepperDash/epi-extron-xtp-switch) | v2.0.0 | v2.0.0 | 2.12.4 | 1.6.9 |
 | [epi-generic-cec-display](https://github.com/PepperDash/epi-generic-cec-display) | v1.1.1 | v1.1.2-feature-4-seri... | 2.1.0 | 2.1.0 |
+| [epi-generic-tcp-server](https://github.com/PepperDash/epi-generic-tcp-server) | N/A | v1.0.0-initial-commit.8 | 2.12.1 | 2.12.1 |
 | [epi-lg-display](https://github.com/PepperDash/epi-lg-display) | v2.7.0 | v3.0.0-feature-migrat... | 2.5.1 | 1.9.0 |
 | [epi-nec-display](https://github.com/PepperDash/epi-nec-display) | v2.0.0 | v2.0.1-maintenance-up... | 2.5.1 | 1.16.1 |
 | [epi-netgear-cli](https://github.com/PepperDash/epi-netgear-cli) | v1.3.2 | v1.4.0-feature-add-po... | 2.5.1 | 1.10.2 |
