@@ -88,7 +88,7 @@
 | [epi-utilities-deviceInfo](https://github.com/PepperDash/epi-utilities-deviceInfo) | 0.0.1 | 0.0.1 | 1.6.4 | 1.6.4 |
 | [epi-utilities-i18n](https://github.com/PepperDash/epi-utilities-i18n) | 1.0.5 | 1.0.5 | 1.6.4 | 1.6.6 |
 | [epi-utility-tcpproxy](https://github.com/PepperDash/epi-utility-tcpproxy) | N/A | N/A | 1.6.4 | 1.10.2 |
-| [epi-zoom-room](https://github.com/PepperDash/epi-zoom-room) | v1.0.0 | v1.0.0 | 1.15.3 | 1.15.3 |
+| [epi-zoom-room](https://github.com/PepperDash/epi-zoom-room) | v1.0.0 | v2.0.0-feature-v3-mig... | 1.15.3 | 1.15.3 |
 
 ## Other Repositories
 
