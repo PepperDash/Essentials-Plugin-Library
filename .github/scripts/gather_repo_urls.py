@@ -1,4 +1,4 @@
-from github import Github
+from github import Auth, Github, GithubException
 from github import RateLimitExceededException
 import os
 import logging
@@ -26,6 +26,8 @@ def handle_rate_limit(g, operation_name="API operation"):
                 logging.warning(f"Rate limit nearly exceeded. Waiting {wait_time:.1f} seconds before {operation_name}")
                 time.sleep(wait_time)
     except Exception as e:
+        if isinstance(e, GithubException) and e.status == 401:
+            raise
         logging.warning(f"Could not check rate limit: {e}")
 
 def retry_with_backoff(func, max_retries=3, base_delay=1):
@@ -463,10 +465,10 @@ def main():
     is_github_actions = os.getenv('GITHUB_ACTIONS') == 'true'
 
     # Get the token
-    token = os.getenv('GITHUB_TOKEN')
+    token = os.getenv('GITHUB_TOKEN', '').strip()
     if not token:
-        logging.error("GITHUB_TOKEN environment variable is not set or is empty. Ensure it is passed in the workflow or set locally.")
-        return
+        logging.error("GITHUB_TOKEN is missing, empty, or whitespace-only. Set the PEPPERDASH_ORG_READ workflow secret (passed as GITHUB_TOKEN), or set GITHUB_TOKEN locally.")
+        raise SystemExit(1)
 
     # Get the organization name
     org_name = os.getenv('ORG_NAME')
@@ -478,7 +480,7 @@ def main():
             org_name = input("Enter the organization name: ").strip()
 
     # Authenticate with GitHub
-    g = Github(token)
+    g = Github(auth=Auth.Token(token))
 
     try:
         org = g.get_organization(org_name)
@@ -511,6 +513,14 @@ def main():
         # Process the repositories after the list is fully populated
         process_repositories(repo_list, g)
     except Exception as e:
+        if isinstance(e, GithubException) and e.status == 401:
+            logging.error(
+                "GitHub authentication failed (401 Bad credentials). Verify GITHUB_TOKEN "
+                "is set from the PEPPERDASH_ORG_READ workflow secret, the token has not "
+                "expired or been revoked, and it has the required repository read and "
+                "organization access permissions (including SSO authorization if required)."
+            )
+            raise SystemExit(1) from None
         logging.error(f"Error accessing organization or repositories: {e}")
         # Log rate limit info if available
         try:
