@@ -346,6 +346,7 @@ def process_repositories(repo_list, g):
     total_epi_repos = 0
     total_release_1_x = 0
     total_release_2_x = 0
+    total_release_3_x = 0
     total_release_na = 0
 
     # Define maximum lengths for truncation
@@ -377,6 +378,8 @@ def process_repositories(repo_list, g):
                     total_release_1_x += 1
                 elif norm == "2":
                     total_release_2_x += 1
+                elif norm == "3":
+                    total_release_3_x += 1
                 elif result["min_essentials"] == "N/A":
                     total_release_na += 1
     # --- CONCURRENT PROCESSING END ---
@@ -384,6 +387,7 @@ def process_repositories(repo_list, g):
     # Separate results by Essentials version
     essentials_1_repos = []
     essentials_2_repos = []
+    essentials_3_repos = []
     other_repos = []
     
     for result in results:
@@ -392,6 +396,8 @@ def process_repositories(repo_list, g):
             essentials_1_repos.append(result)
         elif norm == "2":
             essentials_2_repos.append(result)
+        elif norm == "3":
+            essentials_3_repos.append(result)
         else:
             other_repos.append(result)
 
@@ -404,9 +410,21 @@ def process_repositories(repo_list, g):
         file.write(f"| Total repos            | {total_epi_repos} |\n")
         file.write(f"| Total Essentials v1    | {total_release_1_x} |\n")
         file.write(f"| Total Essentials v2    | {total_release_2_x} |\n")
+        file.write(f"| Total Essentials v3    | {total_release_3_x} |\n")
         file.write(f"| Total Essentials N/A   | {total_release_na} |\n\n\n")
 
-        # Write Essentials 2 table first (as requested - v2 should come before v1)
+        # Write Essentials 3 table first (newest framework version comes first).
+        # Always emit the header so the v3 section is visible even before any v3 plugins exist.
+        file.write("## Essentials Framework v3 Repositories\n\n")
+        file.write("| Repository                          | Release | Build Output | Min Essentials | Package Version |\n")
+        file.write("|-------------------------------------|---------|--------------|----------------|----------------|\n")
+        for result in sorted(essentials_3_repos, key=lambda x: x["repo_name"]):
+            file.write(
+                f"| [{result['repo_name']}]({result['repo_url']}) | {result['release']} | {result['build_tag']} | {result['min_essentials']} | {result['package_version']} |\n"
+            )
+        file.write("\n")
+
+        # Write Essentials 2 table next (as requested - v2 should come before v1)
         if essentials_2_repos:
             file.write("## Essentials Framework v2 Repositories\n\n")
             file.write("| Repository                          | Release | Build Output | Min Essentials | Package Version |\n")

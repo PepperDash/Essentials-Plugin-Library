@@ -6,8 +6,14 @@
 | Total repos            | 73 |
 | Total Essentials v1    | 37 |
 | Total Essentials v2    | 34 |
+| Total Essentials v3    | 0 |
 | Total Essentials N/A   | 2 |
 
+
+## Essentials Framework v3 Repositories
+
+| Repository                          | Release | Build Output | Min Essentials | Package Version |
+|-------------------------------------|---------|--------------|----------------|----------------|
 
 ## Essentials Framework v2 Repositories
 
