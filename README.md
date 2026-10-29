@@ -31,7 +31,7 @@
 | [epi-extron-quantum](https://github.com/PepperDash/epi-extron-quantum) | v1.0.2 | v1.0.3-hotfixUpdateOn... | 2.24.4 | 1.10.2 |
 | [epi-extron-xtp-switch](https://github.com/PepperDash/epi-extron-xtp-switch) | v2.0.0 | v2.0.0 | 2.12.4 | 1.6.9 |
 | [epi-generic-cec-display](https://github.com/PepperDash/epi-generic-cec-display) | v1.2.0 | v2.0.0-feature-v3-mig... | 2.1.0 | 2.1.0 |
-| [epi-generic-tcp-server](https://github.com/PepperDash/epi-generic-tcp-server) | v1.0.0 | v1.0.0 | 2.24.4 | 2.24.4 |
+| [epi-generic-tcp-server](https://github.com/PepperDash/epi-generic-tcp-server) | v1.0.0 | v2.0.0-feature-essent... | 2.24.4 | 2.24.4 |
 | [epi-lg-display](https://github.com/PepperDash/epi-lg-display) | v2.8.0 | v3.0.0-feature-migrat... | 2.5.1 | 1.9.0 |
 | [epi-megapixel-helios](https://github.com/PepperDash/epi-megapixel-helios) | v2.0.0 | v3.0.0-fix-tolerate-u... | 2.43.0 | 2.43.0 |
 | [epi-nec-common-ascii](https://github.com/PepperDash/epi-nec-common-ascii) | v1.0.2 | v2.0.0-fix-v3-lamp-ho... | 2.24.4 | 2.24.4 |
@@ -40,13 +40,13 @@
 | [epi-optisigns-graphql](https://github.com/PepperDash/epi-optisigns-graphql) | v1.0.0 | v1.0.0 | 2.24.4 | 2.24.4 |
 | [epi-panasonic-projector](https://github.com/PepperDash/epi-panasonic-projector) | v1.3.1 | v1.3.1 | 2.10.0 | 1.11.1 |
 | [epi-planar-qe-display](https://github.com/PepperDash/epi-planar-qe-display) | v2.2.0 | v2.2.0 | 2.12.1 | 1.11.1 |
-| [epi-samsung-mdc-display](https://github.com/PepperDash/epi-samsung-mdc-display) | v1.6.3 | v2.0.0-feature-migrat... | 2.24.3 | 1.16.1 |
+| [epi-samsung-mdc-display](https://github.com/PepperDash/epi-samsung-mdc-display) | v1.6.3 | v2.0.0-fix-mdc-volume... | 2.24.3 | 1.16.1 |
 | [epi-samsung-tizenWebsocket](https://github.com/PepperDash/epi-samsung-tizenWebsocket) | v1.1.0 | v1.1.0 | 2.12.1 | 2.12.1 |
 | [epi-slack-app](https://github.com/PepperDash/epi-slack-app) | v1.0.0 | v1.0.0 | 2.24.4 | 2.24.4 |
-| [epi-sony-bravia](https://github.com/PepperDash/epi-sony-bravia) | v2.6.0 | v2.7.0-fix-volume-com... | 2.20.0 | 2.20.0 |
+| [epi-sony-bravia](https://github.com/PepperDash/epi-sony-bravia) | v2.6.0 | v3.0.0-feature-v3-mig... | 2.20.0 | 2.20.0 |
 | [epi-symetrix-dsp](https://github.com/PepperDash/epi-symetrix-dsp) | v2.0.1 | v2.0.1 | 2.29.0 | 2.29.0 |
 | [epi-udm-cws](https://github.com/PepperDash/epi-udm-cws) | v1.4.1 | v1.4.1 | 2.24.0 | 2.24.0 |
-| [epi-utilities-customvalues](https://github.com/PepperDash/epi-utilities-customvalues) | v1.2.0 | v1.2.0 | 2.5.1 | 2.15.0 |
+| [epi-utilities-customvalues](https://github.com/PepperDash/epi-utilities-customvalues) | v1.2.0 | v2.0.0-feat-v3-migrat... | 2.5.1 | 2.15.0 |
 | [epi-utilities-devicemonitor](https://github.com/PepperDash/epi-utilities-devicemonitor) | v2.0.0 | v2.0.1-feature-swap-i... | 2.4.4 | 2.4.4 |
 | [epi-utilities-password-manager](https://github.com/PepperDash/epi-utilities-password-manager) | v1.1.0 | v1.1.0 | 2.24.5 | 2.24.5 |
 | [epi-utilities-routeCycle](https://github.com/PepperDash/epi-utilities-routeCycle) | v2.0.2 | v2.0.2 | 2.4.4 | 2.8.0 |
@@ -95,7 +95,7 @@
 | [epi-1beyond-automate-vx](https://github.com/PepperDash/epi-1beyond-automate-vx) | v3.0.0 | v3.1.0-feat-expose-se... | 3.0.0... | 3.0.0... |
 | [epi-axis-camera](https://github.com/PepperDash/epi-axis-camera) | N/A | v3.0.0-feat-axis-came... | N/A | N/A |
 | [epi-crestron-fusion](https://github.com/PepperDash/epi-crestron-fusion) | v3.0.0 | v3.0.0 | 3.0.0... | 3.0.0... |
-| [epi-lutron-quantum](https://github.com/PepperDash/epi-lutron-quantum) | v3.0.0 | v3.0.0 | 3.0.0... | 3.0.0... |
+| [epi-lutron-quantum](https://github.com/PepperDash/epi-lutron-quantum) | v3.0.0 | v4.0.0-feature-multi-... | 3.0.0... | 3.0.0... |
 | [epi-panopto-cloud](https://github.com/PepperDash/epi-panopto-cloud) | v2.0.0 | v2.1.0-fix-poll-relia... | 3.0.0... | 3.0.0... |
 | [epi-qsc-qsysdsp](https://github.com/PepperDash/epi-qsc-qsysdsp) | v4.0.0 | v4.1.0-qrc-protocol.1 | 3.0.0... | 3.0.0... |
 | [epi-snapone-wattbox](https://github.com/PepperDash/epi-snapone-wattbox) | v1.0.0 | v1.0.0 | 3.0.0... | 1.12.2 |
