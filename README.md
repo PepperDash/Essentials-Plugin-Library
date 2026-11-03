@@ -16,7 +16,7 @@
 | [epi-avproedge-acmxYxY](https://github.com/PepperDash/epi-avproedge-acmxYxY) | v1.1.1 | v1.1.2-clear-route.1 | 2.12.4 | 2.12.4 |
 | [epi-avr-marantz](https://github.com/PepperDash/epi-avr-marantz) | v1.2.0 | v1.3.0-fix-volume-com... | 2.43.0 | 1.15.2 |
 | [epi-barco-g60](https://github.com/PepperDash/epi-barco-g60) | v2.0.0 | v2.0.0 | 2.43.0 | 2.43.0 |
-| [epi-biamp-tesira](https://github.com/PepperDash/epi-biamp-tesira) | v3.8.2 | v4.0.0-port-148-devic... | 2.38.0 | 1.10.0 |
+| [epi-biamp-tesira](https://github.com/PepperDash/epi-biamp-tesira) | v3.8.5 | v4.0.0-port-148-devic... | 2.38.0 | 1.10.0 |
 | [epi-birddog-camera](https://github.com/PepperDash/epi-birddog-camera) | N/A | v1.0.0-cmd-queue.2 | 2.18.0 | 2.18.0 |
 | [epi-bluesound-bluos](https://github.com/PepperDash/epi-bluesound-bluos) | v1.0.0 | v1.0.0 | 2.28.1 | 2.28.1 |
 | [epi-camera-visca](https://github.com/PepperDash/epi-camera-visca) | v2.1.0 | v3.0.0-fix-essentials... | 2.24.0 | 2.24.0 |
