@@ -3,9 +3,9 @@
 [Click here to see the Readme Diff](https://pepperdash.github.io/Essentials-Plugin-Library/readme-diff.html)
 | Metric                 | Count |
 |------------------------|-------|
-| Total repos            | 77 |
+| Total repos            | 78 |
 | Total Essentials v1    | 30 |
-| Total Essentials v2    | 39 |
+| Total Essentials v2    | 38 |
 | Total Essentials N/A   | 1 |
 
 
@@ -15,8 +15,7 @@
 |-------------------------------------|---------|--------------|----------------|----------------|
 | [epi-avproedge-acmxYxY](https://github.com/PepperDash/epi-avproedge-acmxYxY) | v1.1.1 | v1.1.2-clear-route.1 | 2.12.4 | 2.12.4 |
 | [epi-avr-marantz](https://github.com/PepperDash/epi-avr-marantz) | v1.2.0 | v1.3.0-fix-volume-com... | 2.43.0 | 1.15.2 |
-| [epi-barco-g60](https://github.com/PepperDash/epi-barco-g60) | v2.0.0 | v2.0.0 | 2.43.0 | 2.43.0 |
-| [epi-biamp-tesira](https://github.com/PepperDash/epi-biamp-tesira) | v3.8.5 | v4.0.0-port-148-devic... | 2.38.0 | 1.10.0 |
+| [epi-barco-g60](https://github.com/PepperDash/epi-barco-g60) | v2.1.0 | v2.1.0 | 2.43.0 | 2.43.0 |
 | [epi-birddog-camera](https://github.com/PepperDash/epi-birddog-camera) | N/A | v1.0.0-cmd-queue.2 | 2.18.0 | 2.18.0 |
 | [epi-bluesound-bluos](https://github.com/PepperDash/epi-bluesound-bluos) | v1.0.0 | v1.0.0 | 2.28.1 | 2.28.1 |
 | [epi-camera-visca](https://github.com/PepperDash/epi-camera-visca) | v2.1.0 | v3.0.0-fix-essentials... | 2.24.0 | 2.24.0 |
@@ -94,7 +93,9 @@
 |-------------------------------------|---------|--------------|----------------|----------------|
 | [epi-1beyond-automate-vx](https://github.com/PepperDash/epi-1beyond-automate-vx) | v3.0.0 | v3.1.0-feat-expose-se... | 3.0.0... | 3.0.0... |
 | [epi-axis-camera](https://github.com/PepperDash/epi-axis-camera) | N/A | v3.0.0-feat-axis-came... | N/A | N/A |
+| [epi-biamp-tesira](https://github.com/PepperDash/epi-biamp-tesira) | v4.0.0 | v4.0.0 | 3.0.0... | 3.0.0... |
 | [epi-crestron-fusion](https://github.com/PepperDash/epi-crestron-fusion) | v3.0.0 | v3.0.0 | 3.0.0... | 3.0.0... |
+| [epi-extron-mgp](https://github.com/PepperDash/epi-extron-mgp) | N/A | v1.0.0-initial-develo... | 3.0.0... | 3.0.0... |
 | [epi-lutron-quantum](https://github.com/PepperDash/epi-lutron-quantum) | v3.0.0 | v4.0.0-feature-multi-... | 3.0.0... | 3.0.0... |
 | [epi-panopto-cloud](https://github.com/PepperDash/epi-panopto-cloud) | v2.0.0 | v2.1.0-fix-poll-relia... | 3.0.0... | 3.0.0... |
 | [epi-qsc-qsysdsp](https://github.com/PepperDash/epi-qsc-qsysdsp) | v4.0.0 | v4.1.0-qrc-protocol.1 | 3.0.0... | 3.0.0... |
