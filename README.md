@@ -93,7 +93,7 @@
 |-------------------------------------|---------|--------------|----------------|----------------|
 | [epi-1beyond-automate-vx](https://github.com/PepperDash/epi-1beyond-automate-vx) | v3.0.0 | v3.1.0-feat-expose-se... | 3.0.0... | 3.0.0... |
 | [epi-axis-camera](https://github.com/PepperDash/epi-axis-camera) | N/A | v3.0.0-feat-axis-came... | N/A | N/A |
-| [epi-biamp-tesira](https://github.com/PepperDash/epi-biamp-tesira) | v4.0.0 | v4.1.0-feat-meter-sub... | 3.0.0... | 3.0.0... |
+| [epi-biamp-tesira](https://github.com/PepperDash/epi-biamp-tesira) | v4.5.0 | v4.5.0 | 3.0.0... | 3.0.0... |
 | [epi-crestron-fusion](https://github.com/PepperDash/epi-crestron-fusion) | v3.0.0 | v3.0.0 | 3.0.0... | 3.0.0... |
 | [epi-extron-mgp](https://github.com/PepperDash/epi-extron-mgp) | N/A | v1.0.0-initial-develo... | 3.0.0... | 3.0.0... |
 | [epi-lutron-quantum](https://github.com/PepperDash/epi-lutron-quantum) | v3.0.0 | v4.0.0-feature-multi-... | 3.0.0... | 3.0.0... |
