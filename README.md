@@ -3,7 +3,7 @@
 [Click here to see the Readme Diff](https://pepperdash.github.io/Essentials-Plugin-Library/readme-diff.html)
 | Metric                 | Count |
 |------------------------|-------|
-| Total repos            | 78 |
+| Total repos            | 79 |
 | Total Essentials v1    | 30 |
 | Total Essentials v2    | 38 |
 | Total Essentials N/A   | 1 |
@@ -93,9 +93,10 @@
 |-------------------------------------|---------|--------------|----------------|----------------|
 | [epi-1beyond-automate-vx](https://github.com/PepperDash/epi-1beyond-automate-vx) | v3.0.0 | v3.1.0-feat-expose-se... | 3.0.0... | 3.0.0... |
 | [epi-axis-camera](https://github.com/PepperDash/epi-axis-camera) | N/A | v3.0.0-feat-axis-came... | N/A | N/A |
-| [epi-biamp-tesira](https://github.com/PepperDash/epi-biamp-tesira) | v4.5.0 | v4.5.0 | 3.0.0... | 3.0.0... |
+| [epi-biamp-tesira](https://github.com/PepperDash/epi-biamp-tesira) | v4.5.1 | v4.5.1 | 3.0.0... | 3.0.0... |
 | [epi-crestron-fusion](https://github.com/PepperDash/epi-crestron-fusion) | v3.0.0 | v3.0.0 | 3.0.0... | 3.0.0... |
 | [epi-extron-mgp](https://github.com/PepperDash/epi-extron-mgp) | N/A | v1.0.0-initial-develo... | 3.0.0... | 3.0.0... |
+| [epi-genelec-smart-ip](https://github.com/PepperDash/epi-genelec-smart-ip) | v1.0.0 | v1.1.0-maintenance-es... | 3.0.0... | 3.0.0... |
 | [epi-lutron-quantum](https://github.com/PepperDash/epi-lutron-quantum) | v3.0.0 | v4.0.0-feature-multi-... | 3.0.0... | 3.0.0... |
 | [epi-panopto-cloud](https://github.com/PepperDash/epi-panopto-cloud) | v2.0.0 | v2.1.0-fix-poll-relia... | 3.0.0... | 3.0.0... |
 | [epi-qsc-qsysdsp](https://github.com/PepperDash/epi-qsc-qsysdsp) | v4.0.0 | v4.1.0-qrc-protocol.1 | 3.0.0... | 3.0.0... |
