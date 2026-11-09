@@ -39,7 +39,7 @@
 | [epi-optisigns-graphql](https://github.com/PepperDash/epi-optisigns-graphql) | v1.0.0 | v1.0.0 | 2.24.4 | 2.24.4 |
 | [epi-panasonic-projector](https://github.com/PepperDash/epi-panasonic-projector) | v1.3.1 | v1.3.1 | 2.10.0 | 1.11.1 |
 | [epi-planar-qe-display](https://github.com/PepperDash/epi-planar-qe-display) | v2.2.0 | v2.2.0 | 2.12.1 | 1.11.1 |
-| [epi-samsung-mdc-display](https://github.com/PepperDash/epi-samsung-mdc-display) | v1.6.3 | v2.0.0-fix-mdc-volume... | 2.24.3 | 1.16.1 |
+| [epi-samsung-mdc-display](https://github.com/PepperDash/epi-samsung-mdc-display) | v1.6.3 | v2.0.0-fix-warmup-coo... | 2.24.3 | 1.16.1 |
 | [epi-samsung-tizenWebsocket](https://github.com/PepperDash/epi-samsung-tizenWebsocket) | v1.1.0 | v1.1.0 | 2.12.1 | 2.12.1 |
 | [epi-slack-app](https://github.com/PepperDash/epi-slack-app) | v1.0.0 | v1.0.0 | 2.24.4 | 2.24.4 |
 | [epi-sony-bravia](https://github.com/PepperDash/epi-sony-bravia) | v2.6.0 | v3.0.0-feature-v3-mig... | 2.20.0 | 2.20.0 |
