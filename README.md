@@ -99,6 +99,6 @@
 | [epi-genelec-smart-ip](https://github.com/PepperDash/epi-genelec-smart-ip) | v1.0.0 | v1.1.0-maintenance-es... | 3.0.0... | 3.0.0... |
 | [epi-lutron-quantum](https://github.com/PepperDash/epi-lutron-quantum) | v3.0.0 | v4.0.0-feature-multi-... | 3.0.0... | 3.0.0... |
 | [epi-panopto-cloud](https://github.com/PepperDash/epi-panopto-cloud) | v2.0.0 | v2.1.0-fix-poll-relia... | 3.0.0... | 3.0.0... |
-| [epi-qsc-qsysdsp](https://github.com/PepperDash/epi-qsc-qsysdsp) | v4.0.0 | v4.1.0-qrc-protocol.1 | 3.0.0... | 3.0.0... |
+| [epi-qsc-qsysdsp](https://github.com/PepperDash/epi-qsc-qsysdsp) | v4.1.0 | v4.1.0 | 3.0.0... | 3.0.0... |
 | [epi-snapone-wattbox](https://github.com/PepperDash/epi-snapone-wattbox) | v1.0.0 | v1.0.0 | 3.0.0... | 1.12.2 |
 | [epi-wyrestorm-networkHD](https://github.com/PepperDash/epi-wyrestorm-networkHD) | v1.1.0 | v1.1.0 | 3.0.0... | 3.0.0... |
