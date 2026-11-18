@@ -80,7 +80,7 @@
 | [epi-sharp-display](https://github.com/PepperDash/epi-sharp-display) | v1.0.4 | v1.0.6-feature-4-seri... | 1.9.1 | 1.9.1 |
 | [epi-shure-mxw](https://github.com/PepperDash/epi-shure-mxw) | 2.1.1 | v3.0.0-feature-4-seri... | 1.6.6 | 1.15.5 |
 | [epi-shure-ulxd](https://github.com/PepperDash/epi-shure-ulxd) | 2.0.0 | 2.0.0 | 1.12.0 | 1.12.0 |
-| [epi-tripleplay-server](https://github.com/PepperDash/epi-tripleplay-server) | v1.0.5 | v2.0.1-feature-4-seri... | 1.9.1 | 1.9.1 |
+| [epi-tripleplay-server](https://github.com/PepperDash/epi-tripleplay-server) | v1.0.5 | v3.0.0-feature-v3-mig... | 1.9.1 | 1.9.1 |
 | [epi-uintled-colorlightZ6](https://github.com/PepperDash/epi-uintled-colorlightZ6) | v1.0.0 | v2.0.0-feature-v3-mig... | 1.5.5 | 1.16.1 |
 | [epi-utilities-deviceInfo](https://github.com/PepperDash/epi-utilities-deviceInfo) | 0.0.1 | 0.0.1 | 1.6.4 | 1.6.4 |
 | [epi-utilities-i18n](https://github.com/PepperDash/epi-utilities-i18n) | 1.0.5 | 1.0.5 | 1.6.4 | 1.6.6 |
