@@ -31,7 +31,7 @@
 | [epi-extron-xtp-switch](https://github.com/PepperDash/epi-extron-xtp-switch) | v2.0.0 | v2.0.0 | 2.12.4 | 1.6.9 |
 | [epi-generic-cec-display](https://github.com/PepperDash/epi-generic-cec-display) | v1.2.0 | v2.0.0-feature-v3-mig... | 2.1.0 | 2.1.0 |
 | [epi-generic-tcp-server](https://github.com/PepperDash/epi-generic-tcp-server) | v1.0.0 | v2.0.0-feature-essent... | 2.24.4 | 2.24.4 |
-| [epi-lg-display](https://github.com/PepperDash/epi-lg-display) | v2.8.0 | v3.0.0-feature-migrat... | 2.5.1 | 1.9.0 |
+| [epi-lg-display](https://github.com/PepperDash/epi-lg-display) | v2.9.0 | v3.0.0-fix-v3-minimum... | 2.16.0 | 1.9.0 |
 | [epi-megapixel-helios](https://github.com/PepperDash/epi-megapixel-helios) | v2.0.0 | v3.0.0-fix-tolerate-u... | 2.43.0 | 2.43.0 |
 | [epi-nec-common-ascii](https://github.com/PepperDash/epi-nec-common-ascii) | v1.0.2 | v2.0.0-fix-v3-lamp-ho... | 2.24.4 | 2.24.4 |
 | [epi-nec-display](https://github.com/PepperDash/epi-nec-display) | v2.1.0 | v3.0.0-feature-v3-mig... | 2.5.1 | 1.16.1 |
@@ -95,7 +95,7 @@
 | [epi-axis-camera](https://github.com/PepperDash/epi-axis-camera) | N/A | v3.0.0-feat-axis-came... | N/A | N/A |
 | [epi-biamp-tesira](https://github.com/PepperDash/epi-biamp-tesira) | v4.6.1 | v4.6.1 | 3.0.0... | 3.0.0... |
 | [epi-crestron-fusion](https://github.com/PepperDash/epi-crestron-fusion) | v3.0.0 | v3.0.0 | 3.0.0... | 3.0.0... |
-| [epi-extron-mgp](https://github.com/PepperDash/epi-extron-mgp) | N/A | v1.0.0-initial-develo... | 3.0.0... | 3.0.0... |
+| [epi-extron-mgp](https://github.com/PepperDash/epi-extron-mgp) | v1.0.0 | v1.0.0 | 3.0.0... | 3.0.0... |
 | [epi-genelec-smart-ip](https://github.com/PepperDash/epi-genelec-smart-ip) | v1.0.0 | v1.1.0-maintenance-es... | 3.0.0... | 3.0.0... |
 | [epi-lutron-quantum](https://github.com/PepperDash/epi-lutron-quantum) | v3.0.0 | v4.0.0-feature-multi-... | 3.0.0... | 3.0.0... |
 | [epi-panopto-cloud](https://github.com/PepperDash/epi-panopto-cloud) | v2.0.0 | v2.1.0-fix-poll-relia... | 3.0.0... | 3.0.0... |
