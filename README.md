@@ -50,7 +50,7 @@
 | [epi-utilities-password-manager](https://github.com/PepperDash/epi-utilities-password-manager) | v1.1.0 | v1.1.0 | 2.24.5 | 2.24.5 |
 | [epi-utilities-routeCycle](https://github.com/PepperDash/epi-utilities-routeCycle) | v2.0.2 | v2.0.2 | 2.4.4 | 2.8.0 |
 | [epi-utilities-timer](https://github.com/PepperDash/epi-utilities-timer) | v2.0.0 | v3.0.0-beta.1 | 2.4.4 | 2.4.4 |
-| [epi-videoCodec-ciscoExtended](https://github.com/PepperDash/epi-videoCodec-ciscoExtended) | v2.11.10 | v3.0.0-port-dac1dd6-t... | 2.37.... | 2.37.... |
+| [epi-videoCodec-ciscoExtended](https://github.com/PepperDash/epi-videoCodec-ciscoExtended) | v2.11.11 | v3.0.0-port-dac1dd6-t... | 2.37.... | 2.37.... |
 
 ## Essentials Framework v1 Repositories
 
