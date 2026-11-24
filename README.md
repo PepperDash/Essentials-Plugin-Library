@@ -34,7 +34,7 @@
 | [epi-lg-display](https://github.com/PepperDash/epi-lg-display) | v2.9.0 | v3.0.0-fix-v3-minimum... | 2.16.0 | 1.9.0 |
 | [epi-megapixel-helios](https://github.com/PepperDash/epi-megapixel-helios) | v2.0.0 | v3.0.0-fix-tolerate-u... | 2.43.0 | 2.43.0 |
 | [epi-nec-common-ascii](https://github.com/PepperDash/epi-nec-common-ascii) | v1.0.2 | v2.0.0-fix-v3-lamp-ho... | 2.24.4 | 2.24.4 |
-| [epi-nec-display](https://github.com/PepperDash/epi-nec-display) | v2.1.0 | v3.0.0-feature-v3-mig... | 2.5.1 | 1.16.1 |
+| [epi-nec-display](https://github.com/PepperDash/epi-nec-display) | v2.1.0 | v3.0.0-fix-duplicate-... | 2.5.1 | 1.16.1 |
 | [epi-netgear-cli](https://github.com/PepperDash/epi-netgear-cli) | v1.4.0 | v2.0.0-feature-v3-mig... | 2.29.... | 2.29.... |
 | [epi-optisigns-graphql](https://github.com/PepperDash/epi-optisigns-graphql) | v1.0.0 | v1.0.0 | 2.24.4 | 2.24.4 |
 | [epi-panasonic-projector](https://github.com/PepperDash/epi-panasonic-projector) | v1.3.1 | v1.3.1 | 2.10.0 | 1.11.1 |
