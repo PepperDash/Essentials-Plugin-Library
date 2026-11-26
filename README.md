@@ -14,7 +14,7 @@
 | Repository                          | Release | Build Output | Min Essentials | Package Version |
 |-------------------------------------|---------|--------------|----------------|----------------|
 | [epi-avproedge-acmxYxY](https://github.com/PepperDash/epi-avproedge-acmxYxY) | v1.1.1 | v1.1.2-clear-route.1 | 2.12.4 | 2.12.4 |
-| [epi-avr-marantz](https://github.com/PepperDash/epi-avr-marantz) | v1.2.0 | v1.3.0-fix-volume-com... | 2.43.0 | 1.15.2 |
+| [epi-avr-marantz](https://github.com/PepperDash/epi-avr-marantz) | v1.3.0 | v1.3.0 | 2.43.0 | 1.15.2 |
 | [epi-barco-g60](https://github.com/PepperDash/epi-barco-g60) | v2.1.0 | v2.1.0 | 2.43.0 | 2.43.0 |
 | [epi-birddog-camera](https://github.com/PepperDash/epi-birddog-camera) | N/A | v1.0.0-cmd-queue.2 | 2.18.0 | 2.18.0 |
 | [epi-bluesound-bluos](https://github.com/PepperDash/epi-bluesound-bluos) | v1.0.0 | v1.0.0 | 2.28.1 | 2.28.1 |
@@ -42,7 +42,7 @@
 | [epi-samsung-mdc-display](https://github.com/PepperDash/epi-samsung-mdc-display) | v1.6.3 | v2.0.0-fix-warmup-coo... | 2.24.3 | 1.16.1 |
 | [epi-samsung-tizenWebsocket](https://github.com/PepperDash/epi-samsung-tizenWebsocket) | v1.1.0 | v1.1.0 | 2.12.1 | 2.12.1 |
 | [epi-slack-app](https://github.com/PepperDash/epi-slack-app) | v1.0.0 | v1.0.0 | 2.24.4 | 2.24.4 |
-| [epi-sony-bravia](https://github.com/PepperDash/epi-sony-bravia) | v2.6.0 | v3.0.0-feature-v3-mig... | 2.20.0 | 2.20.0 |
+| [epi-sony-bravia](https://github.com/PepperDash/epi-sony-bravia) | v2.7.0 | v3.0.0-feature-v3-mig... | 2.20.0 | 2.20.0 |
 | [epi-symetrix-dsp](https://github.com/PepperDash/epi-symetrix-dsp) | v2.0.1 | v2.0.1 | 2.29.0 | 2.29.0 |
 | [epi-udm-cws](https://github.com/PepperDash/epi-udm-cws) | v1.4.1 | v1.4.1 | 2.24.0 | 2.24.0 |
 | [epi-utilities-customvalues](https://github.com/PepperDash/epi-utilities-customvalues) | v1.2.0 | v2.0.0-feat-v3-migrat... | 2.5.1 | 2.15.0 |
